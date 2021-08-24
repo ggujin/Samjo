@@ -1,0 +1,53 @@
+@charset "UTF-8";
+
+.head{
+  position: fixed;
+  margin: 0;
+  background-color: azure;
+}
+
+header {
+  color: darkolivegreen;
+  font-size: 2em;
+  text-align: center;
+  background-color: honeydew;
+  padding:5% 0;
+  margin: 0;
+}
+
+h3 {
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+}
+ul ol{
+  display: table; margin-left: auto; margin-right: auto
+}
+
+
+.a {
+  border: 5px solid white ;
+  margin: 5px;
+  flex-grow: 1;
+}
+.tml {
+  flex-basis: 230px;
+}
+
+.food {
+  flex-basis: 130px;
+}
+
+.Coffee {
+  flex-basis: 200px;
+}
+
+footer {
+  border-top: 1px solid gray;
+  margin-top: 5%;
+  text-align: center;
+  clear: both;
+
+}
