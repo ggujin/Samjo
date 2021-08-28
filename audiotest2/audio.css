@@ -1,36 +1,35 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
 .audio1 {
-
-    width: 100px;
-    height: 50px;
-    background-color: green;
-    color: red;
-    font-size: 15px;
-
+  width: 100px;
+  height: 50px;
+  background-color: green;
+  color: red;
+  font-size: 15px;
 }
 
 .audio2 {
-    width: 230px;
-    height: 200px;
-    background-image: url('https://drive.google.com/uc?export=download&id=1wswNUD5CqQkRPjDZm6ii1nPHeKtgf-JS');
-    background-color: green;
-    color:rgba(17, 146, 17, 0.863);
-    font-size: 30px; 
-    
-    
-    border: 0;
-    outline: 0;
-    border-radius:100px;
-    
+  width: 100px;
+  height: 100px;
+  background-image: url("https://drive.google.com/uc?export=download&id=1wswNUD5CqQkRPjDZm6ii1nPHeKtgf-JS");
+  background-size: cover;
+  /* background-color: green; */
+  color: rgba(17, 146, 17, 0.863);
+  font-size: 30px;
 
-    
-    
+  border: 0;
+  outline: 0;
+  border-radius: 100px;
 }
 
 .audio2:hover {
-    background-color: rgb(151, 10, 10);
-    background-blend-mode:lighten;
+  background-color: rgb(151, 10, 10);
+  background-blend-mode: lighten;
 }
 
 .audio2:active {
-    background-blend-mode: saturation;
+  background-blend-mode: saturation;
 }
