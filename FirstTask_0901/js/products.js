@@ -8,9 +8,6 @@ window.addEventListener('DOMContentLoaded', event => {
     const listHoursArray = document.body.querySelectorAll('.list-hours li');
     listHoursArray[new Date().getDay()].classList.add(('today'));
 })
-
-import("../css/styles.css")
-
 const dots = document.querySelector(".dot");
 const bd = document.querySelector(".mysvg");
 let sizeup = 100;
