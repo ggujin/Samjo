@@ -11863,3 +11863,66 @@ canvas {
   background: #000;
   cursor: pointer;
 }
+
+.mysvg {
+  width: 1296px;
+  height: 540px;
+  background-color: #0067a3;
+}
+
+.dot{
+  cx : 50%;
+  cy : 50%;
+  fill : #ff6347;
+  r : 10;
+  transition: all ease 450ms;
+}
+
+.mysvgcontainer{
+  position: relative;
+}
+
+.mymysvgcontainer {
+  width: 1296px;
+  height: 540px;
+  background-color: #6d4b20;
+  transition: all 450ms;
+}
+
+.zomzom{
+  width: 200px;
+  height: 200px;
+}
+
+.myrealcontainer{
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: none;
+}
+
+.mydiv{
+  width: 1296px;
+  height: 540px;
+  background-color: #ffc806;
+}
+
+.rectanglecontainer{
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: none;
+}
+
+.myrectangle{
+  width: 200px;
+  height: 200px;
+  rx : 0px;
+  ry : 0px;
+  fill: #cc4e1e;
+  transition: all 250ms;
+}
