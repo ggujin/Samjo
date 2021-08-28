@@ -1,0 +1,23 @@
+.audio2 {
+  width: 200px;
+  height: 200px;
+  background-image: url("http://drive.google.com/uc?export=view&id=1IZL7hWezPoYOC8G_Bd6Ft6FWfEGhoaaR");
+  background-size: cover; 
+  /* background-color: green; */
+  color: rgb(110, 3, 3);
+  font-size: 30px;
+  background-color:transparent;
+
+  border: 0;
+  outline: 0;
+  border-radius: 100px;
+}
+
+.audio2:hover {
+  background-color: rgb(110, 3, 3);
+}
+
+
+.audio2:active {
+  background-blend-mode: saturation;
+}
