@@ -11542,11 +11542,11 @@ canvas {
   transition: all ease 450ms;
 }
 
-.mysvger {
+.mysvgcontainer {
   position: relative;
 }
 
-.mymysvger {
+.mymysvgcontainer {
   width: 1296px;
   height: 540px;
   background-color: #6d4b20;
@@ -11558,7 +11558,7 @@ canvas {
   height: 200px;
 }
 
-.myrealer {
+.myrealcontainer {
   width: 200px;
   height: 200px;
   position: absolute;
@@ -11573,7 +11573,7 @@ canvas {
   background-color: #ffc806;
 }
 
-.rectangleer {
+.rectanglecontainer {
   width: 200px;
   height: 200px;
   position: absolute;
@@ -11588,7 +11588,7 @@ canvas {
   rx: 0px;
   ry: 0px;
   fill: #cc4e1e;
-  transition: all 250ms;
+  transition: all 50ms;
 }
 
 .ball {
