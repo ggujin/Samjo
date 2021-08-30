@@ -1,3 +1,33 @@
+Skip to content
+Search or jump to…
+Pulls
+Issues
+Marketplace
+Explore
+ 
+@Minju-Jeon 
+hayo01
+/
+Samjo
+0
+00
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+More
+Samjo/FirstTask_0901/css/styles.css
+@Minju-Jeon
+Minju-Jeon menu 추가 / index 페이지 커피아이콘 위치 재정렬
+Latest commit 874139e 1 hour ago
+ History
+ 3 contributors
+@hayo01@Minju-Jeon@beomsookim96
+11621 lines (9817 sloc)  199 KB
+  
 @charset "UTF-8";
 /*!
 * Start Bootstrap - Business Casual v7.0.3 (https://startbootstrap.com/theme/business-casual)
@@ -220,12 +250,11 @@ html *::after {
     
 }
 
-.svg-er {
+.svg-container {
 
     width: 0;
     height: 0;
 }
-
 
 @media screen and (max-width: 50em) {
     .menu{
@@ -783,7 +812,7 @@ progress {
   color: #6c757d;
 }
 .blockquote-footer::before {
-  content: "— ";
+  content: "— ";
 }
 
 .img-fluid {
@@ -814,56 +843,56 @@ progress {
   color: #6c757d;
 }
 
-.er,
-.er-fluid,
-.er-xxl,
-.er-xl,
-.er-lg,
-.er-md,
-.er-sm {
+.container,
+.container-fluid,
+.container-xxl,
+.container-xl,
+.container-lg,
+.container-md,
+.container-sm {
   width: 100%;
   padding-right: var(--bs-gutter-x, 0.75rem);
   padding-left: var(--bs-gutter-x, 0.75rem);
-  margin: 0 auto;
+  margin: 1rem auto;
 }
 
 @media (min-width: 576px) {
-  .er-sm,
-  .er {
+  .container-sm,
+  .container {
     max-width: 540px;
   }
 }
 @media (min-width: 768px) {
-  .er-md,
-  .er-sm,
-  .er {
+  .container-md,
+  .container-sm,
+  .container {
     max-width: 720px;
   }
 }
 @media (min-width: 992px) {
-  .er-lg,
-  .er-md,
-  .er-sm,
-  .er {
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container {
     max-width: 960px;
   }
 }
 @media (min-width: 1200px) {
-  .er-xl,
-  .er-lg,
-  .er-md,
-  .er-sm,
-  .er {
+  .container-xl,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container {
     max-width: 1140px;
   }
 }
 @media (min-width: 1400px) {
-  .er-xxl,
-  .er-xl,
-  .er-lg,
-  .er-md,
-  .er-sm,
-  .er {
+  .container-xxl,
+  .container-xl,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container {
     max-width: 1320px;
   }
 }
@@ -11619,3 +11648,16 @@ canvas {
 .audio2:active {
   background-blend-mode: saturation;
 }
+© 2021 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+Loading complete
