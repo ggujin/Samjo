@@ -1,4 +1,6 @@
 
+
+
 .audio2 {
   width: 200px;
   height: 200px;
@@ -80,14 +82,14 @@
 }
 
 .coffe{
-  z-index: 85px;
+
   width: 100px;
   height: 150px;
   background-size: cover;
   text-align: center;
   position:absolute;
   left:47%;
-  top: 40%;
+  top:420px;
   
 }
 
@@ -101,14 +103,13 @@
   }
 
   .coffe{
-  	z-index: 100;
-    width: 75px;
+    width: 80px;
     height: 130px;
     background-size: cover;
     text-align: center;
     position: absolute;
     left:47%;
-    top:40%;
+    top:420px;
 
   }
 
@@ -123,14 +124,13 @@
 
   }
   .coffe{
- 	z-index: 100;
     width: 70px;
     height: 120px;
     background-size: cover;
     text-align: center;
     position: absolute;
     left:47%;
-    top:40%;
+    top:410px;
 
   }
 
@@ -145,14 +145,13 @@
   }
 
   .coffe{
- 	 z-index: 100;
-    width: 57px;
+    width: 60px;
     height: 100px;
     background-size: cover;
     text-align: center;
     position: absolute;
     left:47%;
-    top:22%;
+    top:180px;
 
   }
 
@@ -166,14 +165,25 @@
 
   }
   .coffe{
- 	 z-index: 100;
     width: 50px;
     height: 90px;
     background-size: cover;
     text-align: center;
     position: absolute;
     left:47%;
-    top:21%;
+    top:175px;
+  }
+}
+
+@media (max-width:800px){
+  .coffe{
+    width: 50px;
+    height: 90px;
+    background-size: cover;
+    text-align: center;
+    position: absolute;
+    left:47%;
+    top:100px;
   }
 }
 
@@ -185,14 +195,13 @@
 
   }
   .coffe{
-  z-index: 100;
     width: 45px;
     height: 80px;
     background-size: cover;
     text-align: center;
     position: absolute;
     left:47%;
-    top:13%;
+    top:100px;
   }
 }
 
@@ -205,14 +214,13 @@
 
   }
   .coffe{
-  z-index: 100;
-    width: 35px;
+    width: 40px;
     height: 60px;
     background-size: cover;
     text-align: center;
     position: absolute;
     left:47%;
-    top:14%;
+    top:100px;
   }
 }
 
@@ -226,17 +234,34 @@
   }
 
   .coffe{
-  z-index: 100;
     width: 30px;
     height: 50px;
     background-size: cover;
     text-align: center;
     position: absolute;
     left:47%;
-    top:13%;
+    top:90px;
+  }
+
+  
+
+}
+
+
+@media (max-width:429px){
+
+  .coffe{
+    width: 25px;
+    height: 40px;
+    background-size: cover;
+    text-align: center;
+    position: absolute;
+    left:47%;
+    top:135px;
   }
 
 }
+
 
 @media (max-width:383px){
 
@@ -247,14 +272,13 @@
   }
 
   .coffe{
-  z-index: 100;
-    width: 18px;
+    width: 20px;
     height: 30px;
     background-size: cover;
     text-align: center;
     position: absolute;
     left:47%;
-    top:13%;
+    top:130px;
   }
 
 }
@@ -269,31 +293,41 @@
     }
 
     .coffe{
-  		z-index: 100;
-        width: 9px;
-        height: 15px;
-        background-size: cover;
-        text-align: center;
-        position: absolute;
-        left:47%;
-        top:18%;
+      width: 10px;
+      height: 20px;
+      background-size: cover;
+      text-align: center;
+      position: absolute;
+      left:47%;
+      top:130px;
     }
 
   }
 
-  
+    @media (max-width:248px){
+
+      .coffe{
+        width: 10px;
+        height: 10px;
+        background-size: cover;
+        text-align: center;
+        position: absolute;
+        left:47%;
+        top:130px;
+      }
+
+  }
 
   @media (max-width:220px){
 
     .coffe{
-    z-index: 100;
-      width: 7px;
+      width: 10px;
       height: 10px;
       background-size: cover;
       text-align: center;
       position: absolute;
       left:47%;
-      top:19%;
+      top:130px;
     }
 
   }
