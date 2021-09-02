@@ -18,27 +18,27 @@ function tv() {
         staticTO,
         gifData = [ //여기에 조별 사진.
             {
-                file: "https://mblogthumb-phinf.pstatic.net/20140322_110/ghtlzh88_13954621864615PKue_GIF/d56212cbc548a00d992f4af2a5426fd4.gif?type=w2",
+                file: "src/img/hy.jpg",
                 desc: "Steamboat Willie (Mickey Mouse) steering a ship"
             },
             {
-                file: "https://i.ibb.co/0FqQVrj/skeletons.gif",
+                file: "src/img/jy.jpg",
                 desc: "Spooky scary skeletons sending shivers down your spine"
             },
             {
-                file: "https://i.ibb.co/Hpnwgq2/kingkong.gif",
+                file: "src/img/sj.jpg",
                 desc: "King Kong waving on Empire State Building",
             },
             {
-                file: "https://i.ibb.co/fp0PSjv/tracks.gif",
+                file: "src/img/bs.jpg",
                 desc: "Looking at train tracks from behind a train",
             },
             {
-                file: "https://i.ibb.co/5FM7BtH/nuke.gif",
+                file: "src/img/mj.jpg",
                 desc: "Nuclear explosion at sea",
             },
             {
-                file: "https://mblogthumb-phinf.pstatic.net/20140322_110/ghtlzh88_13954621864615PKue_GIF/d56212cbc548a00d992f4af2a5426fd4.gif?type=w2",
+                file: "src/img/js.jpg",
                 desc: "Nuclear explosion at sea",
             }
         ],
@@ -99,75 +99,58 @@ function tv() {
         },300);
     };
 
-    // function onmouseoverGcon(){
-    //     var displayed = document.getElementById("displayed");
-    //     displayed.src = gifs[0].src;
-    //     displayed.alt = gifs[0].alt;
-    //     gcontainer.style.transition = "all 2s";
-    //     gcontainer.style.left = Math.random()*window.innerWidth + "px";
-    //     gcontainer.style.top = Math.random()*window.innerHeight + "px";
-    //
-    // }
-    //
-    // function onmouseoverGcon2(){
-    //
-    //     var displayed = document.getElementById("displayed");
-    //     displayed.src = gifs[1].src;
-    //     displayed.alt = gifs[1].alt;
-    //
-    //     gcontainer2.style.left = Math.random()*window.innerWidth + "px";
-    //     gcontainer2.style.top = Math.random()*window.innerHeight + "px";
-    //
-    //
-    // }
-    //
-    // function onmouseoverGcon3(){
-    //
-    //     var displayed = document.getElementById("displayed");
-    //     displayed.src = gifs[2].src;
-    //     displayed.alt = gifs[2].alt;
-    //     gcontainer3.style.left = Math.random()*window.innerWidth + "px";
-    //     gcontainer3.style.top = Math.random()*window.innerHeight + "px";
-    //
-    //
-    //
-    // }
-    //
-    // function onmouseoverGcon4(){
-    //
-    //     var displayed = document.getElementById("displayed");
-    //     displayed.src = gifs[3].src;
-    //     displayed.alt = gifs[3].alt;
-    //     gcontainer4.style.left = Math.random()*window.innerWidth + "px";
-    //     gcontainer4.style.top = Math.random()*window.innerHeight + "px";
-    //
-    //
-    //
-    // }
-    //
-    // function onmouseoverGcon5(){
-    //
-    //     var displayed = document.getElementById("displayed");
-    //     displayed.src = gifs[4].src;
-    //     displayed.alt = gifs[4].alt;
-    //     gcontainer5.style.left = Math.random()*window.innerWidth + "px";
-    //     gcontainer5.style.top = Math.random()*window.innerHeight + "px";
-    //
-    //
-    //
-    // }
-    //
-    // function onmouseoverGcon6(){
-    //
-    //     var displayed = document.getElementById("displayed");
-    //     displayed.src = gifs[5].src;
-    //     displayed.alt = gifs[5].alt;
-    //     gcontainer6.style.left = Math.random()*window.innerWidth + "px";
-    //     gcontainer6.style.top = Math.random()*window.innerHeight + "px";
-    //
-    //
-    //
-    // }
+    function onmouseoverGcon(){
+        var displayed = document.getElementById("displayed");
+        displayed.src = gifs[0].src;
+        displayed.alt = gifs[0].alt;
+
+
+    }
+
+    function onmouseoverGcon2(){
+
+        var displayed = document.getElementById("displayed");
+        displayed.src = gifs[1].src;
+        displayed.alt = gifs[1].alt;
+
+
+    }
+
+    function onmouseoverGcon3(){
+
+        var displayed = document.getElementById("displayed");
+        displayed.src = gifs[2].src;
+        displayed.alt = gifs[2].alt;
+
+
+    }
+
+    function onmouseoverGcon4(){
+
+        var displayed = document.getElementById("displayed");
+        displayed.src = gifs[3].src;
+        displayed.alt = gifs[3].alt;
+
+
+    }
+
+    function onmouseoverGcon5(){
+
+        var displayed = document.getElementById("displayed");
+        displayed.src = gifs[4].src;
+        displayed.alt = gifs[4].alt;
+
+
+    }
+
+    function onmouseoverGcon6(){
+
+        var displayed = document.getElementById("displayed");
+        displayed.src = gifs[5].src;
+        displayed.alt = gifs[5].alt;
+
+
+    }
 
     function automove(){
 
@@ -186,13 +169,13 @@ function tv() {
         mtvc.style.display = "block";
     }
     setInterval(automove,1000);
-    // gcontainer.addEventListener("mouseover",onmouseoverGcon);
-    // gcontainer2.addEventListener("mouseover",onmouseoverGcon2);
-    // gcontainer3.addEventListener("mouseover",onmouseoverGcon3);
-    // gcontainer4.addEventListener("mouseover",onmouseoverGcon4);
-    // gcontainer5.addEventListener("mouseover",onmouseoverGcon5);
-    // gcontainer6.addEventListener("mouseover",onmouseoverGcon6);
-    window.addEventListener("mousedown",containerhide);
-    window.addEventListener("mouseup",containercomeon);
+    gcontainer.addEventListener("mouseover",onmouseoverGcon);
+    gcontainer2.addEventListener("mouseover",onmouseoverGcon2);
+    gcontainer3.addEventListener("mouseover",onmouseoverGcon3);
+    gcontainer4.addEventListener("mouseover",onmouseoverGcon4);
+    gcontainer5.addEventListener("mouseover",onmouseoverGcon5);
+    gcontainer6.addEventListener("mouseover",onmouseoverGcon6);
+    window.addEventListener("click",containerhide);
+    window.addEventListener("click",containercomeon);
     document.getElementById("channel").addEventListener("click",changeChannel);
 }
