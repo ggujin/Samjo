@@ -1,11 +1,15 @@
 body{
-    background-color: black;
+    background-image: url("https://c.wallhere.com/photos/92/2f/windows_blackandwhite_bw_mountains_tower_contrast_dark_washington-926594.jpg!d");
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
 }
 
 .mytvcontainer{
 
     position: relative;
-    top: 50%;
+    top: 20%;
+    display: block;
 
 
 }
@@ -19,8 +23,8 @@ body{
 main {
     font-size: 10px;
     margin: auto;
-    width: 51em;
-    height: 52.5em;
+    width: 50em;
+    height: 100em;
 }
 img, canvas {
     display: block;
@@ -29,8 +33,8 @@ img, canvas {
     transform: translate(-50%,-50%);
 }
 img {
-    width: 32em;
-    height: 22em;
+    width: 50em;
+    height: 40em;
 }
 body, .tv-body, .controls, .legs {
     display: flex;
@@ -49,24 +53,24 @@ body, .tv-body, .controls, .legs {
             linear-gradient(#0000,#0004),
             radial-gradient(12em 0.4em at 32em 2em,#fff,#fff0),
             /* 여기가  tv 바디 */
-            url(https://gif5jvqbd.fmkorea.com/files/attach/new/20200621/33854530/895310885/2955786958/8559335a251baab76a97aaa97a1ad183.gif);
+            url(https://images.unsplash.com/photo-1599992836360-f88e279f8350?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80);
     /*라운드*/
     border-radius: 0.75em 0.75em 0.75em 0.75em / 3em 3em 0.75em 0.75em;
     /*박스 아래 그림자*/
     box-shadow: 0 -1em 0.75em #8c917e inset;
     flex-direction: column;
     align-items: center;
-    height: 50em;
+    height: 55em;
 }
 .screen-container, .controls {
-    width: 38em;
+    width: 48em;
 }
 .screen-container {
     background-color: #bcb;
     margin: 3em 0 0 0;
     overflow: hidden;
     position: relative;
-    height: 28em;
+    height: 60em;
 }
 .screen, .screen-inset, .screen-frame, canvas, img {
     position: absolute;
@@ -280,9 +284,11 @@ body, .tv-body, .controls, .legs {
     height: 400px;
     padding: 0;
     box-sizing: border-box;
-    background: black;
     position: absolute;
-    left: 2%;
+    float: top;
+    left: 9%;
+    transition: all 2s;
+    opacity: 70%;
 }
 
 .ghostcontainer2 {
@@ -290,10 +296,12 @@ body, .tv-body, .controls, .legs {
     height: 400px;
     padding: 0;
     box-sizing: border-box;
-    background: black;
     position: absolute;
+    float: top;
     top: 30%;
-    left: 9%;
+    left: 2%;
+    transition: all 2s;
+    opacity: 70%;
 }
 
 .ghostcontainer3 {
@@ -301,10 +309,50 @@ body, .tv-body, .controls, .legs {
     height: 400px;
     padding: 0;
     box-sizing: border-box;
-    background: black;
     position: absolute;
+    float: top;
     top: 60%;
-    left: 2%;
+    left: 9%;
+    transition: all 2s;
+    opacity: 70%;
+}
+
+.ghostcontainer4 {
+    width: 400px;
+    height: 400px;
+    padding: 0;
+    box-sizing: border-box;
+    position: absolute;
+    float: top;
+    right: 9%;
+    transition: all 2s;
+    opacity: 70%;
+}
+
+.ghostcontainer5 {
+    width: 400px;
+    height: 400px;
+    padding: 0;
+    box-sizing: border-box;
+    position: absolute;
+    float: top;
+    top: 30%;
+    right: 2%;
+    transition: all 2s;
+    opacity: 70%;
+}
+
+.ghostcontainer6 {
+    width: 400px;
+    height: 400px;
+    padding: 0;
+    box-sizing: border-box;
+    position: absolute;
+    float: top;
+    top: 60%;
+    right: 9%;
+    transition: all 2s;
+    opacity: 70%;
 }
 
 *::after,

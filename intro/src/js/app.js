@@ -3,6 +3,10 @@ document.addEventListener("DOMContentLoaded",tv);
 const gcontainer = document.querySelector(".ghostcontainer");
 const gcontainer2 = document.querySelector(".ghostcontainer2");
 const gcontainer3 = document.querySelector(".ghostcontainer3");
+const gcontainer4 = document.querySelector(".ghostcontainer4");
+const gcontainer5 = document.querySelector(".ghostcontainer5");
+const gcontainer6 = document.querySelector(".ghostcontainer6");
+const mtvc = document.querySelector(".mytvcontainer");
 function tv() {
     var cnv = document.getElementById("static"),
         c = cnv.getContext("2d"),
@@ -95,31 +99,100 @@ function tv() {
         },300);
     };
 
-    function onmouseoverGcon(){
-        var displayed = document.getElementById("displayed");
-        displayed.src = gifs[0].src;
-        displayed.alt = gifs[0].alt;
+    // function onmouseoverGcon(){
+    //     var displayed = document.getElementById("displayed");
+    //     displayed.src = gifs[0].src;
+    //     displayed.alt = gifs[0].alt;
+    //     gcontainer.style.transition = "all 2s";
+    //     gcontainer.style.left = Math.random()*window.innerWidth + "px";
+    //     gcontainer.style.top = Math.random()*window.innerHeight + "px";
+    //
+    // }
+    //
+    // function onmouseoverGcon2(){
+    //
+    //     var displayed = document.getElementById("displayed");
+    //     displayed.src = gifs[1].src;
+    //     displayed.alt = gifs[1].alt;
+    //
+    //     gcontainer2.style.left = Math.random()*window.innerWidth + "px";
+    //     gcontainer2.style.top = Math.random()*window.innerHeight + "px";
+    //
+    //
+    // }
+    //
+    // function onmouseoverGcon3(){
+    //
+    //     var displayed = document.getElementById("displayed");
+    //     displayed.src = gifs[2].src;
+    //     displayed.alt = gifs[2].alt;
+    //     gcontainer3.style.left = Math.random()*window.innerWidth + "px";
+    //     gcontainer3.style.top = Math.random()*window.innerHeight + "px";
+    //
+    //
+    //
+    // }
+    //
+    // function onmouseoverGcon4(){
+    //
+    //     var displayed = document.getElementById("displayed");
+    //     displayed.src = gifs[3].src;
+    //     displayed.alt = gifs[3].alt;
+    //     gcontainer4.style.left = Math.random()*window.innerWidth + "px";
+    //     gcontainer4.style.top = Math.random()*window.innerHeight + "px";
+    //
+    //
+    //
+    // }
+    //
+    // function onmouseoverGcon5(){
+    //
+    //     var displayed = document.getElementById("displayed");
+    //     displayed.src = gifs[4].src;
+    //     displayed.alt = gifs[4].alt;
+    //     gcontainer5.style.left = Math.random()*window.innerWidth + "px";
+    //     gcontainer5.style.top = Math.random()*window.innerHeight + "px";
+    //
+    //
+    //
+    // }
+    //
+    // function onmouseoverGcon6(){
+    //
+    //     var displayed = document.getElementById("displayed");
+    //     displayed.src = gifs[5].src;
+    //     displayed.alt = gifs[5].alt;
+    //     gcontainer6.style.left = Math.random()*window.innerWidth + "px";
+    //     gcontainer6.style.top = Math.random()*window.innerHeight + "px";
+    //
+    //
+    //
+    // }
 
+    function automove(){
+
+        const conarr = new Array(gcontainer, gcontainer2, gcontainer3, gcontainer4, gcontainer5, gcontainer6);
+
+        let randomv =parseInt(Math.random()*6);
+
+        conarr[randomv].style.left =  Math.random()*window.innerWidth + "px";
+        conarr[randomv].style.top = Math.random()*window.innerHeight+ "px";
     }
 
-    function onmouseoverGcon2(){
-
-        var displayed = document.getElementById("displayed");
-        displayed.src = gifs[1].src;
-        displayed.alt = gifs[1].alt;
-
+    function containerhide(){
+        mtvc.style.display = "none";
     }
-
-    function onmouseoverGcon3(){
-
-        var displayed = document.getElementById("displayed");
-        displayed.src = gifs[2].src;
-        displayed.alt = gifs[2].alt;
-
-
+    function containercomeon(){
+        mtvc.style.display = "block";
     }
-    gcontainer.addEventListener("mouseover",onmouseoverGcon);
-    gcontainer2.addEventListener("mouseover",onmouseoverGcon2);
-    gcontainer3.addEventListener("mouseover",onmouseoverGcon3);
+    setInterval(automove,1000);
+    // gcontainer.addEventListener("mouseover",onmouseoverGcon);
+    // gcontainer2.addEventListener("mouseover",onmouseoverGcon2);
+    // gcontainer3.addEventListener("mouseover",onmouseoverGcon3);
+    // gcontainer4.addEventListener("mouseover",onmouseoverGcon4);
+    // gcontainer5.addEventListener("mouseover",onmouseoverGcon5);
+    // gcontainer6.addEventListener("mouseover",onmouseoverGcon6);
+    window.addEventListener("mousedown",containerhide);
+    window.addEventListener("mouseup",containercomeon);
     document.getElementById("channel").addEventListener("click",changeChannel);
 }
