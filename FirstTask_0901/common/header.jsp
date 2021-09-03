@@ -1,28 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>King SamJo</title>
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet" />
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link href="https://fonts.googleapis.com/css2?family=Allison&family=Frijole&family=Special+Elite&display=swap" rel="stylesheet">
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-        <!-- 음악 css 링크 연결 -->
-        <link rel="stylesheet" href="css/audio.css">
-    </head>
-     
-    <body>
-   	<header>
-		 <h1 class="site-heading text-center text-faded d-none d-lg-block">
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+<h1 class="site-heading text-center text-faded d-none d-lg-block">
                 <span class="site-heading-upper text-primary mb-3">this will be our future..or already..</span>
                 <span class="site-heading-lower">SamZomffee</span>
 		</h1>
@@ -36,7 +14,7 @@
                 
     
     <button class="menu__item active" style="--bgColorItem: #f54888;" >
-    <a href="index.html">
+    <a href="index.jsp">
     <svg class="icon" viewBox="-11 -1 60 60">
         <path d="m24.5 14c-2.4852814 0-4.5 2.0147186-4.5 4.5s2.0147186 4.5 4.5 4.5 4.5-2.0147186 4.5-4.5c-.0027556-2.4841391-2.0158609-4.4972444-4.5-4.5zm0" />
 		<path d="m18 18.5c0-2.4852814-2.0147186-4.5-4.5-4.5s-4.5 2.0147186-4.5 4.5 2.0147186 4.5 4.5 4.5c2.4841391-.0027556 4.4972444-2.0158609 4.5-4.5zm-7z" />
@@ -46,7 +24,7 @@
 		5.6779124s2.83532773 4.4841745 5.49092845 4.1890876c1.81 5.227 5.086 8.843 9.192 10.305-.2315316 1.3062126-.6757629 2.5655998-1.315 3.728h-1.436c-5.52033443.0060624-9.99393763 4.4796656-10 10v6c0 1.1045695.8954305 2 2 2h30c1.1045695 
 		0 2-.8954305 2-2v-6c-.0060624-5.5203344-4.4796656-9.9939376-10-10h-1.436c-.6387341-1.1616526-1.0832632-2.4199132-1.316-3.725 4.106-1.461 
 		7.382-5.078 9.192-10.307 2.6631264.3106206 5.097235-1.5346217 5.5174656-4.1826651.4202306-2.6480433-1.3230147-5.1562098-3.9514656-5.6853349l-.006-3.053c.0108562-1.0781753-.0802155-2.1549635-.272-3.216-.12594-.5994573-.4835503-1.1249108-.995-1.462-.0379698-1.22110931-.4868473-2.39368729-1.274-3.328.007-.1.012-.2.012-.3-.0027566-3.01488446-2.4461155-5.45824341-5.461-5.461zm-2.468
-		 1.971c.2767486.33187853.7353669.44844907 1.137.289.4230703-.17060539.8748275-.25885248 1.331-.26 1.9099915.00220426 3.4577957 1.55000855 
+		1.971c.2767486.33187853.7353669.44844907 1.137.289.4230703-.17060539.8748275-.25885248 1.331-.26 1.9099915.00220426 3.4577957 1.55000855 
 		3.46 3.46-.004181.16498377-.020559.32943236-.049.492-.0471659.31556321.059086.6346904.286.859.5208195.51336453.865644 1.17850832.985 1.9000003l-5.955-.0000003c-.2531979.00020294-.4959326-.10099656-.674-.281-.1545716-.15306942-.2401432-.36248505-.237-.58.0148019-.79196365-.2932139-1.55587219-.8532203-2.11606715-.5600063-.56019497-1.3238111-.86846808-2.1157797-.85393285-.2186219.00860025-.4300995-.07869362-.579-.239-.1783516-.1777036-.278418-.41923088-.278-.671v-2.97c0-.046-.012-.09-.014-.136 1.2996193-.34714821 
 		2.6830625.08352434 3.556 1.107zm10.458 48.749v6h-4v-7c0-.5522847-.4477153-1-1-1s-1 .4477153-1 1v7h-18v-7c0-.5522847-.44771525-1-1-1s-1 .4477153-1 1v7h-4v-6c.00495988-4.4162219 3.58377808-7.9950401z" />
 		<path d="m9.481 13c.4343834-.0000137.8190787-.2804533.952-.694.443053-1.3827431 1.2080245-2.64055914 2.232-3.67.7030581-.70422034 1.513063-1.2928239 2.4-1.744.492638-.25046114.6889611-.852862.4385-1.34549998-.2504612-.49263799-.852862-.68896113-1.3455-.43850002-1.0716181.54769302-2.0502777 1.26076471-2.9 2.113-1.2480135 1.25498256-2.18083726 2.7878704-2.722 4.473-.08110501.2526176-.05849534.5271117.06285161.7630537.12134695.2359419.33148322.4139895.58414839.4949463.09637178.0308217.1968244.047002.298.048z" />
@@ -56,7 +34,7 @@
     </button>
 
     <button class="menu__item " style="--bgColorItem: #4343f5;">
-      <a href="about.html">
+      <a href="map.jsp">
       <svg class="icon" viewBox="-40 -10 570 570">
            <g stroke-width="1rem">
 	<path d="M142.752,437.13c30.45,8.602,70.669,13.34,113.248,13.34s82.798-4.737,113.248-13.34  
@@ -85,7 +63,7 @@ c7.261-3.988,9.913-13.108,5.924-20.369c-3.989-7.26-13.106-9.913-20.369-5.924C23.
     </button>
 
     <button class="menu__item" style="--bgColorItem: #e0b115;" >
-      <a href="products.html">
+      <a href="bumbum.jsp">
       <svg class="icon" viewBox="-20 -10 550 550">
            <g stroke-width="1rem">
 			<path d="m506.597 245.486c-46.353-56.474-144.49-122.379-251.597-122.379-107.491 0-205.632 66.353-251.597 122.379-4.538 5.531-4.538 13.497 0 19.028 47.452 57.84 145.819 122.38 251.597 122.38 109.537 0 207.256-68.357 251.597-122.379 4.538-5.532 4.538-13.498 0-19.029zm-149.704 9.514c0 56.184-45.709 101.894-101.894 101.894-56.186 0-101.894-45.713-101.894-101.894 0-56.184 45.709-101.894 101.894-101.894 56.19.001 101.894 45.716 101.894 101.894zm-321.631.004c16.883-17.547 57.591-55.416 114.736-79.721-35.862 47.122-35.876 112.273-.017 159.412-43.449-18.415-83.811-47.509-114.719-79.691zm324.74 79.713c35.862-47.123 35.875-112.273.017-159.412 43.447 18.415 83.81 47.51 114.719 79.69-16.883 17.549-57.591 55.416-114.736 79.722z" />
@@ -102,7 +80,7 @@ c7.261-3.988,9.913-13.108,5.924-20.369c-3.989-7.26-13.106-9.913-20.369-5.924C23.
     </button>
 
     <button class="menu__item" style="--bgColorItem: #65ddb7;" > 
-      <a href="store.html">
+      <a href="bomb.jsp">
       <svg class="icon" viewBox="-5 0 520 520" >
             <g stroke-width="1rem">
 		<path d="M340.023,303.174c-3.899-3.909-10.239-3.909-14.138,0c-3.909,3.899-3.909,10.239,0,14.138
@@ -140,7 +118,6 @@ c7.261-3.988,9.913-13.108,5.924-20.369c-3.989-7.26-13.106-9.913-20.369-5.924C23.
 </a>
     </button>
 
-  
 </div>
     <div class="menu__border"></div>
 
@@ -155,37 +132,3 @@ c7.261-3.988,9.913-13.108,5.924-20.369c-3.989-7.26-13.106-9.913-20.369-5.924C23.
       </clipPath>
     </svg>
   </div>
-		
-	</header>
-	
-	
-       <!--  음악 삽입  -->
-
-                <!-- 노래 제목 : Puple Hat --> 
-                <button class="audio2" id="btnPlay2"><i class="fas fa-play"></i></button>
-                <button class="audio2" id="btnPause2"><i class="fas fa-pause-circle"></i></button> 
-                <button class="audio2" id="btnStop2"><i class="fas fa-stop"></i></button> 
-                
-                <img class="coffe" src="http://drive.google.com/uc?export=view&id=1YVScjp1vZj-KXCzpYcqp1YYK0kuikkoa
-                    " alt="coffe">
-
-                <!-- 노래 제목 : Tia Tamera --> 
-                <button class="audio3" id="btnStop3"><i class="fas fa-stop"></i></button> 
-                <button class="audio3" id="btnPause3"><i class="fas fa-pause-circle"></i></button> 
-                <button class="audio3" id="btnPlay3"><i class="fas fa-play"></i></button>
-
-        
-        <section class="page-section clearfix">
-                <div class="intro">
-                    <canvas></canvas>
-                </div>
-        </section>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-        <script src="js/menu.js"></script>
-        <!-- audio.js 연결   -->
-        <script src="js/audio.js"></script>
-    </body>
-</html>
