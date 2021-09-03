@@ -1,7 +1,3 @@
-// import{
-// 	Ball
-// }from './ball.js';
-
 class Ball{
 	constructor(stageWidth, stageHeight, radius, speed){
 		this.radius = radius;
@@ -53,7 +49,7 @@ class App{
 		window.addEventListener('resize', this.resize.bind(this), false);
 		this.resize();
 
-		this.ball = new Ball(this.stageWidth, this.stageHeight, 30, 10);
+		this.balls = [new Ball(this.stageWidth, this.stageHeight, 30, 10), new Ball(this.stageWidth, this.stageHeight, 50, 15)];
 
 		window.requestAnimationFrame(this.animate.bind(this));
 	}
