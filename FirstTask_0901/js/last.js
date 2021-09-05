@@ -4,7 +4,7 @@ var panel = document.getElementById("panel");
 var turnOff = document.getElementById("turn-off");
 var turnOffHor = document.getElementById("closing");
 var detonate = document.getElementById("detonate");
-alarm.volume = 0.25; //volume level
+alarm.volume = 0.3; //volume level
 
 var time = document.getElementById("time");
 function showCountDown() {
@@ -55,18 +55,18 @@ abort.addEventListener("click", function () {
 });
 
 var reload = document.getElementById("restart");
-reload.addEventListener("click", function () {
-	panel.classList.remove("show");
-	turnOff.classList.remove("close");
-	turnOffHor.classList.remove("close");
-	abort.classList.remove("hide");
-	detonate.classList.remove("show");
-	cover.classList.remove("opened");
-	btn.classList.remove("pushed");
-	this.classList.remove("show");
-	time.classList.remove("crono");
-	time.innerText = 9;
-});
+// reload.addEventListener("click", function () {
+// 	// panel.classList.remove("show");
+// 	// turnOff.classList.remove("close");
+// 	// turnOffHor.classList.remove("close");
+// 	// abort.classList.remove("hide");
+// 	// detonate.classList.remove("show");
+// 	// cover.classList.remove("opened");
+// 	// btn.classList.remove("pushed");
+// 	// this.classList.remove("show");
+// 	// time.classList.remove("crono");
+// 	// time.innerText = 9;
+// });
 
 setTimeout(function () {
 	cover.classList.remove("opened");

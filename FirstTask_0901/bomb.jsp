@@ -1,10 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/last.css" rel="stylesheet" />
+        <script src="https://kit.fontawesome.com/91815d1378.js" crossorigin="anonymous"></script>
     </head>
     <body>
         <div class="grid"></div>
@@ -34,7 +37,7 @@
         </div>
         
         <div id="panel">
-            <div id="msg">YOU'LL BE DESTRUCTION BY JS</div>
+            <div id="msg">YOU'LL BE DESTRUCTION BY JavaScript</div>
             <div id="time">9</div>
             <span id="abort">STOP</span>
             <span id="detonate">DETONATE</span>
@@ -43,8 +46,11 @@
         <div id="turn-off"></div>
         <div id="closing"></div>
         
-        <div id="restart"><button id="reload"></button></div>
-        
+        <div id="restart">
+            <a id="booya" href="ghost.jsp"><i class="fas fa-ghost"></i></a>
+        </div>
+        <!--<button id="reload"></button>-->
+
         <div id="mute"></div>
         
         <audio id="alarm">
