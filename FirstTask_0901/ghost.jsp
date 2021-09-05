@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>King SamJo</title>
     <link rel="stylesheet" href="css/ghost.css">
 
 </head>
