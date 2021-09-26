@@ -1,4 +1,4 @@
-package kr.or.bit.action;
+package action;
 
 //servlet 요청 : 화면전달 , 로직제어(DB) , 뷰 경로
 public class ActionForward {

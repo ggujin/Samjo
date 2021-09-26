@@ -1,8 +1,8 @@
 package service.replay;
 
-import kr.or.bit.action.Action;
-import kr.or.bit.action.ActionForward;
-import kr.or.bit.dao.BoardDao;
+import action.Action;
+import action.ActionForward;
+import dao.BoardDao;
 
 import javax.naming.NamingException;
 import javax.servlet.http.HttpServletRequest;

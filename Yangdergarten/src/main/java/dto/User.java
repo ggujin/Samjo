@@ -1,4 +1,4 @@
-package kr.or.bit.dto;
+package dto;
 
 public class User {
 	private String id;

@@ -1,8 +1,13 @@
 package controller;
 
-import kr.or.bit.action.Action;
-import kr.or.bit.action.ActionForward;
-import kr.or.bit.service.*;
+import action.Action;
+import action.ActionForward;
+import service.student.AddStudent;
+import service.student.DeleteStudent;
+import service.student.EditStudentInfo;
+import service.student.SearchStudentService;
+import service.student.ShowStudentInfoOrEditPageService;
+import service.student.ShowStudentListService;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,13 +17,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("*.do")
+@WebServlet("*.sams")
 public class FrontStudentController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     public FrontStudentController() {
         super();
-
     }
 
     protected void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -29,66 +33,37 @@ public class FrontStudentController extends HttpServlet {
     	Action action=null;
     	ActionForward forward=null;
 
-    	if(url_Command.equals("/BoardList.do")) { //글쓰기 처리
-    		//UI+로직
-    		action = new BoardListService();
+    	if(url_Command.equals("/StudentList.sams")) { //원아리스트
+    		action = new ShowStudentListService();
     		forward = action.execute(request, response);
 
-    	}else if(url_Command.equals("/BoardWrite.do")) { //만약 있다면 상세보기
-    		//UI 제공 ...
-    		//예) /WEB-INF/views/memoview.jsp 가정
+    	}else if(url_Command.equals("/StudentAddPage.sams")) { //원아등록화면show
     		forward = new ActionForward();
     		forward.setRedirect(false);
-    		forward.setPath("/WEB-INF/views/board/board_write.jsp");
-    	}else if(url_Command.equals("/BoardWriteOK.do")) { //만약 있다면 상세보기
-    		//UI 제공 ...
-    		//예) /WEB-INF/views/memoview.jsp 가정
-    		action = new BoardAddService();
+    		forward.setPath("/WEB-INF/views/studentAddPage.jsp");
+    		
+    	}else if(url_Command.equals("/StudentAdd.sams")) { //원아등록ok
+    		action = new AddStudent();
     		forward = action.execute(request, response);
-    	}else if(url_Command.equals("/BoardContent.do")) { //만약 있다면 상세보기
-    		//UI 제공 ...
-    		//예) /WEB-INF/views/memoview.jsp 가정
-    		action = new BoardContentService();
+    		
+    	}else if(url_Command.equals("/StudentInfo.sams")) { //원아상세정보show
+    		action = new ShowStudentInfoOrEditPageService();
     		forward = action.execute(request, response);
-    	}else if(url_Command.equals("/ReplyOk.do")) { //만약 있다면 상세보기
-    		//UI 제공 ...
-    		//예) /WEB-INF/views/memoview.jsp 가정
-    		action = new ReplyAddService();
+    		
+    	}else if(url_Command.equals("/StudentEditPage.sams")) { //원아정보수정show
+    		action = new ShowStudentInfoOrEditPageService();
     		forward = action.execute(request, response);
-    	}else if(url_Command.equals("/BoardEdit.do")) { //만약 있다면 상세보기
-    		//UI 제공 ...
-    		//예) /WEB-INF/views/memoview.jsp 가정
-    		action = new BoardEditService();
+    		
+    	}else if(url_Command.equals("/StudentEdit.sams")) { //원아정보수정ok
+    		action = new EditStudentInfo();
     		forward = action.execute(request, response);
-    	}else if(url_Command.equals("/BoardEditOk.do")) { //만약 있다면 상세보기
-    		//UI 제공 ...
-    		//예) /WEB-INF/views/memoview.jsp 가정
-    		action = new BoardEditOk();
+    		
+    	}else if(url_Command.equals("/StudentDelete.sams")) { //원아삭제ok
+    		action = new DeleteStudent();
     		forward = action.execute(request, response);
-    	}else if(url_Command.equals("/BoardDelete.do")) { //만약 있다면 상세보기
-    		//UI 제공 ...
-    		//예) /WEB-INF/views/memoview.jsp 가정
-    		action = new BoardDeleteService();
-    		forward = action.execute(request, response);
-    	}else if(url_Command.equals("/BoardDeleteOk.do")) { //만약 있다면 상세보기
-    		//UI 제공 ...
-    		//예) /WEB-INF/views/memoview.jsp 가정
-    		action = new BoardDeleteOk();
-    		forward = action.execute(request, response);
-    	}else if(url_Command.equals("/BoardRewrite.do")) { //만약 있다면 상세보기
-    		//UI 제공 ...
-    		//예) /WEB-INF/views/memoview.jsp 가정
-    		action = new BoardRewriteService();
-    		forward = action.execute(request, response);
-    	}else if(url_Command.equals("/BoardRewriteOk.do")) { //만약 있다면 상세보기
-    		//UI 제공 ...
-    		//예) /WEB-INF/views/memoview.jsp 가정
-    		action = new BoardRewriteOk();
-    		forward = action.execute(request, response);
-    	}else if(url_Command.equals("/ReplyDeleteOk.do")) { //만약 있다면 상세보기
-    		//UI 제공 ...
-    		//예) /WEB-INF/views/memoview.jsp 가정
-    		action = new ReplyDeleteOk();
+    		
+    	}else if(url_Command.equals("/StudentSearch.sams")) { //원아이름검색
+    		action = new SearchStudentService();
     		forward = action.execute(request, response);
     	}
 
