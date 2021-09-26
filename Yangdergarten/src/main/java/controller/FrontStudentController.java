@@ -62,7 +62,7 @@ public class FrontStudentController extends HttpServlet {
     		action = new DeleteStudent();
     		forward = action.execute(request, response);
     		
-    	}else if(url_Command.equals("/StudentSearch.sams")) { //원아이름검색
+    	}else if(url_Command.equals("/StudentSearch.sams")) { //원아이름검색//ajax로 추가적으로 빼둠
     		action = new SearchStudentService();
     		forward = action.execute(request, response);
     	}

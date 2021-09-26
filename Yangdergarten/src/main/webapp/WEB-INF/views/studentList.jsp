@@ -15,15 +15,17 @@
 		$(function(){
 			$('#searchBtn').click(function(){
 				$.ajax({ 
-					url: "StudentSearch.sams", 
+					url: "StudentSearch", //"StudentSearch.sams", 
 					type: "GET", 
-					data: {bName:$('#bName').text()}, 
-					success: function(data) { 
+					data: {bName:$('#bName').val()}, 
+					dataType:"html",
+					success: function(responsedata) { 
+						let data = responsedata.trim();
 						console.log(data);
+						$('#searchStudent').html(data);
 					} 
 				});
-				console.log($('#bName').text());
-				$('#searchStudent').load("StudentSearch.sams?bName="+$('#bName').val());
+				//$('#searchStudent').load("StudentSearch.sams?bName="+$('#bName').val());
 			});
 		});
 	</script>
