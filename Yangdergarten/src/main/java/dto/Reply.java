@@ -4,8 +4,21 @@ public class Reply {
 	private int no;
 	private String author;
 	private String createDate;
-	private int index;
-	
+	private int boardindex;
+	private String content;
+
+	public void setBoardindex(int boardindex) {
+		this.boardindex = boardindex;
+	}
+
+	public String getContent() {
+		return content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+	}
+
 	public int getNo() {
 		return no;
 	}
@@ -24,16 +37,16 @@ public class Reply {
 	public void setCreateDate(String createDate) {
 		this.createDate = createDate;
 	}
-	public int getIndex() {
-		return index;
+	public int getBoardindex() {
+		return boardindex;
 	}
 	public void setIndex(int index) {
-		this.index = index;
+		this.boardindex = index;
 	}
 	
 	@Override
 	public String toString() {
-		return "Reply [no=" + no + ", author=" + author + ", createDate=" + createDate + ", index=" + index + "]";
+		return "Reply [no=" + no + ", author=" + author + ", createDate=" + createDate + ", index=" + boardindex + "]";
 	}
 	
 	public Reply() {
@@ -45,6 +58,6 @@ public class Reply {
 		this.no = no;
 		this.author = author;
 		this.createDate = createDate;
-		this.index = index;
+		this.boardindex = index;
 	}
 }

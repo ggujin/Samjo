@@ -1,7 +1,7 @@
 package dto;
 
 public class Board {
-	private int index;
+	private int boardindex;
 	private int boardId;
 	private String createDate;
 	private String updateDate;
@@ -11,12 +11,30 @@ public class Board {
 	private int reference;
 	private int depth;
 	private int step;
-	
-	public int getIndex() {
-		return index;
+	private int pnum;
+	private int ccount;
+
+	public int getCcount() {
+		return ccount;
 	}
-	public void setIndex(int index) {
-		this.index = index;
+
+	public void setCcount(int ccount) {
+		this.ccount = ccount;
+	}
+
+	public int getPnum() {
+		return pnum;
+	}
+
+	public void setPnum(int pnum) {
+		this.pnum = pnum;
+	}
+
+	public int getBoardindex() {
+		return boardindex;
+	}
+	public void setBoardindex(int index) {
+		this.boardindex = index;
 	}
 	public int getBoardId() {
 		return boardId;
@@ -75,7 +93,7 @@ public class Board {
 	
 	@Override
 	public String toString() {
-		return "Board [index=" + index + ", boardId=" + boardId + ", createDate=" + createDate + ", updateDate="
+		return "Board [index=" + boardindex + ", boardId=" + boardId + ", createDate=" + createDate + ", updateDate="
 				+ updateDate + ", author=" + author + ", title=" + title + ", content=" + content + ", reference="
 				+ reference + ", depth=" + depth + ", step=" + step + "]";
 	}
@@ -86,7 +104,7 @@ public class Board {
 	
 	public Board(int index, int boardId, String createDate, String updateDate, String author, String title,
 			String content, int reference, int depth, int step) {
-		this.index = index;
+		this.boardindex = index;
 		this.boardId = boardId;
 		this.createDate = createDate;
 		this.updateDate = updateDate;
