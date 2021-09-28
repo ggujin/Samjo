@@ -8,5 +8,10 @@
 </head>
 <body>
 
+<form action="login.samu" method="POST">
+    ID:   <input type="text"     name="id" placeholder="id입력"><br>
+    PWD:  <input type="password" name="pwd" placeholder="pwd입력"><br>
+    <input type="submit" value="로그인">
+</form>
 </body>
 </html>
