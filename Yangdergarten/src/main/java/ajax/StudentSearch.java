@@ -1,6 +1,7 @@
 package ajax;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -27,7 +28,12 @@ public class StudentSearch extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		
 		Action action = new SearchStudentService();
-		ActionForward forward = action.execute(request, response);
+		ActionForward forward = null;
+		try {
+			forward = action.execute(request, response);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 
 		if(forward != null) {
     		if(forward.isRedirect()) { //true
