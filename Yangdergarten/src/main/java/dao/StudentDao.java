@@ -20,11 +20,12 @@ public class StudentDao {
 		try {
 			conn = ConnectionHelper.getConnection("oracle");
 			
-			String sql = "insert into STUDENT(studentnum,bname,bclass) values(?,?,?)";
+			String sql = "insert into STUDENT(studentnum,bname,bclassnum,phone) values(?,?,?,?)";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, st.getStudentNum());
 			pstmt.setString(2, st.getbName());
-			pstmt.setString(3, st.getbClass());
+			pstmt.setInt(3, st.getbClassNum());
+			pstmt.setString(4,  st.getPhone());
 			
 			resultrow = pstmt.executeUpdate();
 			
@@ -41,7 +42,7 @@ public class StudentDao {
 	public List<Student> showStudentList() throws SQLException{ //원아목록show
 		Connection conn = ConnectionHelper.getConnection("oracle");
 		PreparedStatement pstmt=null;
-		String sql = "select studentnum,bname,bclass from STUDENT";
+		String sql = "select studentnum,bname,bclassnum,phone from STUDENT";
 		
 		pstmt = conn.prepareStatement(sql);
 		ResultSet rs = pstmt.executeQuery();
@@ -51,7 +52,8 @@ public class StudentDao {
 			Student st = new Student();
 			st.setStudentNum(rs.getInt("studentnum"));
 			st.setbName(rs.getString("bname"));
-			st.setbClass(rs.getString("bclass"));
+			st.setbClassNum(rs.getInt("bclassnum"));
+			st.setPhone(rs.getString("phone"));
 			
 			studentList.add(st);
 		}
@@ -65,7 +67,7 @@ public class StudentDao {
 	public Student showStudentInfo(int studentNum) throws SQLException { //원아상세정보, 원아정보수정show
 		Connection conn = ConnectionHelper.getConnection("oracle");
 		PreparedStatement pstmt = null;
-		String sql = "select studentnum,bname,bclass from STUDENT where studentnum=?";
+		String sql = "select studentnum,bname,bclassnum,phone from STUDENT where studentnum=?";
 		
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setInt(1, studentNum);
@@ -76,7 +78,8 @@ public class StudentDao {
 		while(rs.next()) {
 			st.setStudentNum(rs.getInt("studentnum"));
 			st.setbName(rs.getString("bname"));
-			st.setbClass(rs.getString("bclass"));
+			st.setbClassNum(rs.getInt("bclassnum"));
+			st.setPhone(rs.getString("phone"));
 		}
 		ConnectionHelper.close(rs);
         ConnectionHelper.close(pstmt);
@@ -92,12 +95,13 @@ public class StudentDao {
 		
 		try {
 			conn = ConnectionHelper.getConnection("oracle");
-			String sql = "update STUDENT set bname=?, bclass=? where studentnum=?";
+			String sql = "update STUDENT set bname=?, bclassnum=?, phone=? where studentnum=?";
 			pstmt = conn.prepareStatement(sql);
 			
 			pstmt.setString(1, st.getbName());
-			pstmt.setString(2, st.getbClass());
-			pstmt.setInt(3, st.getStudentNum());
+			pstmt.setInt(2, st.getbClassNum());
+			pstmt.setString(3, st.getPhone());
+			pstmt.setInt(4, st.getStudentNum());
 			
 			resultrow = pstmt.executeUpdate();
 			
@@ -135,7 +139,7 @@ public class StudentDao {
 	public List<Student> searchStudentByName(String bName) throws SQLException { //원아이름검색
 		Connection conn = ConnectionHelper.getConnection("oracle");
 		PreparedStatement pstmt=null;
-		String sql = "select studentnum,bname,bclass from STUDENT where bname like ?";
+		String sql = "select studentnum,bname,bclass,phone from STUDENT where bname like ?";
 		
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, "%"+bName+"%");
@@ -148,7 +152,8 @@ public class StudentDao {
 			Student st = new Student();
 			st.setStudentNum(rs.getInt("studentnum"));
 			st.setbName(rs.getString("bname"));
-			st.setbClass(rs.getString("bclass"));
+			st.setbClassNum(rs.getInt("bclassnum"));
+			st.setPhone(rs.getString("phone"));
 			
 			studentList.add(st);
 		}

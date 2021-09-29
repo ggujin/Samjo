@@ -16,7 +16,8 @@ public class EditStudentInfo implements Action {
 		Student st = new Student();
 		st.setStudentNum(Integer.parseInt(request.getParameter("studentNum")));
 		st.setbName(request.getParameter("bName"));
-		st.setbClass(request.getParameter("bClass"));
+		st.setbClassNum(Integer.parseInt(request.getParameter("bClass")));
+		st.setPhone(request.getParameter(request.getParameter("phone")));
 		
 		StudentDao dao = new StudentDao();
 		int result = dao.editStudentInfo(st);

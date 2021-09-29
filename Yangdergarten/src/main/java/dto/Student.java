@@ -3,7 +3,8 @@ package dto;
 public class Student {
 	private int studentNum;
 	private String bName;
-	private String bClass;
+	private int bClassNum;
+	private String phone;
 	
 	public int getStudentNum() {
 		return studentNum;
@@ -17,25 +18,32 @@ public class Student {
 	public void setbName(String bName) {
 		this.bName = bName;
 	}
-	public String getbClass() {
-		return bClass;
+	public int getbClassNum() {
+		return bClassNum;
 	}
-	public void setbClass(String bClass) {
-		this.bClass = bClass;
+	public void setbClassNum(int bClassNum) {
+		this.bClassNum = bClassNum;
 	}
 	
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
 	@Override
 	public String toString() {
-		return "Student [studentNum=" + studentNum + ", bName=" + bName + ", bClass=" + bClass + "]";
+		return "Student [studentNum=" + studentNum + ", bName=" + bName + ", bClassNum=" + bClassNum +", phone=" + phone +"]";
 	}
 	
 	public Student() {
 		super();
 	}
 	
-	public Student(int studentNum, String bName, String bClass) {
+	public Student(int studentNum, String bName, int bClassNum, String phone) {
 		this.studentNum = studentNum;
 		this.bName = bName;
-		this.bClass = bClass;
+		this.bClassNum = bClassNum;
+		this.phone = phone;
 	}	
 }

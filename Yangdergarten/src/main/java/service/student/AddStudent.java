@@ -16,7 +16,8 @@ public class AddStudent implements Action {
 		Student st = new Student();
 		st.setStudentNum(Integer.parseInt(request.getParameter("studentNum")));
 		st.setbName(request.getParameter("bName"));
-		st.setbClass(request.getParameter("bClass"));
+		st.setbClassNum(Integer.parseInt(request.getParameter("bClassNum")));
+		st.setPhone(request.getParameter("phone"));
 		
 		StudentDao dao = new StudentDao();
 		int result = dao.addStudent(st);
