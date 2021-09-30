@@ -10,35 +10,35 @@ import dto.Student;
 
 public class EditStudentInfo implements Action {
 
-	@Override
-	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) {
-		
-		Student st = new Student();
-		st.setStudentNum(Integer.parseInt(request.getParameter("studentNum")));
-		st.setbName(request.getParameter("bName"));
-		st.setbClassNum(Integer.parseInt(request.getParameter("bClass")));
-		st.setPhone(request.getParameter(request.getParameter("phone")));
-		
-		StudentDao dao = new StudentDao();
-		int result = dao.editStudentInfo(st);
-		
-		String msg="";
-		String url="";
-		if(result > 0){
-			msg ="원아정보 수정 성공";
-			url ="StudentList.sams";
-		}else{
-			msg="원아정보 수정 실패";
-			url="StudentList.sams";
-		}
+    @Override
+    public ActionForward execute(HttpServletRequest request, HttpServletResponse response) {
 
-		request.setAttribute("sam_msg",msg);
-		request.setAttribute("sam_url", url);
+        Student st = new Student();
+        st.setStudentNum(Integer.parseInt(request.getParameter("studentNum")));
+        st.setbName(request.getParameter("bName"));
+        st.setbClassNum(Integer.parseInt(request.getParameter("bClassNum")));
+        st.setPhone(request.getParameter("phone"));
 
-		ActionForward forward = new ActionForward();
-		forward.setRedirect(false);
-		forward.setPath("/WEB-INF/views/redirect.jsp");
+        StudentDao dao = new StudentDao();
+        int result = dao.editStudentInfo(st);
 
-		return forward;
-	}
+        String msg = "";
+        String url = "";
+        if (result > 0) {
+            msg = "원아정보 수정 성공";
+            url = "StudentList.sams";
+        } else {
+            msg = "원아정보 수정 실패";
+            url = "StudentList.sams";
+        }
+
+        request.setAttribute("sam_msg", msg);
+        request.setAttribute("sam_url", url);
+
+        ActionForward forward = new ActionForward();
+        forward.setRedirect(false);
+        forward.setPath("/WEB-INF/views/redirect.jsp");
+
+        return forward;
+    }
 }

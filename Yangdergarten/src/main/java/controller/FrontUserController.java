@@ -33,7 +33,7 @@ public class FrontUserController extends HttpServlet {
         //3
         String viewpage = "";
 
-        if(urlcommand.equals("/main.samu")) { // 메인 view
+        if (urlcommand.equals("/main.samu")) { // 메인 view
 
             forward = new ActionForward();
             forward.setRedirect(false);
@@ -61,57 +61,66 @@ public class FrontUserController extends HttpServlet {
             forward.setRedirect(false);
             forward.setPath("/WEB-INF/views/login.jsp");
 
-        } else if(urlcommand.equals("/login.samu")) { // 로그인 Ok
+        } else if (urlcommand.equals("/login.samu")) { // 로그인 Ok
             action = new Login(); //부모가 action애들 바꿔낄수 있따 Register->Login
-            forward = action.execute(request, response); ;/////******KEY POINT (현재 페이지가 가지고 있는 request 객체 주소 전달)
+            forward = action.execute(request, response);
+            ;/////******KEY POINT (현재 페이지가 가지고 있는 request 객체 주소 전달)
 
-        } else if(urlcommand.equals("/logout.samu")) { // 로그아웃 ok
+        } else if (urlcommand.equals("/logout.samu")) { // 로그아웃 ok
             //UI+로직
             action = new Logout();
             forward = action.execute(request, response);
             System.out.println("Logout실행");
 
-        } else if(urlcommand.equals("/showUsersList.samu")) { // 회원 목록 view
+        } else if (urlcommand.equals("/showUsersList.samu")) { // 회원 목록 view
             action = new ShowUserListService();
             forward = action.execute(request, response);
 
-        } else if(urlcommand.equals("/showUsersInfo.samu")) { // 회원 상세 보기 view
+        } else if (urlcommand.equals("/showUsersInfo.samu")) { // 회원 상세 보기 view
             action = new ShowUsersInfoOrEditPageService();
             forward = action.execute(request, response);
             System.out.println(" showUsersInfo 실행");
 
-        }else if(urlcommand.equals("/usersEditPage.samu")) { // 회원 정보 수정 view
+        } else if (urlcommand.equals("/usersEditPage.samu")) { // 회원 정보 수정 view
 
             action = new ShowUsersInfoOrEditPageService();
             forward = action.execute(request, response);
             System.out.println("usersEditPage 실행");
 
 
-        }else if(urlcommand.equals("/usersEdit.samu")) { // 회원 정보 수정 ok
+        } else if (urlcommand.equals("/usersEdit.samu")) { // 회원 정보 수정 ok
             action = new EditUserInfo();
             forward = action.execute(request, response);
 
 
-        } else if(urlcommand.equals("/usersDelete.samu")) { // 회원 삭제
+        } else if (urlcommand.equals("/usersDelete.samu")) { // 회원 삭제
             action = new DeleteUser();
             forward = action.execute(request, response);
             System.out.println("users delete");
 
-        } else if(urlcommand.equals("/usersSearch.samu")) { // 회원 검색
+        } else if (urlcommand.equals("/usersSearch.samu")) { // 회원 검색
             System.out.println(request.getParameter("id"));
 
             action = new UsersSearchService();
-            forward = action.execute(request,response);
+            forward = action.execute(request, response);
             System.out.println("SearchUsersService 실행");
+
+        } else if (urlcommand.equals("/adminPage.samu")) { // 관리자뷰 view
+
+            forward = new ActionForward();
+            forward.setRedirect(false);
+            forward.setPath("/WEB-INF/views/adminPage.jsp");
+
+            System.out.println("adminPage.jsp로 이동");
         }
 
 
 
-        if(forward != null) {
+        if (forward != null) {
 
-            if(forward.isRedirect()) { //true라는 얘기는 페이지 재요청하겠다
+            if (forward.isRedirect()) { //true라는 얘기는 페이지 재요청하겠다
                 response.sendRedirect(forward.getPath());
-            }else {
+            } else {
 
                 RequestDispatcher dis = request.getRequestDispatcher(forward.getPath());
                 dis.forward(request, response);
@@ -119,9 +128,7 @@ public class FrontUserController extends HttpServlet {
         }
 
 
-
     }
-
 
 
     @Override

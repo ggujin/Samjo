@@ -12,26 +12,26 @@ import dto.Student;
 
 public class SearchStudentService implements Action {
 
-	@Override
-	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) {
-		StudentDao dao = new StudentDao();
-		List<Student> studentList = null;
-		
-		try {
-			studentList = dao.searchStudentByName(request.getParameter("bName"));
-			
-		} catch (Exception e) {
-			System.out.println(e.getMessage());
-		}
-		
-		request.setAttribute("studentList", studentList);
-		request.setAttribute("searchOk", 1);
-		
-		ActionForward forward = new ActionForward();
-		forward.setRedirect(false);
-		forward.setPath("/WEB-INF/views/studentSearch.jsp");
+    @Override
+    public ActionForward execute(HttpServletRequest request, HttpServletResponse response) {
+        StudentDao dao = new StudentDao();
+        List<Student> studentList = null;
 
-		 return forward;
-	}
+        try {
+            studentList = dao.searchStudentByName(request.getParameter("bName"));
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        request.setAttribute("studentList", studentList);
+        request.setAttribute("searchOk", 1);
+
+        ActionForward forward = new ActionForward();
+        forward.setRedirect(false);
+        forward.setPath("/WEB-INF/views/studentSearch.jsp");
+
+        return forward;
+    }
 
 }

@@ -34,7 +34,7 @@ public class UsersDao {
         int resultrow = 0;
 
         try {
-            conn = ConnectionHelper.getConnection("mysql");
+            conn = ConnectionHelper.getConnection("oracle");
 //                                                                     처음 가입은 우선 비회원 0
             String sql = "insert into users(id, pwd, phone, studentNum, cnum ) values(?,?,?,?,0)";
 
@@ -64,7 +64,7 @@ public class UsersDao {
         UsersDto usersDto = new UsersDto();
 
         try {
-            conn = ConnectionHelper.getConnection("mysql");
+            conn = ConnectionHelper.getConnection("oracle");
 
             String sql = "select id, pwd from users where id=?";
 
@@ -95,7 +95,7 @@ public class UsersDao {
         ArrayList<UsersDto> usersList = null;
 
         try {
-            conn = ConnectionHelper.getConnection("mysql");
+            conn = ConnectionHelper.getConnection("oracle");
 
 //            String sql = "select id, pwd, phone, studentNum, cnum from users"; //조인 전 쿼리!
             String sql = "SELECT users.id, users.PWD, USERS.PHONE, USERS.STUDENTNUM, Userkind.cname " +
@@ -131,7 +131,7 @@ public class UsersDao {
     // 회원 상세 정보, 회원 정보 수정 show
     public UsersDto showUserInfo(String id) throws SQLException {
 
-        Connection conn = ConnectionHelper.getConnection("mysql");
+        Connection conn = ConnectionHelper.getConnection("oracle");
 
         String sql = "SELECT users.id, users.PWD, USERS.PHONE, USERS.STUDENTNUM, Userkind.cname " +
                 "FROM users, USERKIND " +
@@ -172,7 +172,7 @@ public class UsersDao {
         PreparedStatement pstmt = null;
         int resultrow = 0;
         try {
-            conn = ConnectionHelper.getConnection("mysql");
+            conn = ConnectionHelper.getConnection("oracle");
             String sql = "delete from users where id=?";
             pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, id);
@@ -198,7 +198,7 @@ public class UsersDao {
         UsersDto usersDto = new UsersDto();
 
         try {
-            conn = ConnectionHelper.getConnection("mysql");// 추가
+            conn = ConnectionHelper.getConnection("oracle");// 추가
 
             String sql = "select id, pwd, phone, studentNum, cnum from users where id=?";
             pstmt = conn.prepareStatement(sql);
@@ -233,7 +233,7 @@ public class UsersDao {
         int resultrow = 0;
 
         try {
-            conn = ConnectionHelper.getConnection("mysql");
+            conn = ConnectionHelper.getConnection("oracle");
             String sql = "update users set pwd=?, phone=?, studentNum=?, cnum=? where id=?";
             pstmt = conn.prepareStatement(sql);
 
@@ -256,7 +256,7 @@ public class UsersDao {
 
     //  회원 id 검색
     public ArrayList<UsersDto> searchUsersById(String id) throws SQLException {
-        Connection conn = ConnectionHelper.getConnection("mysql");
+        Connection conn = ConnectionHelper.getConnection("oracle");
         PreparedStatement pstmt = null;
 
 //        String sql = "select id, pwd, phone, STUDENTNUM, cnum from users where id like ?"; // 조인 전 쿼리

@@ -18,7 +18,7 @@ public class UsersSearchService implements Action {
 
         try {
             usersDtoList = usersDao.searchUsersById(request.getParameter("id"));
-            System.out.println(usersDtoList +"서치 서비스탓따,,,,,,좀드가라,,");
+            System.out.println(usersDtoList + "서치 서비스탓따,,,,,,좀드가라,,");
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
