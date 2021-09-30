@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>
 <head>
@@ -15,14 +15,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 
     <script type="text/javascript">
-        $(function(){
-            $('#searchBtn').click(function(){
+        $(function () {
+            $('#searchBtn').click(function () {
                 $.ajax({
                     url: "usersSearch", //"StudentSearch.sams",
                     type: "GET",
-                    data: {id:$('#id').val()},
-                    dataType:"html",
-                    success: function(responsedata) {
+                    data: {id: $('#id').val()},
+                    dataType: "html",
+                    success: function (responsedata) {
                         let data = responsedata.trim();
                         console.log(data);
                         $('#searchUsers').html(data);
@@ -48,14 +48,14 @@
     </tr>
     </thead>
     <tbody>
-    <c:set var="usersDtoList" value="${requestScope.usersList}" />
+    <c:set var="usersDtoList" value="${requestScope.usersList}"/>
     <c:forEach var="users" items="${usersDtoList}">
         <tr>
-            <td><b><a href="./showUsersInfo.samu?id=${users.id}" >${users.id}</a></b></td>
+            <td><b><a href="./showUsersInfo.samu?id=${users.id}">${users.id}</a></b></td>
             <td>${users.pwd}</td>
             <td>${users.phone}</td>
             <td>${users.studentNum}</td>
-            <td>${users.cnum}</td>
+            <td>${users.cname}</td>
         </tr>
     </c:forEach>
     </tbody>

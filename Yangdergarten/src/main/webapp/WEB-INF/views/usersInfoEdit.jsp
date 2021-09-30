@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>Title</title>
@@ -34,8 +34,8 @@
                 <td><input type="text" name="studentNum" id="studentNum" value="${user.studentNum}"></td>
             </tr>
             <tr>
-                <th>회원 구분 번호 </th>
-                <td><input type="text" name="cnum" id="cnum" value="${user.cnum}"></td>
+                <th>회원 구분 번호</th>
+                <td><input type="text" name="cnum" id="cnum" value="${user.cname}"></td>
             </tr>
             <tr>
                 <td>
