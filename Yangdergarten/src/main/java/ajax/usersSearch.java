@@ -9,24 +9,28 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-@WebServlet(name = "usersSearch", value = "/usersSearch")
+@WebServlet("/usersSearch")
 public class usersSearch extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=UTF-8");
-
-        Action action = new UsersSearchService();
-        ActionForward forward = action.execute(request, response);
-
-        if(forward != null) {
-            if(forward.isRedirect()) { //true
-                response.sendRedirect(forward.getPath());
-            }else {
-                RequestDispatcher dis  = request.getRequestDispatcher(forward.getPath());
-                dis.forward(request, response);
-            }
-        }
+        
+        try {
+        	Action action = new UsersSearchService();
+        	ActionForward forward = action.execute(request, response);
+        	
+        	if(forward != null) {
+        		if(forward.isRedirect()) { //true
+        			response.sendRedirect(forward.getPath());
+        		}else {
+        			RequestDispatcher dis  = request.getRequestDispatcher(forward.getPath());
+        			dis.forward(request, response);
+        		}
+        	}			
+		} catch (Exception e) {
+			System.out.println("usersSearch : "+e.getMessage());
+		}
     }
 
     @Override
