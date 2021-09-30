@@ -1,9 +1,9 @@
 
-
 .login-page {
-	width: 360px;
-	padding: 8% 0 0;
-	margin: auto;
+    height: 50rem;
+    width: 360px;
+    padding: 9rem 0 10%;
+    margin: auto;
 }
 
 .register-page {
@@ -12,30 +12,44 @@
 	margin: auto;
 }
 
-.form {
+.login-page .form {
 	position: relative;
 	z-index: 1;
-	background: #FFFFFF;
+	background: rgba(255, 255, 255, 0.4);
 	max-width: 360px;
-	margin: 0 auto 100px;
-	padding: 45px;
+	margin: 0 auto;
+	padding: 50px;
 	text-align: center;
 	/*박스테두리
 	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0
 		rgba(0, 0, 0, 0.24);
 		*/
+	border-radius: 40px;
+	border: 2px dashed pink;
 }
 
-.form input {
-	font-family: "Roboto", sans-serif;
+.login-page .form p {
+  margin: 15px 10px 5px 10px;
+	text-align: left;
+}
+
+.login-page .form input {
 	outline: 0;
 	width: 100%;
-	border: 0;
 	margin: 0 0 15px;
-	padding: 15px;
+	padding: 10px;
 	box-sizing: border-box;
 	font-size: 14px;
+	border: 1px solid rgba(0,0,0,0.07);
+	border-bottom: 3px solid pink;
+	background-color: rgba(255,255,255,0.5);
 }
+
+.login-page .form input :focus{
+	border: 1px solid pink !important;
+
+}
+
 /*
 .form button {
 	font-family: "Roboto", sans-serif;
@@ -52,57 +66,60 @@
 	cursor: pointer;
 }  
 */
-.form button {
-    display: inline-block;
-    background-color: #ff695f;
-    font-size: 15px;
-    font-weight: 400;
-    color: #fff;
-    text-transform: capitalize;
-    padding: 12px 25px;
-    border-radius: 23px;
-    letter-spacing: 0.25px;
-    border: none;
-    outline: none;
-    transition: all .3s;
+
+.login-page .form button {
+	display: inline-block;
+	background-color: #ff695f;
+	font-size: 15px;
+	font-weight: 800;
+	color: #fff;
+	text-transform: capitalize;
+	padding: 12px 25px;
+	border-radius: 23px;
+	letter-spacing: 0.25px;
+	border: none;
+	outline: none;
+	transition: all .3s;
 	width: 100%; /*추가로 넣음*/
+	background: #27CDF2;
+}
 
-  }
 
-.form button:hover, .form button:active, .form button:focus {
+.login-page .form button:hover, .form button:active, .form button:focus
+	{
 	background: #03a4ed;
 }
 
-.form .message {
+.login-page .form .message {
 	margin: 15px 0 0;
 	color: #b3b3b3;
 	font-size: 12px;
 }
 
-.form .message a {
+.login-page .form .message a {
 	color: #4F4F4F;
 	text-decoration: none;
 }
 
-.container {
+.login-page .container {
 	position: relative;
 	z-index: 1;
 	max-width: 300px;
 	margin: 0 auto;
 }
 
-.container:before, .container:after {
+.login-page .container:before, .container:after {
 	content: "";
 	display: block;
 	clear: both;
 }
 
-.container .info {
+.login-page .container .info {
 	margin: 50px auto;
 	text-align: center;
 }
 
-.container .info h1 {
+.login-page .container .info h1 {
 	margin: 0 0 15px;
 	padding: 0;
 	font-size: 36px;
@@ -110,22 +127,16 @@
 	color: #1a1a1a;
 }
 
-.container .info span {
+.login-page .container .info span {
 	color: #4d4d4d;
 	font-size: 12px;
 }
 
-.container .info span a {
+.login-page .container .info span a {
 	color: #000000;
 	text-decoration: none;
 }
 
-.container .info span .fa {
+.login-page .container .info span .fa {
 	color: #EF3B3A;
 }
-
-body{
-    background-image: url("http://drive.google.com/uc?export=view&id=11D2tN7snBTfAuuaLpsnN8EdL-2NPqRux");
-	background-size: 100vw 100vh; /* 양하영 굿 */
-}
-

@@ -1,43 +1,78 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-	<!--Bootstrap Table-->
-   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-   	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <!DOCTYPE html>
+        <html>
 
-<title>Insert title here</title>
-</head>
-<body>
-	<h3>원아등록</h3>
-	<div>
-		<form action="StudentAdd.sams" method="get">
-			<table class="table table-striped">
-				<tr>
-					<th>studentNum:</th>
-					<td><input type="text" name="studentNum" id="studentNum"></td>
-				</tr>
-				<tr>
-					<th>bName:</th>
-					<td><input type="text" name="bName" id="bName"></td>
-				</tr>
-				<tr>
-					<th>bClass:</th>
-					<td><input type="text" name="bClass" id="bClass"></td>
-				</tr>
-				<tr>
-					<td>
-						<input type="submit" value="등록하기">
-						<input type="reset" value="취소">
-					</td>
-				</tr>
-			</table>
-		</form>
-	</div>
-</body>
-</html>
+        <head>
+            <meta charset="UTF-8">
+            <!--Bootstrap Table-->
+            <link rel="stylesheet" href="css/jstyle.css">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+            <title>관리자 페이지</title>
+            <style>
+                form#sadd {
+                    background-image: url(img/studentadd.png);
+                    background-size: cover;
+                    box-shadow: 0px 0px 15px rgb(0 0 0 / 10%);
+                    padding: 60px 120px;
+                    border-radius: 30px;
+                }
+
+                .buttons {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                }
+            </style>
+
+        </head>
+
+        <body>
+            <div id="header">
+
+            </div>
+
+            <div id="contents3">
+
+                <form id="sadd" action="StudentAdd.sams" method="get">
+                    <h3 style="text-align: center; margin: 10px 0 35px 0;">원아등록</h3>
+                    <table class="table table-striped">
+                        <tr>
+                            <th>원생 등록번호</th>
+                            <td><input type="text" name="studentNum" id="studentNum" class="form-control"></td>
+                        </tr>
+                        <tr>
+                            <th>학부모 전화번호</th>
+                            <td><input type="text" name="phone" id="phone" class="form-control"></td>
+                        </tr>
+                        <tr>
+                            <th>원생 이름</th>
+                            <td><input type="text" name="bName" id="bName" class="form-control"></td>
+                        </tr>
+                        <tr>
+                            <th>원생 반</th>
+                            <td><input type="text" name="bClass" id="bClass" class="form-control"></td>
+                        </tr>
+
+                    </table>
+                    <div class="buttons">
+                        <input type="submit" class="btn btn-secondary" value="등록하기" style="width: 100px;">
+                        <input type=" reset" class="btn btn-outline-danger" value="취소"
+                            style="width: 100px; margin-left: 10px;">
+
+
+                    </div>
+
+                </form>
+
+
+
+            </div>
+        </body>
+
+        </html>
