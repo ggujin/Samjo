@@ -1,5 +1,6 @@
 package dao;
 
+import dto.UserKind;
 import dto.UsersDto;
 import utils.ConnectionHelper;
 
@@ -97,23 +98,26 @@ public class UsersDao {
         try {
             conn = ConnectionHelper.getConnection("mysql");
 
-            String sql = "select id, pwd, phone, studentNum, cnum from users";
+//            String sql = "select id, pwd, phone, studentNum, cnum from users"; //조인 전 쿼리!
+            String sql = "SELECT users.id, users.PWD, USERS.PHONE, USERS.STUDENTNUM, Userkind.cname " +
+                "FROM users, USERKIND " +
+                "WHERE users.CNUM = Userkind.CNUM";
+
             pstmt = conn.prepareStatement(sql);
             resultSet = pstmt.executeQuery();
             usersList = new ArrayList<UsersDto>();
 
-            System.out.println("3");
+
             while (resultSet.next()) {
                 UsersDto usersDto = new UsersDto();
                 usersDto.setId(resultSet.getString("id"));
                 usersDto.setPwd(resultSet.getString("pwd"));
                 usersDto.setPhone(resultSet.getString("phone"));
                 usersDto.setStudentNum(Integer.parseInt(resultSet.getString("studentNum")));
-                usersDto.setCnum(Integer.parseInt(resultSet.getString("cnum")));
+                usersDto.setCname(resultSet.getString("cname"));
 
                 usersList.add(usersDto);
             }
-
 
         } catch (Exception e) {
             System.out.println("UserList Select : " + e.getMessage());
@@ -130,12 +134,20 @@ public class UsersDao {
 
         Connection conn = ConnectionHelper.getConnection("mysql");
 
-        String sql = "select id, pwd, phone, studentNum, cnum  from users where id=?";
+        String sql = "SELECT users.id, users.PWD, USERS.PHONE, USERS.STUDENTNUM, Userkind.cname " +
+                "FROM users, USERKIND " +
+                "WHERE users.CNUM = Userkind.CNUM AND id=?";
+
+//        String sql = "select id, pwd, phone, studentnum from users where id=?"; // 조인 이전 쿼리문
+
         PreparedStatement pstmt = conn.prepareStatement(sql);
+
         pstmt.setString(1, id);
 
         ResultSet resultSet = pstmt.executeQuery();
+
         UsersDto usersDto = new UsersDto();
+
 
         while (resultSet.next()) {
 
@@ -143,13 +155,14 @@ public class UsersDao {
             usersDto.setPwd(resultSet.getString("pwd"));
             usersDto.setPhone(resultSet.getString("phone"));
             usersDto.setStudentNum(Integer.parseInt(resultSet.getString("studentNum")));
-            usersDto.setStudentNum(Integer.parseInt(resultSet.getString("cnum")));
+            usersDto.setCname(resultSet.getString("cname"));
 
         }
 
         ConnectionHelper.close(resultSet);
         ConnectionHelper.close(pstmt);
         ConnectionHelper.close(conn);
+        System.out.println(usersDto);
 
         return usersDto;
     }
@@ -199,7 +212,7 @@ public class UsersDao {
                 usersDto.setPwd(resultSet.getString("pwd"));
                 usersDto.setPhone(resultSet.getString("phone"));
                 usersDto.setStudentNum(resultSet.getInt("studentNum"));
-                usersDto.setStudentNum(resultSet.getInt("cnum"));
+                usersDto.setCnum(resultSet.getInt("cnum"));
             }
 
         } catch (Exception e) {
@@ -244,7 +257,7 @@ public class UsersDao {
 
     //  회원 id 검색
     public ArrayList<UsersDto> searchUsersById(String id) throws SQLException {
-        Connection conn = ConnectionHelper.getConnection("oracle");
+        Connection conn = ConnectionHelper.getConnection("mysql");
         PreparedStatement pstmt = null;
         String sql = "select id, pwd, phone, STUDENTNUM, cnum from users where id like ?";
 

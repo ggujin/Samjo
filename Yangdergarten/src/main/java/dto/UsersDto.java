@@ -1,72 +1,86 @@
 package dto;
 
-public class UsersDto {
+public class UsersDto extends UserKind{
 
-	private String id;
-	private String pwd;
-	private String phone;
-	private int studentNum;
-	private int cnum;
-//	관리자계정 0, 비회원 1, 학부모 회원 2
+    private String id;
+    private String pwd;
+    private String phone;
+    private int studentNum;
+    private int cnum;
 
-	public UsersDto() {};
+//    private String unumber; //cname 값을 담는 변수
 
-	public UsersDto(String id, String pwd, String phone, int studentNum, int cnum) {
-		this.id = id;
-		this.pwd = pwd;
-		this.phone = phone;
-		this.studentNum = studentNum;
-		this.cnum = cnum;
-	}
 
-	public String getId() {
-		return id;
-	}
+    public UsersDto() {
+        super();
+    }
 
-	public void setId(String id) {
-		this.id = id;
-	}
+    public UsersDto(String id, String pwd, String phone, int studentNum, int cnum) {
+        this.id = id;
+        this.pwd = pwd;
+        this.phone = phone;
+        this.studentNum = studentNum;
+        this.cnum = cnum;
+    }
 
-	public String getPwd() {
-		return pwd;
-	}
 
-	public void setPwd(String pwd) {
-		this.pwd = pwd;
-	}
+    public String getId() {
+        return id;
+    }
 
-	public String getPhone() {
-		return phone;
-	}
+    public void setId(String id) {
+        this.id = id;
+    }
 
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
+    public String getPwd() {
+        return pwd;
+    }
 
-	public int getStudentNum() {
-		return studentNum;
-	}
+    public void setPwd(String pwd) {
+        this.pwd = pwd;
+    }
 
-	public void setStudentNum(int studentNum) {
-		this.studentNum = studentNum;
-	}
+    public String getPhone() {
+        return phone;
+    }
 
-	public int getCnum() {
-		return cnum;
-	}
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
 
-	public void setCnum(int cnum) {
-		this.cnum = cnum;
-	}
+    public int getStudentNum() {
+        return studentNum;
+    }
 
-	@Override
-	public String toString() {
-		return "UsersDto{" +
-				"id='" + id + '\'' +
-				", pwd='" + pwd + '\'' +
-				", phone='" + phone + '\'' +
-				", studentNum=" + studentNum +
-				", cnum=" + cnum +
-				'}';
-	}
+    public void setStudentNum(int studentNum) {
+        this.studentNum = studentNum;
+    }
+
+    public int getCnum() {
+        return cnum;
+    }
+
+    public void setCnum(int cnum) {
+        this.cnum = cnum;
+    }
+
+//    public String getUnumber() {
+//        return unumber;
+//    }
+//
+//    public void setUnumber(String unumber) {
+//        this.unumber = unumber;
+//    }
+
+    @Override
+    public String toString() {
+        return "UsersDto{" +
+                "id='" + id + '\'' +
+                ", pwd='" + pwd + '\'' +
+                ", phone='" + phone + '\'' +
+                ", studentNum=" + studentNum +
+                ", cnum=" + cnum +
+                '}';
+    }
+
 }
