@@ -25,7 +25,7 @@ public class AddStudent implements Action {
 		String msg="";
 		String url="";
 		if(result > 0) {
-			msg = "'"+st.getbName()+"' 학생이 정상적으로 등록 되었습니다";
+			msg = st.getbName()+" 학생이 정상적으로 등록 되었습니다";
 			url = "StudentList.sams";
 		}else {
 			msg = "원아의 등록이 정상적으로 진행되지 않았습니다";

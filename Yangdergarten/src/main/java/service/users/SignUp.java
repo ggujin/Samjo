@@ -17,7 +17,12 @@ public class SignUp implements Action {
     usersDto.setId(request.getParameter("id"));
     usersDto.setPwd(request.getParameter("pwd"));
     usersDto.setPhone(request.getParameter("phone"));
-    usersDto.setStudentNum(Integer.parseInt(request.getParameter("studentNum")));
+    
+    if(request.getParameter("studentNum").equals("") || request.getParameter("studentNum") == null) {
+    	usersDto.setStudentNum(0);
+    }else {
+    	usersDto.setStudentNum(Integer.parseInt(request.getParameter("studentNum")));
+    }
 
 
     UsersDao usersDao = new UsersDao();

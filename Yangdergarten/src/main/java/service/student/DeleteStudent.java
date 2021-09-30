@@ -32,6 +32,6 @@ public class DeleteStudent implements Action {
 		forward.setRedirect(false);
 		forward.setPath("/WEB-INF/views/redirect.jsp");
 		
-		return null;
+		return forward;
 	}
 }
