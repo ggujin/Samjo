@@ -20,7 +20,7 @@
         <th>PASSWORD</th>
         <th>PHONE</th>
         <th>STUDENTNUM</th>
-        <th>CNUM</th>
+        <th>CNAME</th>
     </tr>
     </thead>
     <tbody>

@@ -262,7 +262,7 @@ public class UsersDao {
 //        String sql = "select id, pwd, phone, STUDENTNUM, cnum from users where id like ?"; // 조인 전 쿼리
         String sql = "SELECT users.id, users.PWD, USERS.PHONE, USERS.STUDENTNUM, Userkind.cname " +
                 "FROM users, USERKIND " +
-                "WHERE users.CNUM = Userkind.CNUM AND like id=?";
+                "WHERE users.CNUM = Userkind.CNUM AND id like ?";
 
         pstmt = conn.prepareStatement(sql);
         pstmt.setString(1, "%" + id + "%");
