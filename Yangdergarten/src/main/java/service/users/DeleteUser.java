@@ -20,7 +20,7 @@ public class DeleteUser implements Action {
         String url="";
         if(result > 0){
             msg ="삭제성공";
-            url ="UsersList.samu";
+            url ="showUsersList.samu";
         }else{
             msg="삭제실패";
             url="main.samu";
