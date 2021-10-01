@@ -1,12 +1,28 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: KBS
-  Date: 9/25/2021
-  Time: 오후 10:00
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@page import="javax.sql.DataSource"%>
+<%@page import="javax.naming.InitialContext"%>
+<%@page import="javax.naming.Context"%>
+<%@page import="java.sql.Connection"%>
+<%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+     <jsp:include page="/WEB-INF/common/header.jsp"></jsp:include>
+                        <jsp:include page="/WEB-INF/common/jscode.jsp"></jsp:include>
+    
+
+<link rel="stylesheet" href="css/boardmain.css">
+
+<!-- 글쓰기 버튼 꾸미기 -->
+<link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
+
+
 <html>
 <head>
     <title>Title</title>
@@ -24,15 +40,37 @@
     <h1>학부모 공간</h1>
 </c:if>
 
-<a href="BoardAddOrEdit.samb?boardid=${boardid}&mode=0">글쓰기</a>
-<table>
 
-    <tr>
-        <th>Writer</th>
-        <th>Title</th>
-        <th>date</th>
 
-    </tr>
+
+
+<a id="write" href="BoardAddOrEdit.samb?boardid=${boardid}&mode=0">글쓰기</a>
+
+
+<div class="table-wrapper">
+    <table class="fl-table">
+        <thead>
+        <tr>
+            <th>글쓴이</th>
+            <th>제목</th>
+            <th>날짜</th>
+            <th>임시</th>
+            <th>임시</th>
+            
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th>test</th>
+            <th>test</th>
+            <th>test</th>
+            <th>test</th>
+            <th>test</th>
+        </tr>
+
+   
+      
+
             <c:forEach var="board" items="${boardlist}">
                 <tr>
                     <td>${board.author}</td>
@@ -41,24 +79,40 @@
                     <a href="BoardContent.samb?boardindex=${board.boardindex}">
                             ${board.title}
                         </a>
+                        
                     </td>
 
                     <td>${board.updateDate}</td>
 
                 </tr>
             </c:forEach>
+            </tbody>
 </table>
+</div>
 
+
+<div class="search">
 <form action="SearchBoard.samb?boardid=${boardid}" method="post">
+
 
 <select name="searchmode">
     <option value="0">이름</option>
     <option value="1">제목</option>
 </select>
     <input type="text" name="searchvar">
-    <button type="submit">search</button>
+    <button id="searchbtn" type="submit">검색</button>
 </form>
 <c:set var="pager" value="${requestScope.pager.toString()}"></c:set>
 <div>${pager}</div>
+
+</div>
+
+
+
+
+
+
+
 </body>
+
 </html>

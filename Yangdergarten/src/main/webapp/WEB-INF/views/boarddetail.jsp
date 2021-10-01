@@ -1,39 +1,96 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: KBS
-  Date: 9/25/2021
-  Time: 오후 11:25
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@page import="javax.sql.DataSource"%>
+<%@page import="javax.naming.InitialContext"%>
+<%@page import="javax.naming.Context"%>
+<%@page import="java.sql.Connection"%>
+<%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
 <html>
 <head>
-    <title>Title</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+     <jsp:include page="/WEB-INF/common/header.jsp"></jsp:include>
+                <jsp:include page="/WEB-INF/common/jscode.jsp"></jsp:include>
+    
+    
+ <link rel="stylesheet" href="css/boarddetail.css">
+    
 
 </head>
 
 <body>
 <c:set var="board" value="${requestScope.board}"></c:set>
 
-    <a href="BoardAddOrEdit.samb?boardid=${board.boardId}&mode=1&boardindex=${board.boardindex}&title=${board.title}&content=${board.content}">수정</a>
+
+	<!-- 10월1일 css파일로 빼서x 하면 스타일 안먹힘 다시 수정해야됨 -->
+     <div>
+     <button id="btn1"  type="button" onclick="location.href='BoardAddOrEdit.samb?boardid=${board.boardId}&mode=1&boardindex=${board.boardindex}&title=${board.title}&content=${board.content}' ">수정</button>
+     <button id="btn2" type="button" onclick="location.href='BoardDeleteOk.samb?boardid=${board.boardId}&boardindex=${board.boardindex}' ">삭제</button>
+     <button id="btn2"  type="button" onclick="location.href='BoardAddOrEdit.samb?mode=2&boardid=${board.boardId}&boardindex=${board.boardindex}' ">답글</button>
+     
+     </div>
+   
+     
+    <!--  오리지널
+    
+        <a href="BoardAddOrEdit.samb?boardid=${board.boardId}&mode=1&boardindex=${board.boardindex}&title=${board.title}&content=${board.content}">수정</a>
     <a href="BoardDeleteOk.samb?boardid=${board.boardId}&boardindex=${board.boardindex}">삭제</a>
 <%--    <a href="BoardAddOrEdit.do?mod=2&boardid=${board.boardId}&boardindex=${board.boardindex}&title=${board.title}&depth=${board.depth}&reference=${board.reference}">답글</a>--%>
     <a href="BoardAddOrEdit.samb?mode=2&boardid=${board.boardId}&boardindex=${board.boardindex}">답글</a>
-    <h1>${board.author}</h1>
-    <h1>${board.title}</h1>
-    <h1>${board.content}</h1>
+    
+     -->
+
+    
+    
+    
+    
+    <!-- 
+    <h1 id="author" style="color:black">${board.author}</h1>
+    <h2 id="tilte" style="color:black">${board.title}</h2>
+    <p id="content">${board.content}</p>
+     -->
+
+     
+    
+<div class="table-wrapper">
+    <table class="fl-table">
+        <thead>
+        <tr>
+            <th>글쓴이</th>
+            <th>제목</th>
+            <th>내용</th>
+  
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th>${board.author}</th>
+            <th>${board.title}</th>
+            <th>${board.content}</th>
+
+        </tr>
+</tbody>
+
+</table>
 
 
-<p>여기 부터는 댓글</p>
+</div>
 
-<table>
+	<div class="card-header bg-light">
+	        <i class="fa fa-comment fa"></i> 댓글	
+	</div>
+
+ <table class="fl-table">
 
     <tr>
-        <th>Writer</th>
-        <th>Content</th>
-        <th>createdate</th>
-        <th>delete</th>
+        <th>글쓴이</th>
+        <th>내용</th>
+        <th>작성날짜</th>
+        <th>삭제하기</th>
 
     </tr>
     <c:forEach var="reply" items="${replylist}">
@@ -46,11 +103,37 @@
     </c:forEach>
 </table>
 
+
+
+<div class="card mb-2">
+
+	<div class="card-body">
+		<ul class="list-group list-group-flush">
+		    <li class="list-group-item">
+		    
+		    <form action="ReplyOk.samb?boardindex=${board.boardindex}" method="post">
+			<input class="form-control" id="exampleFormControlTextarea1"></textarea>
+			<textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
+			<button type="button" class="btn btn-dark mt-3" onClick="javascript:addReply();">댓글등록</button>
+			</form>
+			
+		    </li>
+		</ul>
+	</div>
+</div>
+
+
+
+<!-- 오리지널	
+
 <form action="ReplyOk.samb?boardindex=${board.boardindex}" method="post">
     <input type="text" name="author">
     <input type="text" name="content">
     <button>submit</button>
 </form>
+
+ -->
+
 
 
 
