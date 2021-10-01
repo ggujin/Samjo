@@ -5,18 +5,13 @@
   Time: 1:39 오전
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
-<link rel="stylesheet" href="css/jstyle.css">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<jsp:include page="/WEB-INF/common/head.jsp"></jsp:include>
+<!-- <link rel="stylesheet" href="css/jstyle.css"> -->
 
 <script type="text/javascript">
 	$(function() {
@@ -38,30 +33,10 @@
 		});
 	});
 </script>
-<style>
-body {
-	background-color: #efefef;
-	align-items: center;
-	color: #333;
-	font-family: "Roboto";
-	font-weight: 400;
-	margin: 0;
-}
-
-.container {
-	margin-top: 5%;
-}
-
-.buttons {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-}
-</style>
 
 </head>
 <body>
-	<div id="header"></div>
+	<%@ include file="/WEB-INF/common/header.jsp"%>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
@@ -98,5 +73,7 @@ body {
 			</div>
 		</div>
 	</div>
+	<%@ include file="/WEB-INF/common/footer.jsp"%>
 </body>
+<jsp:include page="/WEB-INF/common/jscode.jsp"></jsp:include>
 </html>

@@ -137,6 +137,6 @@
 
 
 
-
+        <%@ include file="/WEB-INF/common/footer.jsp"%>
 </body>
 </html>
