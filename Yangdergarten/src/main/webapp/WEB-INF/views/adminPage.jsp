@@ -19,11 +19,11 @@
     <div id="header">
     </div>
     <div id="contents2">
-        <a href="StudentList.sams">
+        <a href="showUsersList.samu">
             <img src="img/studentList.png" style="width:250px" alt="회원목록">
 
         </a>
-        <a href="StudentAdd.sams">
+        <a href="StudentList.sams">
             <img src="img/girl.png" style="width:250px" alt="원아등록">
         </a>
 

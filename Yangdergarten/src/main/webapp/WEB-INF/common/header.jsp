@@ -84,7 +84,7 @@
 							<div class="classynav">
 								<ul>
 									<!-- <li class="active"><a href="index.html">Home</a></li> -->
-									<li><a href="archive-list.html">원 정보</a>
+									<li><a href="intro.jsp">원 정보</a>
 										<ul class="dropdown">
 											<li><a href="index.html">유치원 소개</a></li>
 											<li><a href="archive-list.html">오시는 길</a></li>
@@ -101,7 +101,7 @@
 										</li>
 									<li><a href="BoardList.samb?boardid=2">학부모 공간</a> <!-- 글쓰기 / 댓글 가능 -->
 									</li>
-									<li><a href="contact.html">관리자 페이지</a> <!-- 관리자 권한일때만 보임 -->
+									<li><a href="adminPage.samu">관리자 페이지</a> <!-- 관리자 권한일때만 보임 -->
 									</li>
 								</ul>
 							</div>

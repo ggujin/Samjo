@@ -56,13 +56,13 @@
                         </tr>
                         <tr>
                             <th>원생 반</th>
-                            <td><input type="text" name="bClass" id="bClass" class="form-control"></td>
+                            <td><input type="text" name="bClassNum" id="bClassNum" class="form-control"></td>
                         </tr>
 
                     </table>
                     <div class="buttons">
                         <input type="submit" class="btn btn-secondary" value="등록하기" style="width: 100px;">
-                        <input type=" reset" class="btn btn-outline-danger" value="취소"
+                        <input type="reset" class="btn btn-outline-danger" value="취소"
                             style="width: 100px; margin-left: 10px;">
 
 

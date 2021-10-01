@@ -36,7 +36,7 @@
                 }
             </script>
 
-            <title>Insert title here</title>
+        
 
             <style>
                 body {
@@ -68,6 +68,7 @@
                     <div class="col-md-12">
                         <input type="button" onclick="newPage()" value="원아등록" class="btn btn-danger"
                             style="float:right; margin: 10px;">
+                      <div id="searchStudent">
                         <table class="table" style="text-align: center;">
                             <thead>
                                 <tr>
@@ -90,6 +91,7 @@
                                 </c:forEach>
                             </tbody>
                         </table>
+                       </div>
                         <div class="buttons">
                             <input type="text" name="bName" id="bName">
                             <button type="submit" id="searchBtn" class="btn btn-secondary"
