@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>어쩌구 어린이집 우리 어린이집 이름 뭐엿지</title>
 
 <meta name="description" content="">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">

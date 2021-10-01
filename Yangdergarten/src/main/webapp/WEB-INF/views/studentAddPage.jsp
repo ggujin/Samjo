@@ -8,71 +8,71 @@
 <head>
 <meta charset="UTF-8">
 <!--Bootstrap Table-->
-<link rel="stylesheet" href="css/jstyle.css">
 <jsp:include page="/WEB-INF/common/head.jsp"></jsp:include>
+<link rel="stylesheet" href="css/user.css">
 
-<title>관리자 페이지</title>
-<style>
-form#sadd {
-	background-image: url(img/studentadd.png);
-	background-size: cover;
-	box-shadow: 0px 0px 15px rgb(0 0 0/ 10%);
-	padding: 60px 120px;
-	border-radius: 30px;
-}
-
-.buttons {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-}
-</style>
-
+<title>관리자 - 원아등록</title>
 </head>
 
 <body>
 	<%@ include file="/WEB-INF/common/header.jsp"%>
 
-	<div id="contents3">
+	<div class="addSt-page user-page">
 
-		<form id="sadd" action="StudentAdd.sams" method="get">
-			<h3 style="text-align: center; margin: 10px 0 35px 0;">원아등록</h3>
+		<!-- <form action="StudentAdd.sams" method="get">
+			<h3>원아등록</h3>
+
+			<p>원생 등록번호</p>
+			<input type="text" name="studentNum" id="studentNum">
+
+			<p>학부모 전화번호</p>
+			<input type="text" name="phone" id="phone">
+
+			<p>원생 이름</p>
+			<input type="text" name="bName" id="bName">
+
+			<p>원생 반</p>
+			<input type="text" name="bClassNum" id="bClassNum"> -->
+		<div class="radius">
+		<h3>원아등록</h3>
 			<table class="table table-striped">
+				
 				<tr>
-					<th>원생 등록번호</th>
+					<td>원생 등록번호</td>
+				</tr>
+				<tr>
 					<td><input type="text" name="studentNum" id="studentNum"
 						class="form-control"></td>
 				</tr>
 				<tr>
-					<th>학부모 전화번호</th>
+					<td>학부모 전화번호</td>
+				</tr>
+				<tr>
 					<td><input type="text" name="phone" id="phone"
 						class="form-control"></td>
 				</tr>
 				<tr>
-					<th>원생 이름</th>
+					<td>원생 이름</td>
+				</tr>
+				<tr>
 					<td><input type="text" name="bName" id="bName"
 						class="form-control"></td>
 				</tr>
 				<tr>
-					<th>원생 반</th>
+					<td>원생 반</td>
+				</tr>
+				<tr>
 					<td><input type="text" name="bClassNum" id="bClassNum"
 						class="form-control"></td>
 				</tr>
-
+				<tr>
+					<td><div class="btn_area">
+							<button type="submit" class="submit">등록</button>
+							<button type="reset" class="cancel">취소</button>
+						</div></td>
+				</tr>
 			</table>
-			<div class="buttons">
-				<input type="submit" class="btn btn-secondary" value="등록하기"
-					style="width: 100px;"> <input type="reset"
-					class="btn btn-outline-danger" value="취소"
-					style="width: 100px; margin-left: 10px;">
-
-
-			</div>
-
-		</form>
-
-
-
+		</div>
 	</div>
 	<%@ include file="/WEB-INF/common/footer.jsp"%>
 </body>

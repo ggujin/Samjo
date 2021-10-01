@@ -1,18 +1,17 @@
-
 .login-page {
-    height: 50rem;
-    width: 360px;
-    padding: 9rem 0 10%;
-    margin: auto;
-}
-
-.register-page {
+	height: 50rem;
 	width: 360px;
-	padding: 8% 0 0;
+	padding: 9rem 0 10%;
 	margin: auto;
 }
 
-.login-page .form {
+.register-page {
+	height: 50rem;
+	width: 360px;
+	padding: 5% 0 0;
+	margin: auto;
+}
+.login-page .form, .register-page .form {
 	position: relative;
 	z-index: 1;
 	background: rgba(255, 255, 255, 0.4);
@@ -28,46 +27,28 @@
 	border: 2px dashed pink;
 }
 
-.login-page .form p {
-  margin: 15px 10px 5px 10px;
+.login-page .form p, .register-page .form p {
+	margin: 15px 10px 5px 10px;
 	text-align: left;
 }
 
-.login-page .form input {
+.login-page .form input, .register-page .form input {
 	outline: 0;
 	width: 100%;
 	margin: 0 0 15px;
 	padding: 10px;
 	box-sizing: border-box;
 	font-size: 14px;
-	border: 1px solid rgba(0,0,0,0.07);
+	border: 1px solid rgba(0, 0, 0, 0.07);
 	border-bottom: 3px solid pink;
-	background-color: rgba(255,255,255,0.5);
+	background-color: rgba(255, 255, 255, 0.5);
 }
 
-.login-page .form input :focus{
+.login-page .form input:focus, .register-page .form input:focus {
 	border: 1px solid pink !important;
-
 }
 
-/*
-.form button {
-	font-family: "Roboto", sans-serif;
-	text-transform: uppercase;
-	outline: 0;
-	background: #ff695f;
-	width: 100%;
-	border: 0;
-	padding: 15px;
-	color: #FFFFFF;
-	font-size: 14px;
-	-webkit-transition: all 0.3 ease;
-	transition: all 0.3 ease;
-	cursor: pointer;
-}  
-*/
-
-.login-page .form button {
+.login-page .form button, .register-page .form button {
 	display: inline-block;
 	background-color: #ff695f;
 	font-size: 15px;
@@ -83,7 +64,6 @@
 	width: 100%; /*추가로 넣음*/
 	background: #27CDF2;
 }
-
 
 .login-page .form button:hover, .form button:active, .form button:focus
 	{

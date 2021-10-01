@@ -1,57 +1,44 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/login.css">
-    <title>Document</title>
+<jsp:include page="/WEB-INF/common/head.jsp"></jsp:include>
+<link rel="stylesheet" href="css/user.css">
+<title>Document</title>
 </head>
 <body>
-	
-	<div class="register-page">
+
+	<jsp:include page="/WEB-INF/common/header.jsp"></jsp:include>
+	<div class="register-page user-page">
 		<div class="form">
-		
-		  <form class="register-form"action="signup.samu" method="post">
+			<h3>회원가입</h3>
+			<form class="register-form" action="signup.samu" method="post">
 
-		  
-			<input type="text" name="id" id="id" placeholder="아이디">
-			<hr style="border: solid 0.3px #03a4ed;">				
+				<p>아이디</p>
+				<input type="text" name="id" id="id">
+				<p>비밀번호</p>
+				<input type="password" name="pwd" id="pwd">
 
-			<div class=chid></div>
-			<input type="password" name="pwd" id="pwd" placeholder="비밀번호">
-			<hr style="border: solid 0.3px #03a4ed;">				
+				<p>휴대전화 번호</p>
+				<input type="text" name="phone" id="phone">
 
-			<div class=chpwd></div>
-			<input type="text" name="phone" id="phone" placeholder="휴대폰번호">
-			<hr style="border: solid 0.3px #03a4ed;">				
+				<p>원아 번호</p>
+				<input type="text" name="studentNum" id="studentNum">
 
-			<div class=chpwd_ch></div>
-			<input type="text" name="studentNum" id="studentNum" placeholder="원아번호">
-			<hr style="border: solid 0.3px #03a4ed;">				
+				<button type="submit">가입하기</button>
+				
+				<p class="message">이미 가입한 회원이신가요?</p>
+				<button type="button" onclick="location.href='showLogin.samu'">로그인
+					페이지로</button>
+			</form>
 
-
-			
-	  
-		
-	  
-		   
-			<button type="submit">create</button>
-			<p class="message">Already registered? <a href="./showLogin.samu">Sign In</a></p>
-		  </form>
-		  
-		  
-	  
-		  
-		</div>
-	  </div>
-	  
 
 		</div>
 	</div>
-	
+	<%@ include file="/WEB-INF/common/footer.jsp"%>
 </body>
+<jsp:include page="/WEB-INF/common/jscode.jsp"></jsp:include>
 <script src="login.js"></script>
 </html>

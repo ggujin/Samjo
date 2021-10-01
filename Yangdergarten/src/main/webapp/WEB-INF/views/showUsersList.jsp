@@ -7,11 +7,13 @@
 --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <html>
 <head>
 <jsp:include page="/WEB-INF/common/head.jsp"></jsp:include>
-<!-- <link rel="stylesheet" href="css/jstyle.css"> -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <script type="text/javascript">
 	$(function() {
@@ -76,4 +78,5 @@
 	<%@ include file="/WEB-INF/common/footer.jsp"%>
 </body>
 <jsp:include page="/WEB-INF/common/jscode.jsp"></jsp:include>
+
 </html>

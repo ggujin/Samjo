@@ -9,28 +9,28 @@
 <html>
 <head>
 <jsp:include page="/WEB-INF/common/head.jsp"></jsp:include>
-<link rel="stylesheet" href="css/login.css">
+<link rel="stylesheet" href="css/user.css">
 <title>Document</title>
 </head>
 <body>
 
 	<jsp:include page="/WEB-INF/common/header.jsp"></jsp:include>
 
-	<div class="login-page">
+	<div class="login-page user-page">
+
 		<div class="form">
-
-
+			<h3>로그인</h3>
 			<form class="login-form" action="login.samu" method="POST">
 				<p>아이디</p>
 				<input type="text" name="id" id="id" />
 				<p>비밀번호</p>
 				<input type="password" name="pwd" id="pwd" />
-
-				<button type="submit">login</button>
-
-
+				<button type="submit">로그인</button>
+				
+				<p class="message">처음 오셨나요?</p>
+				<button type="button" onclick="location.href='showSignUp.samu'">회원가입
+					페이지로</button>
 			</form>
-
 
 		</div>
 	</div>
