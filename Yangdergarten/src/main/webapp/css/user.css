@@ -1,7 +1,9 @@
+
+
 .addSt-page {
 	height: 50rem;
 	width: 360px;
-	padding: 5% 0 0;
+	padding: 4rem 0 10%;
 	margin: 0 auto;
 }
 
@@ -15,14 +17,14 @@
 .register-page {
 	height: 50rem;
 	width: 360px;
-	padding: 2% 0 0;
+	padding: 2% 0 10%;
 	margin: auto;
 }
 
 .user-page h3 {
-	color: pink;
-	text-align: center;
 	font-family: "jua", sans-serif;
+	text-align: center;
+	color: pink;
 	margin: 10px 0 30px;
 	font-size: 40px;
 }
@@ -84,7 +86,7 @@
 	background: #27CDF2;
 }
 
-.user-page form button:hover, .form button:active, .form button:focus {
+.user-page form button:hover, .user-page form button:active, .user-page form button:focus {
 	background: #03a4ed;
 }
 
@@ -125,7 +127,7 @@
 	border-radius: 40px;
 	border: 2px dashed pink;
 	overflow: hidden;
-	padding: 10px 50px 50px 50px;
+	padding: 50px;
 }
 
 .user-page table {
@@ -162,6 +164,7 @@
 	padding: 10px;
 	box-sizing: border-box;
 	font-size: 14px;
+	color:#495057;
 	border: 1px solid rgba(0, 0, 0, 0.07);
 	border-bottom: 3px solid pink;
 	background-color: rgba(255, 255, 255, 0.5);
@@ -189,12 +192,16 @@
 	background: #27CDF2;
 }
 
-.user-page table button:hover, .table button:active, .table button:focus
+.user-page table button:hover,
+.table button:active,
+.table button:focus
 	{
 	background: #03a4ed;
 }
 
-.user-page table .submit, .user-page table .cancel {
+
+.user-page table .submit,
+.user-page table .cancel {
 	width: 40%;
 }
 
@@ -210,6 +217,28 @@
 	border: 1px solid;
 }
 
+.btn_area .submit{
+	display: inline-block;
+	background-color: #ff695f;
+	font-size: 15px;
+	font-weight: 800;
+	color: #fff;
+	text-transform: capitalize;
+	padding: 12px 25px;
+	border-radius: 23px;
+	letter-spacing: 0.25px;
+	border: none;
+	outline: none;
+	transition: all .3s;
+	background: #27CDF2;
+}
+
+.btn_area .submit:hover,
+.btn_area .submit:active,
+.btn_area .submit:focus
+	{
+	background: #03a4ed;
+}
 .user-page table .message {
 	text-align: center;
 	margin: 15px 0 0;

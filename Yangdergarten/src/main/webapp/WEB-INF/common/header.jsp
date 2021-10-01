@@ -48,10 +48,11 @@
 							</div> -->
 						<!-- Login -->
 						<a href="showLogin.samu" class="login-btn"><i
-							class="fa fa-user" aria-hidden="true"></i> 로그인 /</a><a
-							href="showSignUp.samu" class="login-btn">회원가입</a> <a
-							href="logout.samu" class="login-btn"><i class="fa fa-user"
-							aria-hidden="true"></i> 로그아웃 </a>
+							class="fas fa-sign-in-alt" aria-hidden="true"></i> 로그인</a><a
+							href="showSignUp.samu" class="login-btn"><i
+							class="fa fa-user" aria-hidden="true"></i> 회원가입</a> <a
+							href="logout.samu" class="login-btn"><i
+							class="fas fa-sign-out-alt" aria-hidden="true"></i> 로그아웃 </a>
 					</div>
 				</div>
 			</div>

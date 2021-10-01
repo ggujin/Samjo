@@ -19,24 +19,11 @@
 
 	<div class="addSt-page user-page">
 
-		<!-- <form action="StudentAdd.sams" method="get">
-			<h3>원아등록</h3>
-
-			<p>원생 등록번호</p>
-			<input type="text" name="studentNum" id="studentNum">
-
-			<p>학부모 전화번호</p>
-			<input type="text" name="phone" id="phone">
-
-			<p>원생 이름</p>
-			<input type="text" name="bName" id="bName">
-
-			<p>원생 반</p>
-			<input type="text" name="bClassNum" id="bClassNum"> -->
-		<div class="radius">
 		<h3>원아등록</h3>
+		<div class="radius">
+
 			<table class="table table-striped">
-				
+
 				<tr>
 					<td>원생 등록번호</td>
 				</tr>
@@ -67,7 +54,8 @@
 				</tr>
 				<tr>
 					<td><div class="btn_area">
-							<button type="submit" class="submit">등록</button>
+							<!-- <button type="submit" class="submit">등록</button> -->
+							<input type="submit" class="submit" value="등록">
 							<button type="reset" class="cancel">취소</button>
 						</div></td>
 				</tr>

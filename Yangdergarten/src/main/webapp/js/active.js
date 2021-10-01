@@ -93,8 +93,8 @@
     // :: 7.0 ScrollUp Active Code
     if ($.fn.scrollUp) {
         browserWindow.scrollUp({
-            scrollSpeed: 1500,
-            scrollText: '<i class="ti-angle-up"></i>'
+            scrollSpeed: 400,
+            scrollText: '<i class="fas fa-angle-up"></i>'
         });
     }
 
