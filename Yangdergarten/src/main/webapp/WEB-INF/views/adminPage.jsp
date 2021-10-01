@@ -21,6 +21,10 @@
         <a href="StudentList.sams">
             <img src="img/girl.png" style="width:250px" alt="원아등록">
         </a>
+        
+        <a href="범수한테 물어봐!">
+        <img src="img/statistics.png" style="width:250px" alt="날씨정보">
+        </a>
 
     </div>
 <%@ include file="/WEB-INF/common/footer.jsp"%>

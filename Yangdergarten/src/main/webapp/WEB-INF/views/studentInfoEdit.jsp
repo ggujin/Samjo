@@ -20,20 +20,24 @@
         <c:set var="st" value="${requestScope.student}"/>
         <table class="table table-striped">
             <tr>
-                <th>studentNum:</th>
+                <th>원생 등록정보</th>
                 <td><input type="text" name="studentNum" id="studentNum" value="${st.studentNum}" readonly></td>
             </tr>
             <tr>
-                <th>bName:</th>
+                <th>원생 이름</th>
                 <td><input type="text" name="bName" id="bName" value="${st.bName}"></td>
             </tr>
             <tr>
-                <th>phone:</th>
+                <th>학부모 전화번호</th>
                 <td><input type="text" name="phone" id="phone" value="${st.phone}"></td>
             </tr>
             <tr>
-                <th>bClass:</th>
-                <td><input type="text" name="bClassNum" id="bClassNum" value="${st.bClass}"></td>
+                <th>원생 반</th>
+                <td><select name="bClassNum" id="bClassNum" class="form-control">
+						<option value="0">햇님반</option>
+						<option value="1">달님반</option>
+						<option value="2">별님반</option>
+						</select></td>
             </tr>
             <tr>
                 <td>

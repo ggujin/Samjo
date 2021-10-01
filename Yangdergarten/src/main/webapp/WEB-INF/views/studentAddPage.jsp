@@ -16,7 +16,7 @@
 
 <body>
 	<%@ include file="/WEB-INF/common/header.jsp"%>
-
+ <form id="sadd" action="StudentAdd.sams" method="get">
 	<div class="addSt-page user-page">
 
 		<h3>원아등록</h3>
@@ -35,7 +35,7 @@
 					<td>학부모 전화번호</td>
 				</tr>
 				<tr>
-					<td><input type="text" name="phone" id="phone"
+						<td><input type="text" name="phone" id="phone"
 						class="form-control"></td>
 				</tr>
 				<tr>
@@ -49,8 +49,12 @@
 					<td>원생 반</td>
 				</tr>
 				<tr>
-					<td><input type="text" name="bClassNum" id="bClassNum"
-						class="form-control"></td>
+					<td><select name="bClassNum" id="bClassNum" class="form-control">
+							<option value="0">햇님반</option>
+							<option value="1">달님반</option>
+							<option value="2">별님반</option>
+						</select>
+					</td>
 				</tr>
 				<tr>
 					<td><div class="btn_area">
@@ -62,6 +66,7 @@
 			</table>
 		</div>
 	</div>
+	</form>
 	<%@ include file="/WEB-INF/common/footer.jsp"%>
 </body>
 <jsp:include page="/WEB-INF/common/jscode.jsp"></jsp:include>
