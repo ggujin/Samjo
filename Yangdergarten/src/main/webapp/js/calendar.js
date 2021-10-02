@@ -33,6 +33,8 @@ $(document).ready(function() {
 		selectable: true,
 		editable: true, //수정가능여부
 		droppable: true, // this allows things to be dropped onto the calendar
+		eventLimit: true,
+        
 		drop: function(info) {
 			// is the "remove after drop" checkbox checked?
 			if (checkbox.checked) {
@@ -45,7 +47,8 @@ $(document).ready(function() {
 	});
 
 	calendar.render();
-
+	allLoad();
+	
 	$('#saveBtn').click(function() {
 		allSave();
 	});
@@ -53,7 +56,29 @@ $(document).ready(function() {
 	$('#deleteBtn').click(function () {
           allDelete();
      });
+
+	$('#newEvent').keyup(function(){
+		var title = $('#newEvent').val();
+		$('#newEventDiv').text(title);
+	});
 });
+
+//DB에 있는 데이터 불러오기
+function allLoad(){
+	console.log('hi2');
+	$.ajax({
+		type:'POST',
+		url:'loadCalendar',
+		data: {"sql":"select title,startdate,enddate from CALENDAR"},
+		dataType:'json',
+		async: false,
+		success: function(data){
+			console.log(data);
+			console.log('hi');
+		}
+	});
+}
+
 
 //1. 전체 이벤트 데이터를 추출		2. ajax로 서버에 전송하여 DB에 저장
 function allSave() {

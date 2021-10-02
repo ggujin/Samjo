@@ -26,12 +26,16 @@
 
 </head>
 <body>
-	<div id='external-events' style="float:left; width:15%;
-									padding-left:1rem; margin-right:1.5rem; margin-top:10rem">
+	<div id='external-events' style="float:left; width:15%; padding-left:1rem; margin-right:1.5rem; margin-top:10rem">
+		<input type="text" id="newEvent" placeholder="새로운 일정..."/>
+		
 		<p>
 			<strong>일정을 추가하세요!</strong>
 		</p>
 
+		<div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
+			<div class='fc-event-main' id='newEventDiv'></div>
+		</div>
 		<div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
 			<div class='fc-event-main'>신나는 가을 소풍</div>
 		</div>
