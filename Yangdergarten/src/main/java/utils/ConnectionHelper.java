@@ -28,8 +28,8 @@ public class ConnectionHelper {
 			try {
 				// 1.
 				Class.forName("com.mysql.jdbc.Driver");
-				Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/demoweb", "devadmin",
-						"mysql");
+				Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "bit",
+						"1004");
 
 				// 2.
 				/*

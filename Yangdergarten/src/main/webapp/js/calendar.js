@@ -1,6 +1,18 @@
 var calendar = null;
+let origianlEvents
 
 $(document).ready(function() {
+	$.ajax({
+		url: '/events',
+		contentType: 'application/json',
+		success: function(events) {
+			origianlEvents = events
+			init(events)
+		}
+	})
+});
+
+function init(events) {
 	var Calendar = FullCalendar.Calendar;
 	var Draggable = FullCalendar.Draggable;
 
@@ -33,8 +45,6 @@ $(document).ready(function() {
 		selectable: true,
 		editable: true, //수정가능여부
 		droppable: true, // this allows things to be dropped onto the calendar
-		eventLimit: true,
-        
 		drop: function(info) {
 			// is the "remove after drop" checkbox checked?
 			if (checkbox.checked) {
@@ -42,71 +52,37 @@ $(document).ready(function() {
 				info.draggedEl.parentNode.removeChild(info.draggedEl);
 			}
 		},
-		
+		events: events.map(({ title, startDate, endDate }) => ({ title, start: startDate, end: endDate })),
 		locale: 'ko'
 	});
 
 	calendar.render();
-	allLoad();
-	
+
 	$('#saveBtn').click(function() {
 		allSave();
 	});
-	
+
 	$('#deleteBtn').click(function () {
-          allDelete();
-     });
-
-	$('#newEvent').keyup(function(){
-		var title = $('#newEvent').val();
-		$('#newEventDiv').text(title);
-	});
-});
-
-//DB에 있는 데이터 불러오기
-function allLoad(){
-	console.log('hi2');
-	$.ajax({
-		type:'POST',
-		url:'loadCalendar',
-		data: {"sql":"select title,startdate,enddate from CALENDAR"},
-		dataType:'json',
-		async: false,
-		success: function(data){
-			console.log(data);
-			console.log('hi');
-		}
+		allDelete();
 	});
 }
-
-
 //1. 전체 이벤트 데이터를 추출		2. ajax로 서버에 전송하여 DB에 저장
 function allSave() {
-	var allEvent = calendar.getEvents();
-
-	var events = new Array();
-	for (var i = 0; i < allEvent.length; i++) {
-		var obj = new Object();
-
-		obj.title = allEvent[i]._def.title; //이벤트 명칭
-		obj.start = moment(allEvent[i]._instance.range.start).format("YYYY-MM-DD"); //시작날짜 및 시간
-		obj.end = moment(allEvent[i]._instance.range.end).format("YYYY-MM-DD"); //마침날짜 및 시간
-
-		events.push(obj);
-	}
-
-	var jsondata = JSON.stringify(events);
-	console.log(jsondata);
-
-	savedata(jsondata);
+	const allEvent = calendar.getEvents();
+	savedata(allEvent.map(event => ({
+			title: event.title,
+			startDate: moment(event.start).format('YYYY-MM-DD'),
+			endDate: moment((event.end || event.start)).format('YYYY-MM-DD')
+	})));
 }
 
 function savedata(jsondata) {
 	$.ajax({
 		type: 'POST',
 		url: 'saveCalendar',
-		data: { "alldata": jsondata },
-		dataType: 'text',
+		contentType: 'application/json',
+		data: JSON.stringify(jsondata),
+		dataType: 'json',
 		async: false,
 		success: function(responsedata) {
 			console.log(responsedata);

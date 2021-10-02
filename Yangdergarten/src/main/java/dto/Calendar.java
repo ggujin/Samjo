@@ -1,10 +1,19 @@
 package dto;
 
 public class Calendar {
+	private int id;
 	private String title;
 	private String startDate;
 	private String endDate;
-	
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	public String getTitle() {
 		return title;
 	}
@@ -23,20 +32,26 @@ public class Calendar {
 	public void setEndDate(String endDate) {
 		this.endDate = endDate;
 	}
-	
-	public Calendar() {
-		super();
+
+
+	@Override
+	public String toString() {
+		return "Calendar{" +
+				"id=" + id +
+				", title='" + title + '\'' +
+				", startDate='" + startDate + '\'' +
+				", endDate='" + endDate + '\'' +
+				'}';
 	}
 
-	public Calendar(String title, String startDate, String endDate) {
-		super();
+	public Calendar(int id, String title, String startDate, String endDate) {
+		this.id = id;
 		this.title = title;
 		this.startDate = startDate;
 		this.endDate = endDate;
 	}
-	
-	@Override
-	public String toString() {
-		return "Calendar [title=" + title + ", startDate=" + startDate + ", endDate=" + endDate + "]";
-	}
+
+	public Calendar() {}
+
+
 }
