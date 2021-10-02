@@ -47,12 +47,17 @@
 								</form>
 							</div> -->
 						<!-- Login -->
-						<a href="showLogin.samu" class="login-btn"><i
-							class="fas fa-sign-in-alt" aria-hidden="true"></i> 로그인</a><a
-							href="showSignUp.samu" class="login-btn"><i
-							class="fa fa-user" aria-hidden="true"></i> 회원가입</a> <a
-							href="logout.samu" class="login-btn"><i
-							class="fas fa-sign-out-alt" aria-hidden="true"></i> 로그아웃 </a>
+						<c:if test="${empty userId}">
+							<a href="showLogin.samu" class="login-btn"><i
+								class="fas fa-sign-in-alt" aria-hidden="true"></i> 로그인 </a>
+							<a href="showSignUp.samu" class="login-btn"><i
+								class="fa fa-user" aria-hidden="true"></i> 회원가입 </a>
+						</c:if>
+						<c:if test="${not empty userId}">
+						<welcome style="color: #07B0F2; font-size: 12px;">${userId}님, 반갑습니다 : )</welcome>
+							<a href="logout.samu" class="login-btn"><i
+								class="fas fa-sign-out-alt" aria-hidden="true"></i> 로그아웃 </a>
+						</c:if>
 					</div>
 				</div>
 			</div>
@@ -106,12 +111,15 @@
 								</li>
 								<li><a href="BoardList.samb?boardid=2">학부모 공간</a> <!-- 글쓰기 / 댓글 가능 -->
 								</li>
-								<li><a href="adminPage.samu">관리자 페이지</a> <!-- 관리자 권한일때만 보임 -->
-									<ul class="dropdown">
-										<li><a href="StudentAddPage.sams">원아 등록</a></li>
-										<li><a href="StudentList.sams">원아목록 조회</a></li>
-										<li><a href="showUsersList.samu">회원목록 조회</a></li>
-									</ul></li>
+								<c:if test="${not empty userId}">
+									<li><a href="adminPage.samu">관리자 페이지</a> <!-- 관리자 권한일때만 보임 -->
+										<ul class="dropdown">
+											<li><a href="showUsersList.samu">회원목록 조회</a></li>
+											<li><a href="StudentList.sams">원아목록 조회</a></li>
+											<li><a href="StudentAddPage.sams">원아 등록</a></li>
+											<li><a href="#">날씨 정보</a></li>
+										</ul></li>
+								</c:if>
 							</ul>
 						</div>
 						<!-- Nav End -->

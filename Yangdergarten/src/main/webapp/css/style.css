@@ -746,6 +746,7 @@ translate
 }
 
 .top-header-area .login-btn {
+	color: #a6a6a6;
 	position: relative;
 	z-index: 1;
 	padding: 0 15px;
@@ -2786,6 +2787,10 @@ select.form-control {
 
 textarea.form-control {
 	height: 140px;
+}
+
+welcome {
+	color:#07B0F2;
 }
 
 /*# sourceMappingURL=style.css.map */

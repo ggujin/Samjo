@@ -112,8 +112,8 @@
 		    <li class="list-group-item">
 		    
 		    <form action="ReplyOk.samb?boardindex=${board.boardindex}" method="post">
-			<input class="form-control" id="exampleFormControlTextarea1"></textarea>
-			<textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
+			<input class="" id="exampleFormControlTextarea1"></textarea>
+			<textarea class="" id="exampleFormControlTextarea1" rows="2"></textarea>
 			<button type="button" class="btn btn-dark mt-3" onClick="javascript:addReply();">댓글등록</button>
 			</form>
 			

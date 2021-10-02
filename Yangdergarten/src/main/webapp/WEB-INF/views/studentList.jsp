@@ -7,11 +7,9 @@
 
 <head>
 <jsp:include page="/WEB-INF/common/head.jsp"></jsp:include>
+<link rel="stylesheet" href="css/list.css">
 
 <!--Bootstrap Table-->
-<link rel="stylesheet" href="css/list.css">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
@@ -21,14 +19,15 @@
 <body>
 	<%@ include file="/WEB-INF/common/header.jsp"%>
 
-	<div class="container st_list list">
-		<div class="row">
-			<div class="col-md-12">
-			<h1>원아 목록</h1>
+	<div class="container list">
+		<div class="st_list">
+			<div class="col-md-12" id="searchStudent">
+				<h1>원아 목록</h1>
 				<div class="btn_area">
-					<button type="button" onclick="newPage()">원아등록</button>
+					<button type="button" onclick="addPage()">원아등록</button>
 				</div>
-				<div id="searchStudent">
+				<div>
+					<!-- <div id="searchStudent"> -->
 					<table class="table" style="text-align: center;">
 						<thead>
 							<tr>
@@ -52,13 +51,13 @@
 						</tbody>
 					</table>
 				</div>
-				<div class="sch_area">
-					<input type="text" name="bName" id="bName">
-					<button type="submit" id="searchBtn" class="btn btn-secondary"
-						style="margin-left: 10px;">원아검색</button>
-
-				</div>
 			</div>
+
+			<div class="sch_area">
+				<input type="text" name="bName" id="bName" class="sch_input">
+				<button type="submit" id="searchBtn">원아검색</button>
+			</div>
+
 		</div>
 	</div>
 
@@ -83,9 +82,29 @@
 			});
 			//$('#searchStudent').load("StudentSearch.sams?bName="+$('#bName').val());
 		});
+		
+		$("#bName").keydown(function(keyNum){
+			if(keyNum.keyCode == 13){ 
+				$.ajax({
+					url : "StudentSearch", //"StudentSearch.sams", 
+					type : "GET",
+					data : {
+						bName : $('#bName').val()
+					},
+					dataType : "html",
+					success : function(responsedata) {
+						let data = responsedata.trim();
+						console.log(data);
+						$('#searchStudent').html(data);
+					}
+				});
+			}
+		})
+		
 	});
 
-	function newPage() {
+	
+	function addPage() {
 		window.location.href = "StudentAddPage.sams"
 	}
 </script>

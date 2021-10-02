@@ -5,17 +5,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
 <!--Bootstrap Table-->
- <jsp:include page="/WEB-INF/common/head.jsp"></jsp:include>
+<jsp:include page="/WEB-INF/common/head.jsp"></jsp:include>
+<link rel="stylesheet" href="css/list.css">
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 <title>Insert title here</title>
 </head>
 <body>
-	<div class="container">
-		<h3>원아검색목록</h3>
+	<div class="container sch_list list">
+		<h1>원아 검색 목록</h1>
+		<div class="btn_area">
+			<button type="button" onclick="addPage()">원아등록</button>
+		</div>
 		<table class="table table-striped">
 			<tr>
 				<th>원아번호</th>
@@ -35,4 +38,11 @@
 		</table>
 	</div>
 </body>
+
+<script type="text/javascript">
+	function addPage() {
+		window.location.href = "StudentAddPage.sams"
+	}
+</script>
+
 </html>

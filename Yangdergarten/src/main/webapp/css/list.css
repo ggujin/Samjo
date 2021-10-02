@@ -6,43 +6,69 @@ h1 {
 	color: pink;
 }
 
-.list{
+.list {
 	margin: 5rem auto;
 }
 
-.list .btn_area,
-.list .sch_area{
-	display:flex;
-	margin: 1rem;
+.list .st_list {
+	max-width: 60%;
+	min-width: 25rem;
+	margin: auto;
+	display: flex;
+	flex-flow: column;
 }
 
-.list .sch_area{
-	margin: auto 0 ;
-	}
+.list .btn_area, .list .sch_area {
+	display: flex;
+	margin: 1rem;
+	justify-content: flex-end;
+}
 
-.list button{
-	margin-left:auto;
+.list button {
 	display: inline-block;
 	background: #ffffff;
 	font-size: 15px;
 	font-weight: 800;
 	color: #27CDF2;
 	text-transform: capitalize;
+	margin: 10px 0;
 	padding: 12px 25px;
 	border-radius: 23px;
 	letter-spacing: 0.25px;
 	border: 2px solid #27CDF2;
 	outline: none;
 	transition: all .3s;
+	padding: 12px 25px;
+	min-width: 120px;
 }
 
-.list button:hover,
-.list button:active,
-.list button:focus {
+.list button:hover, .list button:active, .list button:focus {
 	background: #27CDF2;
 	color: #ffffff;
 }
 
-.list #searchStudent{
-	margin: 1rem;
+.list .sch_area {
+	padding: 0 15px;
 }
+
+.list .sch_area input {
+	outline: 0;
+	margin: 15px;
+	padding: 10px;
+	box-sizing: border-box;
+	font-size: 1rem;
+	line-height: 1.5;
+	color: #495057;
+	border: 1px solid rgba(0, 0, 0, 0.07);
+	border-bottom: 3px solid pink;
+	border-radius: .25rem;
+	background-color: rgba(255, 255, 255, 0.5);
+	transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.list .sch_area input:focus,
+.list .sch_area select:focus {
+	border: 1px solid pink;
+	border-bottom: 3px solid pink;
+}
+

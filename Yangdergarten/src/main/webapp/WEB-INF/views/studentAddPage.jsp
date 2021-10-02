@@ -28,28 +28,25 @@
 					<td>원생 등록번호</td>
 				</tr>
 				<tr>
-					<td><input type="text" name="studentNum" id="studentNum"
-						class="form-control"></td>
+					<td><input type="text" name="studentNum" id="studentNum"></td>
 				</tr>
 				<tr>
 					<td>학부모 전화번호</td>
 				</tr>
 				<tr>
-						<td><input type="text" name="phone" id="phone"
-						class="form-control"></td>
+						<td><input type="text" name="phone" id="phone" placeholder="000-0000-0000"></td>
 				</tr>
 				<tr>
 					<td>원생 이름</td>
 				</tr>
 				<tr>
-					<td><input type="text" name="bName" id="bName"
-						class="form-control"></td>
+					<td><input type="text" name="bName" id="bName"></td>
 				</tr>
 				<tr>
 					<td>원생 반</td>
 				</tr>
 				<tr>
-					<td><select name="bClassNum" id="bClassNum" class="form-control">
+					<td><select name="bClassNum" id="bClassNum">
 							<option value="0">햇님반</option>
 							<option value="1">달님반</option>
 							<option value="2">별님반</option>
@@ -59,7 +56,7 @@
 				<tr>
 					<td><div class="btn_area">
 							<!-- <button type="submit" class="submit">등록</button> -->
-							<input type="submit" class="submit" value="등록">
+							<button type="submit" class="submit">등록</button>
 							<button type="reset" class="cancel">취소</button>
 						</div></td>
 				</tr>

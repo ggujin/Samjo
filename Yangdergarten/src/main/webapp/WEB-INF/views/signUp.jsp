@@ -22,7 +22,7 @@
 				<input type="password" name="pwd" id="pwd">
 
 				<p>휴대전화 번호</p>
-				<input type="text" name="phone" id="phone">
+				<input type="text" name="phone" id="phone" placeholder="000-0000-0000">
 
 				<p>원아 번호</p>
 				<input type="text" name="studentNum" id="studentNum">

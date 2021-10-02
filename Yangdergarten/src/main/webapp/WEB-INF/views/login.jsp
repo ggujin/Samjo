@@ -25,8 +25,8 @@
 				<input type="text" name="id" id="id" />
 				<p>비밀번호</p>
 				<input type="password" name="pwd" id="pwd" />
-				<button type="submit">로그인</button>
-				
+				<button type="submit" id="login_btn">로그인</button>
+
 				<p class="message">처음 오셨나요?</p>
 				<button type="button" onclick="location.href='showSignUp.samu'">회원가입
 					페이지로</button>
@@ -39,4 +39,15 @@
 	<%@ include file="/WEB-INF/common/footer.jsp"%>
 </body>
 <jsp:include page="/WEB-INF/common/jscode.jsp"></jsp:include>
+
+<!-- 비밀번호 창에서 엔터시 로그인 -->
+<script type="text/javascript">
+	$(function() {
+		$("#pwd").keydown(function(keyNum) {
+			if (keyNum.keyCode == 13) {
+				$("#login_btn").click()
+			}
+		})
+	});
+</script>
 </html>
