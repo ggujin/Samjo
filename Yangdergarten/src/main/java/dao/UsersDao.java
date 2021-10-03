@@ -73,8 +73,8 @@ public class UsersDao {
             resultSet = pstmt.executeQuery();
 
             while (resultSet.next()) {
-                usersDto.setId(id);
-                usersDto.setPwd(pwd);
+                usersDto.setId(resultSet.getString("id"));
+                usersDto.setPwd(resultSet.getString("pwd"));
             }
 
         } catch (Exception e) {

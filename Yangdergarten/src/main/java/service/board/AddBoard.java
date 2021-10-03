@@ -6,6 +6,7 @@ import dao.BoardDao;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.sql.SQLException;
 
 /**
@@ -20,9 +21,9 @@ public class AddBoard implements Action {
     public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws SQLException {
 
         BoardDao boardDao = new BoardDao();
-
+        HttpSession session = request.getSession(true);
+        String author = (String)session.getAttribute("userId");
         int boardid = Integer.parseInt(request.getParameter("boardid"));
-        String author = request.getParameter("author");
         String title = request.getParameter("title");
         String content = request.getParameter("content");
 

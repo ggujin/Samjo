@@ -7,6 +7,7 @@ import dto.Board;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.sql.SQLException;
 
 /**
@@ -20,10 +21,10 @@ public class AddRe implements Action {
     public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws SQLException {
 
         BoardDao boardDao = new BoardDao();
-
+        HttpSession session = request.getSession(true);
         String boardindex = request.getParameter("boardindex");
         String boardid = request.getParameter("boardid");
-        String author = request.getParameter("author");
+        String author = (String)session.getAttribute("userId");
         String content = request.getParameter("content");
         Board board = null;
         board = boardDao.getBoardContent(boardindex);

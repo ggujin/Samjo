@@ -513,61 +513,109 @@ public class BoardDao {
             int[] ints = new int[2];
             int breaker = 0;
             int comstep = 0;
-                String select_sql = "select step from board where DEPTH = ? and REFERENCE = ? ORDER by step desc";
-                pstmt = conn.prepareStatement(select_sql);
-                pstmt.setInt(1, board.getDepth());
+
+            //1. depth가 같은 게시물이 나올때까지의 거리를 계산하는 sql문입니다.
+            String select_sql = "select step from board where DEPTH = ? and REFERENCE = ? ORDER by step desc";
+            pstmt = conn.prepareStatement(select_sql);
+            pstmt.setInt(1, board.getDepth());
+            pstmt.setInt(2,board.getReference());
+            ResultSet rs = pstmt.executeQuery();
+
+
+            while (rs.next()&&breaker<2){
+
+                ints[breaker] = rs.getInt("step");
+                breaker++;
+
+            } //breaker의 수치를 더해서 상황별로 아래의 if문에서 다른 로직을 실행시킴.
+
+            comstep = ints[0] - ints[1]; //현재 글을 기준으로 depth가 같은 게시물 사이의 거리
+
+
+            ArrayList<Integer> arrayList = new ArrayList<Integer>();
+
+            if(breaker==1){ //다음에 같은 depth를 가진 글이 없을 때
+
+                //2. 스텝의 거리를 기준으로 삭제할 boardindex값 받아오기 (댓글 삭제때문에 필요하게 되었습니다.)
+
+                String select_sql1 = "select boardindex FROM board WHERE step <= ? and REFERENCE = ?";
+                pstmt =  conn.prepareStatement(select_sql1);
+                pstmt.setInt(1,ints[0]);
                 pstmt.setInt(2,board.getReference());
-                ResultSet rs = pstmt.executeQuery();
+                ResultSet rs1 = pstmt.executeQuery();
 
-
-                while (rs.next()&&breaker<2){
-
-                    ints[breaker] = rs.getInt("step");
-                    breaker++;
+                while (rs1.next()){
+                    String delete_reply = "DELETE FROM REPLY WHERE BOARDINDEX = ?";
+                    pstmt = conn.prepareStatement(delete_reply);
+                    pstmt.setInt(1,rs1.getInt("boardindex"));
+                    pstmt.executeUpdate();
 
                 }
 
-                comstep = ints[0] - ints[1];
 
-            System.out.println("comstep" + comstep);
-            System.out.println(board.getReference());
-            System.out.println(ints[0]);
-            System.out.println(ints[1]);
-                if(breaker==1){
-                    String delete_sql = "DELETE FROM board WHERE step <= ? and REFERENCE = ?";
-                    pstmt =  conn.prepareStatement(delete_sql);
-                    pstmt.setInt(1,ints[0]);
-                    pstmt.setInt(2,board.getReference());
-                    pstmt.executeUpdate();
-                }
-                if(board.getBoardindex()==board.getReference()){
-                    String delete_sql = "DELETE FROM board WHERE REFERENCE = ?";
-                    pstmt =  conn.prepareStatement(delete_sql);
-
-                    pstmt.setInt(1,board.getReference());
-                    pstmt.executeUpdate();
-                }else {
-                    String delete_sql = "DELETE FROM board WHERE step <= ? and step > ? and REFERENCE = ?";
-                    pstmt =  conn.prepareStatement(delete_sql);
-                    pstmt.setInt(1,ints[0]);
-                    pstmt.setInt(2,ints[1]);
-                    pstmt.setInt(3,board.getReference());
-                    pstmt.executeUpdate();
-                }
-
-
-                String ccount_sql = "UPDATE board SET CCOUNT = CCOUNT - 1  WHERE BOARDINDEX = ?";
-                pstmt = conn.prepareStatement(ccount_sql);
-                  pstmt.setInt(1,board.getPnum());
-                pstmt.executeUpdate();
-
-                String update_sql2 = "UPDATE board SET step = step - ?  WHERE REFERENCE = ? AND step > ?";
-                pstmt = conn.prepareStatement(update_sql2);
-                pstmt.setInt(1,comstep);
+                String delete_sql = "DELETE FROM board WHERE step <= ? and REFERENCE = ?";
+                pstmt =  conn.prepareStatement(delete_sql);
+                pstmt.setInt(1,ints[0]);
                 pstmt.setInt(2,board.getReference());
-                pstmt.setInt(3,board.getStep());
-
                 pstmt.executeUpdate();
+            }
+            if(board.getBoardindex()==board.getReference()){ //원글일 때
+
+                String select_sql1 = "SELECT boardindex FROM board WHERE REFERENCE = ?";
+                pstmt =  conn.prepareStatement(select_sql1);
+                pstmt.setInt(1,board.getReference());
+                ResultSet rs1 = pstmt.executeQuery();
+
+                while (rs1.next()){
+                    String delete_reply = "DELETE FROM REPLY WHERE BOARDINDEX = ?";
+                    pstmt = conn.prepareStatement(delete_reply);
+                    pstmt.setInt(1,rs1.getInt("boardindex"));
+                    pstmt.executeUpdate();
+
+                }
+
+                String delete_sql = "DELETE FROM board WHERE REFERENCE = ?";
+                pstmt =  conn.prepareStatement(delete_sql);
+
+                pstmt.setInt(1,board.getReference());
+                pstmt.executeUpdate();
+            }else { //다음에 같은 depth를 가진 글이 있을 때
+
+                String select_sql1 = "SELECT boardindex FROM board WHEREstep <= ? and step > ? and REFERENCE = ?";
+                pstmt =  conn.prepareStatement(select_sql1);
+                pstmt.setInt(1,ints[0]);
+                pstmt.setInt(2,ints[1]);
+                pstmt.setInt(3,board.getReference());
+                ResultSet rs1 = pstmt.executeQuery();
+
+                while (rs1.next()){
+                    String delete_reply = "DELETE FROM REPLY WHERE BOARDINDEX = ?";
+                    pstmt = conn.prepareStatement(delete_reply);
+                    pstmt.setInt(1,rs1.getInt("boardindex"));
+                    pstmt.executeUpdate();
+
+                }
+                String delete_sql = "DELETE FROM board WHERE step <= ? and step > ? and REFERENCE = ?";
+                pstmt =  conn.prepareStatement(delete_sql);
+                pstmt.setInt(1,ints[0]);
+                pstmt.setInt(2,ints[1]);
+                pstmt.setInt(3,board.getReference());
+                pstmt.executeUpdate();
+            }
+
+
+            String ccount_sql = "UPDATE board SET CCOUNT = CCOUNT - 1  WHERE BOARDINDEX = ?";
+            pstmt = conn.prepareStatement(ccount_sql);
+            pstmt.setInt(1,board.getPnum());
+            pstmt.executeUpdate();
+
+            String update_sql2 = "UPDATE board SET step = step - ?  WHERE REFERENCE = ? AND step > ?";
+            pstmt = conn.prepareStatement(update_sql2);
+            pstmt.setInt(1,comstep);
+            pstmt.setInt(2,board.getReference());
+            pstmt.setInt(3,board.getStep());
+
+            pstmt.executeUpdate();
 
 
 

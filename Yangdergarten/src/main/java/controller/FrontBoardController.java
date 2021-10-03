@@ -93,6 +93,12 @@ public class FrontBoardController extends HttpServlet {
 			System.out.println("SearchBoard");
 			action = new SearchBoard();
 			forward = action.execute(request,response);
+		}else if(url_Command.equals("/GoWetherChart.samb")){
+
+			System.out.println("gotochart");
+			forward = new ActionForward();
+			forward.setRedirect(false);
+    		forward.setPath("/WEB-INF/views/chart.jsp");
 		}
     	
     	if(forward != null) {
