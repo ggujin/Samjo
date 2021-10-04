@@ -229,8 +229,11 @@ public class UsersDao {
     public int editUserInfo(UsersDto usersDto) {
 
         Connection conn = null;
+        Connection conn2 = null;
         PreparedStatement pstmt = null;
+        PreparedStatement pstmt2 = null;
         int resultrow = 0;
+        int resultrow2 = 0;
 
         try {
             conn = ConnectionHelper.getConnection("oracle");
@@ -244,12 +247,25 @@ public class UsersDao {
             pstmt.setString(5, usersDto.getId());
 
             resultrow = pstmt.executeUpdate();
+            
+            conn2 = ConnectionHelper.getConnection("oracle");
+            String sql2 = "update STUDENT set phone=? where studentnum=?";
+            pstmt2 = conn2.prepareStatement(sql2);
+            
+            pstmt2.setString(1, usersDto.getPhone());
+            pstmt2.setInt(2, usersDto.getStudentNum());
+            System.out.println("핸드폰번호 : "+usersDto.getPhone()+" /원아번호 : "+usersDto.getStudentNum());
+            
+            resultrow2 = pstmt2.executeUpdate();
+            System.out.println("원아 핸드폰번호 수정건 : "+resultrow2);
 
         } catch (Exception e) {
             System.out.println("User Edit update : " + e.getMessage());
         } finally {
             ConnectionHelper.close(pstmt);
+            ConnectionHelper.close(pstmt2);
             ConnectionHelper.close(conn);
+            ConnectionHelper.close(conn2);
         }
         return resultrow;
     }
