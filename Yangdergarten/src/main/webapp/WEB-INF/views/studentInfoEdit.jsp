@@ -1,53 +1,73 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <!--Bootstrap Table-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<jsp:include page="/WEB-INF/common/head.jsp"></jsp:include>
+<link rel="stylesheet" href="css/user.css">
 
-    <title>Insert title here</title>
+<!--Bootstrap Table-->
 </head>
+
+
 <body>
-<h3>원아정보수정</h3>
-<div>
-    <form action="StudentEdit.sams" method="get">
-        <c:set var="st" value="${requestScope.student}"/>
-        <table class="table table-striped">
-            <tr>
-                <th>원생 등록정보</th>
-                <td><input type="text" name="studentNum" id="studentNum" value="${st.studentNum}" readonly></td>
-            </tr>
-            <tr>
-                <th>원생 이름</th>
-                <td><input type="text" name="bName" id="bName" value="${st.bName}"></td>
-            </tr>
-            <tr>
-                <th>학부모 전화번호</th>
-                <td><input type="text" name="phone" id="phone" value="${st.phone}"></td>
-            </tr>
-            <tr>
-                <th>원생 반</th>
-                <td><select name="bClassNum" id="bClassNum" class="form-control">
-						<option value="0">햇님반</option>
-						<option value="1">달님반</option>
-						<option value="2">별님반</option>
-						</select></td>
-            </tr>
-            <tr>
-                <td>
-                    <input type="submit" value="수정하기">
-                    <input type="reset" value="취소">
-                    <a href="StudentList.sams">목록가기</a>
-                </td>
-            </tr>
-        </table>
-    </form>
-</div>
+	<%@ include file="/WEB-INF/common/header.jsp"%>
+	<form action="StudentEdit.sams" method="get">
+		<div class="addSt-page user-page">
+				<h3>원아정보수정</h3>
+		<div class="radius">
+		
+			<c:set var="st" value="${requestScope.student}" />
+			<table class="table table-striped">
+				<tr>
+					<td>원아 번호</td>
+				</tr>
+				<tr>
+					<td><input type="text" name="studentNum" id="studentNum"
+						value="${st.studentNum}" readonly></td>
+				</tr>
+				<tr>
+					<td>원생 이름</td>
+				</tr>
+				<tr>
+					<td><input type="text" name="bName" id="bName"
+						value="${st.bName}"></td>
+				</tr>
+				<tr>
+					<td>학부모 전화번호</td>
+				</tr>
+				<tr>
+					<td><input type="text" name="phone" id="phone"
+						value="${st.phone}"></td>
+				</tr>
+				<tr>
+					<td>원생 반</td>
+				</tr>
+				<tr>
+					<td><select name="bClassNum" id="bClassNum"
+						class="form-control">
+							<option value="0">햇님반</option>
+							<option value="1">달님반</option>
+							<option value="2">별님반</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td>
+					<div class="btn_area">
+							<!-- <button type="submit" class="submit">등록</button> -->
+							<button type="submit" class="submit">등록</button>
+							<button type="reset" class="cancel">취소</button>
+						</div>
+				
+					</td>
+				</tr>
+			</table>
+		</div>
+		</div>
+		</form>
+	<%@ include file="/WEB-INF/common/footer.jsp"%>
 </body>
+<jsp:include page="/WEB-INF/common/jscode.jsp"></jsp:include>
 </html>

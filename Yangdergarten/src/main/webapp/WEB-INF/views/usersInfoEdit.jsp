@@ -1,51 +1,73 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: yangsujin
-  Date: 2021/09/28
-  Time: 4:01 오전
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html>
 <html>
 <head>
-    <title>Title</title>
+   <jsp:include page="/WEB-INF/common/head.jsp"></jsp:include>
+	<link rel="stylesheet" href="css/user.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
+
 <body>
-<h3>회원 정보 수정</h3>
-<div>
+	<%@ include file="/WEB-INF/common/header.jsp"%>
     <form action="usersEdit.samu" method="get">
-        <c:set var="user" value="${requestScope.user}"/>
-        <table class="table table-striped">
+		<div class="addSt-page user-page">
+				<h3>회원 정보 수정</h3>
+		<div class="radius">
+        	
+        	<c:set var="user" value="${requestScope.user}"/>
+        	<table class="table table-striped">
             <tr>
-                <th>id:</th>
+                <td>아이디</td>
+            </tr>
+            <tr>
                 <td><input type="text" name="id" id="id" value="${user.id}" readonly></td>
             </tr>
             <tr>
-                <th>pwd:</th>
+                <td>비밀번호</td>
+            </tr>
+            <tr>
                 <td><input type="text" name="pwd" id="pwd" value="${user.pwd}"></td>
             </tr>
             <tr>
-                <th>phone:</th>
+                <td>학부모 전화번호</td>
+            </tr>
+            <tr>
                 <td><input type="text" name="phone" id="phone" value="${user.phone}"></td>
             </tr>
             <tr>
-                <th>원아 관리 번호:</th>
-                <td><input type="text" name="studentNum" id="studentNum" value="${user.studentNum}"></td>
+                <td>원아번호</td>
+           	</tr>
+           	<tr>
+                <td><input type="text" name="studentNum" id="studentNum" value="${user.studentNum}" readonly></td>
             </tr>
             <tr>
-                <th>회원 구분 번호</th>
-                <td><input type="text" name="cnum" id="cnum" value="${user.cname}"></td>
+                <td>회원 분류</td>
+           </tr>
+           <tr>
+            <td><select name="cnum" id="cnum"
+						class="form-control">
+							<option value="0">미등록</option>
+							<option value="1">학부모</option>
+							<option value="2">선생님</option>
+					</select></td>
             </tr>
             <tr>
                 <td>
-                    <input type="submit" value="수정하기">
-                    <input type="reset" value="취소">
-                    <a href="showUsersList.samu">목록가기</a>
+               		<div class="btn_area">
+						<button type="submit" class="submit">수정</button>
+						<button type="reset" class="cancel">취소</button>
+					</div>
+				
                 </td>
             </tr>
         </table>
+	</div>
+	</div>
     </form>
-</div>
+    <%@ include file="/WEB-INF/common/footer.jsp"%>
 </body>
+
 </html>
