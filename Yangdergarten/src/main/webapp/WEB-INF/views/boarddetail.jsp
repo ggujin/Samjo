@@ -6,13 +6,43 @@
 <head>
 
 <jsp:include page="/WEB-INF/common/head.jsp"></jsp:include>
-<jsp:include page="/WEB-INF/common/jscode.jsp"></jsp:include>
+<c:set var="board" value="${requestScope.board}"></c:set>
 <link rel="stylesheet" href="css/boarddetail.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script type="text/javascript">
+
+		$(document).ready(function (){
+			$("#commentbtn").click(function (){
+				console.log('click1');
+				const params = {
+					content : $("#exampleFormControlTextarea2").val()
+				}
+
+				$.ajax(
+						{
+							type:"POST",
+							url:"ReplyOk.samb?boardindex=${board.boardindex}",
+							data:params,
+							success:function(res){
+								console.log('통신성공' + ${board.boardindex})
+								$('#myreplylist').load(location.href+' #myreplylist');
+
+							},
+							error : function (XMLHTttpRequest, textStatus, errorThrown){
+								console.log('통신실패');
+							}
+
+						});
+			});
+		})
+
+
+
+	</script>
 </head>
 
 <body>
 	<%@ include file="/WEB-INF/common/header.jsp"%>
-	<c:set var="board" value="${requestScope.board}"></c:set>
 
 
 	<div>
@@ -71,6 +101,7 @@
 		<i class="fa fa-comment fa"></i> 댓글
 	</div>
 
+	<div id="myreplylist">
 	<table class="fl-table">
 
 		<tr>
@@ -90,6 +121,7 @@
 			</tr>
 		</c:forEach>
 	</table>
+	</div>
 
 	<div class="card mb-2">
 		<div class="card-body">
@@ -97,12 +129,10 @@
 				<li class="list-group-item">
 
 
-					<form action="ReplyOk.samb?boardindex=${board.boardindex}"
-						method="post">
 						<textarea name="content" class="form-control"
 							id="exampleFormControlTextarea2" rows="2"></textarea>
-						<button type="submit" class="btn btn-dark mt-3" id="commentbtn">댓글등록</button>
-					</form>
+						<button type="button" class="btn btn-dark mt-3" id="commentbtn">댓글등록</button>
+
 
 				</li>
 			</ul>

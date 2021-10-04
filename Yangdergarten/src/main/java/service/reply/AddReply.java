@@ -22,6 +22,7 @@ public class AddReply implements Action {
         String boardindex = request.getParameter("boardindex");
         String author = (String)session.getAttribute("userId");
         String content = request.getParameter("content");
+        System.out.println(content);
 
         ReplyDao replyDao = new ReplyDao();
         replyDao.insertReply(boardindex,author,content);
