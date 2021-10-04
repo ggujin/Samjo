@@ -28,10 +28,13 @@
 
 	<!-- 10월1일 css파일로 빼서x 하면 스타일 안먹힘 다시 수정해야됨 -->
      <div>
+     <c:if test="${sessionScope.userId eq board.author}">
      <button id="btn1"  type="button" onclick="location.href='BoardAddOrEdit.samb?boardid=${board.boardId}&mode=1&boardindex=${board.boardindex}&title=${board.title}&content=${board.content}' ">수정</button>
      <button id="btn2" type="button" onclick="location.href='BoardDeleteOk.samb?boardid=${board.boardId}&boardindex=${board.boardindex}' ">삭제</button>
-     <button id="btn3"  type="button" onclick="location.href='BoardAddOrEdit.samb?mode=2&boardid=${board.boardId}&boardindex=${board.boardindex}' ">답글</button>
-     
+     </c:if>
+     <c:if test="${not empty sessionScope.userId}">
+         <button id="btn3"  type="button" onclick="location.href='BoardAddOrEdit.samb?mode=2&boardid=${board.boardId}&boardindex=${board.boardindex}' ">답글</button>
+     </c:if>
      </div>
    
      

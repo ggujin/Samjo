@@ -12,49 +12,27 @@
 <html>
 <head>
 <jsp:include page="/WEB-INF/common/head.jsp"></jsp:include>
+<link rel="stylesheet" href="css/list.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-<script type="text/javascript">
-	$(function() {
-		$('#searchBtn').click(function() {
-			$.ajax({
-				url : "usersSearch", //"StudentSearch.sams",
-				type : "GET",
-				data : {
-					id : $('#id').val()
-				},
-				dataType : "html",
-				success : function(responsedata) {
-					let data = responsedata.trim();
-					console.log(data);
-					$('#searchUsers').html(data);
-				}
-			});
-			//$('#searchStudent').load("StudentSearch.sams?bName="+$('#bName').val());
-		});
-	});
-</script>
 
 </head>
 <body>
 	<%@ include file="/WEB-INF/common/header.jsp"%>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<div class="searchbar" style="float: right;">
-					<input type="text" name="id" id="id">
-					<button type="submit" id="searchBtn" class="btn btn-secondary">검색하기</button>
-				</div>
-				<div id="searchUsers">
-					<table class="table" style="text-align: center;">
+	<div class="container list">
+		<div class="user_list">
+			<div class="col-md-12" id="searchUsers">
+				<h1>회원 목록</h1>
+
+				<div class="tb_con">
+					<table class="table">
 						<thead>
 							<tr>
-								<th>ID</th>
-								<th>PASSWORD</th>
-								<th>PHONE</th>
-								<th>STUDENTNUM</th>
-								<th>CNUM</th>
+								<th>아이디</th>
+								<th>비밀번호</th>
+								<th>전화번호</th>
+								<th>원아번호</th>
+								<th>권한</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -71,12 +49,57 @@
 						</tbody>
 					</table>
 				</div>
-
 			</div>
+			
+			<div class="sch_area">
+				<input type="text" name="id" id="id" class="sch_input"
+					placeholder="아이디 입력">
+				<button type="submit" id="searchBtn">검색하기</button>
+			</div>
+			
 		</div>
 	</div>
 	<%@ include file="/WEB-INF/common/footer.jsp"%>
 </body>
-<jsp:include page="/WEB-INF/common/jscode.jsp"></jsp:include>
 
+<script type="text/javascript">
+	$(function() {
+		$('#searchBtn').click(function() {
+			$.ajax({
+				url : "usersSearch", //"usersSearch.sams",
+				type : "GET",
+				data : {
+					id : $('#id').val()
+				},
+				dataType : "html",
+				success : function(responsedata) {
+					let data = responsedata.trim();
+					console.log(data);
+					$('#searchUsers').html(data);
+				}
+			});
+			//$('#searchStudent').load("StudentSearch.sams?bName="+$('#bName').val());
+		});
+		
+		
+		$("#id").keydown(function(keyNum){
+			if(keyNum.keyCode == 13){ 
+				$.ajax({
+					url : "usersSearch", //"usersSearch.sams", 
+					type : "GET",
+					data : {
+						bName : $('#id').val()
+					},
+					dataType : "html",
+					success : function(responsedata) {
+						let data = responsedata.trim();
+						console.log(data);
+						$('#searchUsers').html(data);
+					}
+				});
+			}
+		})
+	});
+</script>
+<jsp:include page="/WEB-INF/common/jscode.jsp"></jsp:include>
 </html>

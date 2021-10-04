@@ -26,14 +26,14 @@
 				<div class="btn_area">
 					<button type="button" onclick="addPage()">원아등록</button>
 				</div>
-				<div>
+				<div class="tb_con">
 					<!-- <div id="searchStudent"> -->
-					<table class="table" style="text-align: center;">
+					<table class="table">
 						<thead>
 							<tr>
 								<th>원아번호</th>
-								<th>학부모전화번호</th>
 								<th>이름</th>
+								<th>학부모 전화번호</th>
 								<th>소속반</th>
 							</tr>
 						</thead>
@@ -43,8 +43,8 @@
 								<tr>
 									<td><a href="StudentInfo.sams?studentNum=${st.studentNum}">${st.studentNum}</a>
 									</td>
-									<td>${st.phone}</td>
 									<td>${st.bName}</td>
+									<td>${st.phone}</td>
 									<td>${st.bClass}</td>
 								</tr>
 							</c:forEach>
@@ -55,7 +55,7 @@
 
 			<div class="sch_area">
 				<input type="text" name="bName" id="bName" class="sch_input">
-				<button type="submit" id="searchBtn">원아검색</button>
+				<button type="submit" id="searchBtn" placeholder="원아명 입력">원아검색</button>
 			</div>
 
 		</div>

@@ -75,7 +75,7 @@
 						<td>${board.author}</td>
 						<td>
 							<%--                        <a href="BoardContent.do?boardid=${boardid}&boardindex=${board.boardindex}&depth=${board.depth}&reference=${board.reference}">--%>
-							<a href="BoardContent.samb?boardindex=${board.boardindex}">
+							<a href="BoardContent.samb?boardindex=${board.boardindex}&boardid=${boardid}">
 								${board.title} </a>
 
 						</td>

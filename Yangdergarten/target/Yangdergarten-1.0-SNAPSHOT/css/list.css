@@ -6,22 +6,86 @@ h1 {
 	color: pink;
 }
 
+.user_list h1{
+	margin-bottom:3rem;
+}
+
+.noMargin h1 {
+	margin-bottom: .5rem;
+}
+
 .list {
 	margin: 5rem auto;
 }
 
 .list .st_list {
 	max-width: 60%;
-	min-width: 25rem;
+	min-width: 33rem;
 	margin: auto;
 	display: flex;
 	flex-flow: column;
+}
+
+.list .user_list {
+	max-width: 60%;
+	min-width: 40rem;
+	margin: auto;
+	display: flex;
+	flex-flow: column;
+}
+
+.list table {
+	background-color: rgba(255, 255, 255, 0.3);
+	text-align: center;
+}
+
+.list table a {
+	color: #27CDF2;
+	font-size: 1rem;
+	font-weight: 800;
+	transition: color .15s ease-in-out;
+	font-size: 1rem;
+}
+
+.list table a:hover {
+	color: pink;
+}
+
+.list table thead tr {
+	padding: 1rem;
+color: white;
+}
+
+.list table thead th {
+	background-color: pink;
+	border: none;
+	padding: 0.75rem 1.5rem;
+}
+
+.list table thead th:first-child {
+	border-radius: 40px 0 0 40px;
+}
+
+.list table thead th:last-child {
+	border-radius: 0 40px 40px 0;
+}
+
+.list table tbody tr td {
+	border-top: 1px dashed #dee2e6;
+}
+
+.list table tbody tr:first-child td {
+	border-top: none;
 }
 
 .list .btn_area, .list .sch_area {
 	display: flex;
 	margin: 1rem;
 	justify-content: flex-end;
+}
+
+.list .sch_list .btn_area {
+	justify-content: space-between;
 }
 
 .list button {
@@ -47,6 +111,18 @@ h1 {
 	color: #ffffff;
 }
 
+.list .btn2 {
+	color: #ffffff;
+	border: 2px solid pink;
+	background: pink;
+}
+
+.list .btn2:hover, .list .btn2:active, .list .btn2:focus {
+	color: pink;
+	border: 2px solid pink;
+	background: #ffffff;
+}
+
 .list .sch_area {
 	padding: 0 15px;
 }
@@ -66,9 +142,7 @@ h1 {
 	transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
-.list .sch_area input:focus,
-.list .sch_area select:focus {
+.list .sch_area input:focus, .list .sch_area select:focus {
 	border: 1px solid pink;
 	border-bottom: 3px solid pink;
 }
-
