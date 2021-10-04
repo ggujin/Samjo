@@ -132,3 +132,27 @@ h2{
 
 
 
+
+.allbtn{
+    background-color: #07B0F2;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    font-size: 20px;
+}
+
+.allbtn:hover, .allbtn:active, .allbtn:focus {
+	background: #ff695f;
+}
+
+#exampleFormControlTextarea2 {
+    background-color: white;
+}
+
+#commentbtn {
+    background-color: #07B0F2;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    font-size: 20px;
+}

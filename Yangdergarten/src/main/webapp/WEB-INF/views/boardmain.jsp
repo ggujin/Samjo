@@ -11,7 +11,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="/src/main/webapp/css/boardmain.css">
 <title>Document</title>
 <jsp:include page="/WEB-INF/common/header.jsp"></jsp:include>
 <jsp:include page="/WEB-INF/common/jscode.jsp"></jsp:include>
@@ -29,6 +29,8 @@
 </head>
 <body>
 
+	<div class="list"> 
+
 	<c:if test="${boardid == '0'}">
 		<h1>공지사항</h1>
 	</c:if>
@@ -38,6 +40,8 @@
 	<c:if test="${boardid == '2'}">
 		<h1>학부모 공간</h1>
 	</c:if>
+
+	</div>
 
 
 
@@ -50,34 +54,24 @@
 		<table class="fl-table">
 			<thead>
 				<tr>
-					<th>글쓴이</th>
+					
 					<th>제목</th>
+					<th>글쓴이</th>
 					<th>날짜</th>
-					<th>임시</th>
-					<th>임시</th>
-
+		
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<th>test</th>
-					<th>test</th>
-					<th>test</th>
-					<th>test</th>
-					<th>test</th>
-				</tr>
-
-
-
 
 				<c:forEach var="board" items="${boardlist}">
 					<tr>
-						<td>${board.author}</td>
 						<td>
 							<%--                        <a href="BoardContent.do?boardid=${boardid}&boardindex=${board.boardindex}&depth=${board.depth}&reference=${board.reference}">--%>
-							<a href="BoardContent.samb?boardindex=${board.boardindex}&boardid=${boardid}">
+							<a style="text-align: start;" href="BoardContent.samb?boardindex=${board.boardindex}&boardid=${boardid}">
 								${board.title} </a>
-
+								
+						
+						<td>${board.author}</td>
 						</td>
 
 						<td>${board.updateDate}</td>
@@ -93,7 +87,7 @@
 		<form action="SearchBoard.samb?boardid=${boardid}" method="post">
 
 
-			<select name="searchmode">
+			<select name="searchmode" id="searchmode">
 				<option value="0">이름</option>
 				<option value="1">제목</option>
 			</select> <input type="text" name="searchvar">

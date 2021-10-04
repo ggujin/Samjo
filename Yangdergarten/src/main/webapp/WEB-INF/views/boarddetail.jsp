@@ -1,10 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core" %>
-<%@page import="javax.sql.DataSource"%>
-<%@page import="javax.naming.InitialContext"%>
-<%@page import="javax.naming.Context"%>
-<%@page import="java.sql.Connection"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,7 +11,7 @@
                 <jsp:include page="/WEB-INF/common/jscode.jsp"></jsp:include>
     
     
- <link rel="stylesheet" href="css/boarddetail.css">
+ <link rel="stylesheet" href="/src/main/webapp/css/boarddetail.css">
     
 
 </head>
@@ -29,12 +23,12 @@
 	<!-- 10월1일 css파일로 빼서x 하면 스타일 안먹힘 다시 수정해야됨 -->
      <div>
      <c:if test="${sessionScope.userId eq board.author}">
-     <button id="btn1"  type="button" onclick="location.href='BoardAddOrEdit.samb?boardid=${board.boardId}&mode=1&boardindex=${board.boardindex}&title=${board.title}&content=${board.content}' ">수정</button>
-     <button id="btn2" type="button" onclick="location.href='BoardDeleteOk.samb?boardid=${board.boardId}&boardindex=${board.boardindex}' ">삭제</button>
-     </c:if>
+        <button class="allbtn" id="btn1"  type="button" onclick="location.href='BoardAddOrEdit.samb?boardid=${board.boardId}&mode=1&boardindex=${board.boardindex}&title=${board.title}&content=${board.content}' ">수정</button>  
+        <button class="allbtn" id="btn2" type="button" onclick="location.href='BoardDeleteOk.samb?boardid=${board.boardId}&boardindex=${board.boardindex}' ">삭제</button>
+    </c:if>
      <c:if test="${not empty sessionScope.userId}">
-         <button id="btn3"  type="button" onclick="location.href='BoardAddOrEdit.samb?mode=2&boardid=${board.boardId}&boardindex=${board.boardindex}' ">답글</button>
-     </c:if>
+        <button class="allbtn" id="btn3"  type="button" onclick="location.href='BoardAddOrEdit.samb?mode=2&boardid=${board.boardId}&boardindex=${board.boardindex}' ">답글</button>  
+       </c:if>
      </div>
    
      
@@ -113,13 +107,11 @@
 	<div class="card-body">
 		<ul class="list-group list-group-flush">
 		    <li class="list-group-item">
-<%--		        form action="ReplyOk.samb?boardindex=${board.boardindex}" method="post">
-			<textarea name="content" class="form-control" id="exampleFormControlTextarea2" rows="2"></textarea>
-			<button type="submit" >댓글등록</button>--%>
+
 
 		    <form action="ReplyOk.samb?boardindex=${board.boardindex}" method="post">
 			<textarea name="content" class="form-control" id="exampleFormControlTextarea2" rows="2"></textarea>
-			<button type="submit" class="btn btn-dark mt-3">댓글등록</button>
+			<button type="submit" class="btn btn-dark mt-3" id="commentbtn">댓글등록</button>
 			</form>
 			
 		    </li>
@@ -142,6 +134,5 @@
 
 
 
-        <%@ include file="/WEB-INF/common/footer.jsp"%>
 </body>
 </html>
