@@ -10,8 +10,12 @@
 <link rel="stylesheet" href="css/boarddetail.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script type="text/javascript">
+//	<td id="deletebtn"><a href="ReplyDeleteOk.samb?boardindex=${board.boardindex}&no=${reply.no}">delete</a></td>
+
 
 		$(document).ready(function (){
+
+
 			$("#commentbtn").click(function (){
 				console.log('click1');
 				const params = {
@@ -34,7 +38,33 @@
 
 						});
 			});
+//	<td id="deletebtn"><a href="ReplyDeleteOk.samb?boardindex=${board.boardindex}&no=${reply.no}">delete</a></td>
+
 		})
+
+function deleteRe(id){
+	console.log('lets delete');
+	console.log(id);
+	const params = {
+		boardindex : ${board.boardindex},
+		no : id
+	}
+
+	$.ajax({
+		type:"POST",
+		url:"ReplyDeleteOk.samb",
+		data:params,
+		success:function(res){
+			console.log('통신성공' + ${board.boardindex})
+			$('#myreplylist').load(location.href+' #myreplylist');
+
+		},
+		error : function (XMLHTttpRequest, textStatus, errorThrown){
+			console.log('통신실패');
+		}
+	})
+
+}
 
 
 
@@ -116,8 +146,7 @@
 				<td>${reply.author}</td>
 				<td>${reply.content}</td>
 				<td>${reply.createDate}</td>
-				<td><a
-					href="ReplyDeleteOk.samb?boardindex=${board.boardindex}&no=${reply.no}">delete</a></td>
+				<td id="${reply.no}" onClick="deleteRe(this.id)"><a>delete</a></td>
 			</tr>
 		</c:forEach>
 	</table>
