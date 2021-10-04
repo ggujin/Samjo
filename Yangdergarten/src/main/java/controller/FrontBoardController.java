@@ -13,6 +13,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
 
@@ -99,6 +100,10 @@ public class FrontBoardController extends HttpServlet {
 			forward = new ActionForward();
 			forward.setRedirect(false);
     		forward.setPath("/WEB-INF/views/chart.jsp");
+		}else if(url_Command.equals("/GoToMain.samb")){
+    		action = new ShowBoard();
+    		forward = action.execute(request,response);
+    		forward.setPath("/WEB-INF/views/main.jsp");
 		}
     	
     	if(forward != null) {

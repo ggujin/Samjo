@@ -17,7 +17,7 @@ public class Logout implements Action {
 
     ActionForward forward = new ActionForward();
     forward.setRedirect(false);
-    forward.setPath("main.samu");
+    forward.setPath("GoToMain.samb");
 
     return forward;
   }

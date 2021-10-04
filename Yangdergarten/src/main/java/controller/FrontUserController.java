@@ -37,7 +37,7 @@ public class FrontUserController extends HttpServlet {
 
             forward = new ActionForward();
             forward.setRedirect(false);
-            forward.setPath("/index.jsp");
+            forward.setPath("/main.jsp");
 
             System.out.println("index.jsp로 이동");
 

@@ -303,7 +303,7 @@ public class BoardDao {
 //            String sql = "SELECT BOARDINDEX, BOARDID, AUTHOR, CREATEDATE, UPDATEDATE, TITLE, CONTENT, REFERENCE, DEPTH , STEP, PNUM, CCOUNT FROM board WHERE boardid = ? Order by REFERENCE desc , step desc";
             String sql = "select * from " +
                     "(select rownum rn ,BOARDINDEX, BOARDID, AUTHOR, CREATEDATE, UPDATEDATE, TITLE, CONTENT, REFERENCE, DEPTH , STEP, PNUM, CCOUNT " +
-                    " from ( SELECT * FROM board WHERE boardid = ? AND author = ? ORDER BY REFERENCE DESC , step DESC ) "+
+                    " from ( SELECT * FROM board WHERE boardid = ? AND author like ? ORDER BY REFERENCE DESC , step DESC ) "+
                     " where rownum <= ?" +  //endrow
                     ") where rn >= ?"; //startrow
             int start = cpage * pagesize - (pagesize -1); //1 * 5 - (5 - 1) >> 1
@@ -311,7 +311,7 @@ public class BoardDao {
 
             pstmt = conn.prepareStatement(sql);
             pstmt.setInt(1, Integer.parseInt(boardid));
-            pstmt.setString(2,seachvar);
+            pstmt.setString(2,"%" + seachvar + "%");
             pstmt.setInt(3,end);
             pstmt.setInt(4,start);
             ResultSet rs = pstmt.executeQuery();
@@ -365,7 +365,7 @@ public class BoardDao {
 //            String sql = "SELECT BOARDINDEX, BOARDID, AUTHOR, CREATEDATE, UPDATEDATE, TITLE, CONTENT, REFERENCE, DEPTH , STEP, PNUM, CCOUNT FROM board WHERE boardid = ? Order by REFERENCE desc , step desc";
             String sql = "select * from " +
                     "(select rownum rn ,BOARDINDEX, BOARDID, AUTHOR, CREATEDATE, UPDATEDATE, TITLE, CONTENT, REFERENCE, DEPTH , STEP, PNUM, CCOUNT " +
-                    " from ( SELECT * FROM board WHERE boardid = ? AND title = ? ORDER BY REFERENCE DESC , step DESC ) "+
+                    " from ( SELECT * FROM board WHERE boardid = ? AND title LIKE ? ORDER BY REFERENCE DESC , step DESC ) "+
                     " where rownum <= ?" +  //endrow
                     ") where rn >= ?"; //startrow
             int start = cpage * pagesize - (pagesize -1); //1 * 5 - (5 - 1) >> 1
@@ -373,7 +373,7 @@ public class BoardDao {
 
             pstmt = conn.prepareStatement(sql);
             pstmt.setInt(1, Integer.parseInt(boardid));
-            pstmt.setString(2,seachvar);
+            pstmt.setString(2,"%" + seachvar + "%");
             pstmt.setInt(3,end);
             pstmt.setInt(4,start);
             ResultSet rs = pstmt.executeQuery();

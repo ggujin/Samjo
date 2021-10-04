@@ -25,23 +25,23 @@ public class Login implements Action {
     String url="";
     if(usersDto.getPwd().equals(pwd)) {
       session.setAttribute("login_out", "Logout");
-
+      session.setAttribute("userKind", usersDto.getCnum());
       session.setAttribute("userId", usersDto.getId());
-      msg = "Welcome! <b>"+ usersDto.getId() +"</b> :)";
-      url = "main.samu";
+      msg = "Welcome!  " + usersDto.getId() + "  :)";
+      url = "GoToMain.samb";
     }else {
       msg = "로그인 실패";
-      url = "login.samu";
+      url = "showLogin.samu";
     }
 
-    session.setAttribute("sam_msg", msg);
+    request.setAttribute("sam_msg", msg);
     request.setAttribute("sam_url", url);
 
     System.out.println(msg);
 
     ActionForward forward = new ActionForward();
     forward.setRedirect(false);
-    forward.setPath("./index.jsp");
+    forward.setPath("/WEB-INF/views/redirect.jsp");
 
     return forward;
   }

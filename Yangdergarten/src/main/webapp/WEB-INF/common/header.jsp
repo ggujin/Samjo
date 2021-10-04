@@ -17,10 +17,10 @@
 						</div>
 						<div id="breakingNewsTicker" class="ticker">
 							<ul>
-								<li><a href="single-post.html">프론트팀 '검은 화면 지긋지긋해' 발언 </a></li>
-								<li><a href="single-post.html">[속보] 헤더 분리 성공하였으나 지저분한
-										CSS 문제 남아…</a></li>
-								<li><a href="single-post.html">'기간내 마칠수 있을지 심려됨' 발표</a></li>
+							<c:forEach var="board" items="${boardlist}">
+								<li><a href="BoardContent.samb?boardindex=${board.boardindex}&boardid=${boardid}">
+									${board.title} </a></li>
+							</c:forEach>
 							</ul>
 						</div>
 					</div>
@@ -73,7 +73,7 @@
 				<nav class="classy-navbar justify-content-between" id="Nav">
 
 					<!-- Nav brand -->
-					<a href="index.jsp" class="nav-brand"><img
+					<a href="GoToMain.samb?" class="nav-brand"><img
 						src="https://www.joeunsorikd.kg.kr:479/data/designImages/TITLE_LOGO_1583382672.jpg"
 						alt=""></a>
 
@@ -111,7 +111,7 @@
 								</li>
 								<li><a href="BoardList.samb?boardid=2">학부모 공간</a> <!-- 글쓰기 / 댓글 가능 -->
 								</li>
-								<c:if test="${not empty userId}">
+								<c:if test="${userKind eq 2}">
 									<li><a href="adminPage.samu">관리자 페이지</a> <!-- 관리자 권한일때만 보임 -->
 										<ul class="dropdown">
 											<li><a href="showUsersList.samu">회원목록 조회</a></li>

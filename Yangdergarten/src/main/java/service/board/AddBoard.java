@@ -22,6 +22,7 @@ public class AddBoard implements Action {
 
         BoardDao boardDao = new BoardDao();
         HttpSession session = request.getSession(true);
+
         String author = (String)session.getAttribute("userId");
         int boardid = Integer.parseInt(request.getParameter("boardid"));
         String title = request.getParameter("title");

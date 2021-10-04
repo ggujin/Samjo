@@ -22,6 +22,9 @@ public class ShowBoard implements Action {
     public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws SQLException {
         BoardDao boardDao = new BoardDao();
         String boardid = request.getParameter("boardid");
+        if(boardid == null){
+            boardid =  "0";
+        }
         ///////////////////////////////////////////////////////
         String ps = request.getParameter("ps");
         String cp = request.getParameter("cp");

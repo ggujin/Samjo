@@ -66,7 +66,7 @@ public class UsersDao {
         try {
             conn = ConnectionHelper.getConnection("oracle");
 
-            String sql = "select id, pwd from users where id=?";
+            String sql = "select id, pwd, cnum from users where id=?";
 
             pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, id);
@@ -75,6 +75,7 @@ public class UsersDao {
             while (resultSet.next()) {
                 usersDto.setId(resultSet.getString("id"));
                 usersDto.setPwd(resultSet.getString("pwd"));
+                usersDto.setCnum(Integer.parseInt(resultSet.getString("cnum")));
             }
 
         } catch (Exception e) {
