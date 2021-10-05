@@ -14,14 +14,15 @@
     username="scott"   //연결한 db 사용자 이름
     password="tiger"   // 연결한 db의 비밀번호
     />
-     -->
+     --><!--              url="jdbc:oracle:thin:@192.168.0.29:1521:XE"-->
+
     <Resource maxWait="-1"
               maxIdle="20"
               maxTotal="20"
               maxActive="20"
               password="1004"
-              username="hr"
-              url="jdbc:oracle:thin:@192.168.0.29:1521:XE"
+              username="bituser"
+              url="jdbc:oracle:thin:@localhost:1521:XE"
               driverClassName="oracle.jdbc.OracleDriver"
               type="javax.sql.DataSource"
               auth="Container"
