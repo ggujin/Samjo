@@ -24,7 +24,7 @@
 			<div class="row no-gutters">
 				<div class="col-12 col-md-7 col-lg-8 banner ">
 					<img class="banner_img"
-						src="http://requaid.dothome.co.kr/data/file/url/2049823731_qr5moIgn_c7fc8c1602c0976fd001e3e90a0b74dcebf1dfae.jpg">
+						src="../../img/logo.png">
 				</div>
 
 				<div class="col-12 col-md-5 col-lg-4">

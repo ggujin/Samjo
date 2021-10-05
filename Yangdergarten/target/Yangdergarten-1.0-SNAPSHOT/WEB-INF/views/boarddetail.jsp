@@ -129,7 +129,7 @@
 				<form class="form-inline" role="form"
 					action="ReplyOk.samb?boardindex=${board.boardindex}" method="post">
 					<div class="form-group">
-						<input class="form-control" id="comment" type="text"
+						<input class="form-control" id="comment" type="text" name="content"
 							placeholder="Your comments" />
 					</div>
 					<div class="form-group">
