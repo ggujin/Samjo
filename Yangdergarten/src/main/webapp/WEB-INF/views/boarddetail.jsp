@@ -4,76 +4,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 <jsp:include page="/WEB-INF/common/head.jsp"></jsp:include>
 <link rel="stylesheet" href="css/boarddetail.css">
 <!-- 아이콘 -->
 <script src="https://kit.fontawesome.com/c811b402f1.js"
 	crossorigin="anonymous"></script>
-	<script type="text/javascript">
-		//	<td id="deletebtn"><a href="ReplyDeleteOk.samb?boardindex=${board.boardindex}&no=${reply.no}">delete</a></td>
-
-
-		$(document).ready(function (){
-
-
-			$("#commentbtn").click(function (){
-				console.log('click1');
-				const params = {
-					content : $("#comment").val()
-				}
-
-				$.ajax(
-						{
-							type:"POST",
-							url:"ReplyOk.samb?boardindex=${board.boardindex}",
-							data:params,
-							success:function(res){
-								console.log('통신성공' + ${board.boardindex})
-								$('#myreplylist').load(location.href+' #myreplylist');
-								$("#comment").val("");
-							},
-							error : function (XMLHTttpRequest, textStatus, errorThrown){
-								console.log('통신실패');
-							}
-
-						});
-			});
-
-
-
-
-//	<td id="deletebtn"><a href="ReplyDeleteOk.samb?boardindex=${board.boardindex}&no=${reply.no}">delete</a></td>
-
-		})
-
-		function deleteRe(id){
-			console.log('lets delete');
-			console.log(id);
-			const params = {
-				boardindex : ${board.boardindex},
-				no : id
-			}
-
-			$.ajax({
-				type:"POST",
-				url:"ReplyDeleteOk.samb",
-				data:params,
-				success:function(res){
-					console.log('통신성공' + ${board.boardindex})
-					$('#myreplylist').load(location.href+' #myreplylist');
-
-				},
-				error : function (XMLHTttpRequest, textStatus, errorThrown){
-					console.log('통신실패');
-				}
-			})
-
-		}
-
-
-
-	</script>
 </head>
 
 <body>
@@ -86,19 +22,23 @@
 
 
 	<c:if test="${sessionScope.userId eq board.author}">
-		<button class="allbtn" id="btn1" type="button"
-			onclick="location.href='BoardAddOrEdit.samb?boardid=${board.boardId}&mode=1&boardindex=${board.boardindex}&title=${board.title}&content=${board.content}' ">
-			<i class="fas fa-edit"></i>
-		</button>
-		<button class="allbtn" id="btn2" type="button"
-			onclick="location.href='BoardDeleteOk.samb?boardid=${board.boardId}&boardindex=${board.boardindex}' ">
-			<i class="fas fa-trash-alt"></i>
-		</button>
+		<div class="btnlist">
+
+			<button class="allbtn" id="btn1" type="button"
+				onclick="location.href='BoardAddOrEdit.samb?boardid=${board.boardId}&mode=1&boardindex=${board.boardindex}&title=${board.title}&content=${board.content}' ">
+				<i class="fas fa-edit">수정</i>
+			</button>
+			<button class="allbtn" id="btn2" type="button"
+				onclick="location.href='BoardDeleteOk.samb?boardid=${board.boardId}&boardindex=${board.boardindex}' ">
+				<i class="fas fa-trash-alt">삭제</i>
+			</button>
+
+		</div>
 	</c:if>
 	<c:if test="${not empty sessionScope.userId}">
 		<button class="allbtn" id="btn3" type="button"
 			onclick="location.href='BoardAddOrEdit.samb?mode=2&boardid=${board.boardId}&boardindex=${board.boardindex}' ">
-			<i class="fas fa-reply"></i>
+			<i class="fas fa-reply">답글</i>
 
 		</button>
 	</c:if>
@@ -144,64 +84,64 @@
 			</div>
 
 
-		
-
-		<!-- 댓글 -->
-
-		<div class="detailBox">
-
-			<div class="titleBox">
-				<label><i class="fas fa-comment"> 댓글 </i> </label>
-			</div>
 
 
-			<div class="actionBox">
-				<ul class="commentList">
+			<!-- 댓글 -->
 
+			<div class="detailBox">
 
-					<li>
-
-
-						<div class="commentText">
-
-							<div id="myreplylist">
-							<table class="fl-table">
-
-
-								<c:forEach var="reply" items="${replylist}">
-									<tr>
-										<td>${reply.author}:</td>
-										<td>${reply.content}</td>
-
-										<td class="date sub-text">${reply.createDate}</td>
-										<c:if test="${reply.author eq sessionScope.userId }">
-											<td id="${reply.no}" onClick="deleteRe(this.id)"><i
-													class="fas fa-trash-alt"></i></td>
-										</c:if>
-									</tr>
-								</c:forEach>
-							</table>
-							</div>
-
-						</div>
-					</li>
-
-				</ul>
-
-
-
-				<div class="form-inline">
-					<div class="form-group">
-						<input class="form-control" id="comment" type="text" name="content"
-							placeholder="Your comments" />
-					</div>
-					<div class="form-group">
-						<button id="commentbtn" type="submit">글쓰기</button>
-					</div>
+				<div class="titleBox">
+					<label><i class="fas fa-comment"> 댓글 </i> </label>
 				</div>
 
 
-				<!-- 
+				<div class="actionBox">
+					<ul class="commentList">
+
+
+						<li>
+
+
+							<div class="commentText">
+
+
+								<table class="fl-table">
+
+
+									<c:forEach var="reply" items="${replylist}">
+										<tr>
+											<td>${reply.author}:</td>
+											<td>${reply.content}</td>
+
+											<td class="date sub-text">${reply.createDate}</td>
+											<c:if test="${reply.author eq sessionScope.userId }">
+												<td><a
+													href="ReplyDeleteOk.samb?boardindex=${board.boardindex}&no=${reply.no}"><i
+														class="fas fa-trash-alt"></i></a></td>
+											</c:if>
+										</tr>
+									</c:forEach>
+								</table>
+
+							</div>
+						</li>
+
+					</ul>
+
+
+					<form class="form-inline" role="form"
+						action="ReplyOk.samb?boardindex=${board.boardindex}" method="post">
+						<div class="form-group">
+							<input class="form-control" id="comment" type="text"
+								name="content" placeholder="Your comments" />
+						</div>
+						<div class="form-group">
+							<button id="commentbtn" type="submit">글쓰기</button>
+						</div>
+					</form>
+
+
+					<!-- 
 										<form action="ReplyOk.samb?boardindex=${board.boardindex}" method="post">
 						<textarea name="content" class="form-control" id="exampleFormControlTextarea2" rows="2"></textarea>
 						<button  class="btn btn-dark mt-3" >댓글등록</button>
@@ -217,12 +157,12 @@
 
 
 
+				</div>
 			</div>
+
+
 		</div>
-
-
 	</div>
-</div>
 
 
 

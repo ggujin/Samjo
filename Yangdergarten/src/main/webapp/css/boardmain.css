@@ -26,7 +26,7 @@ h2{
 }
 /* Table Styles */
 .table-wrapper {
-	margin: 10px 70px 70px;
+	margin: 100px 70px 70px;
 	box-shadow: 0px 35px 50px rgba(0, 0, 0, 0.2);
 }
 
@@ -132,9 +132,8 @@ h2{
 }
 
 #write {
-  	float: right;
-  	margin-right:69px;
-  	margin-bottom:10px;
+ 	float: right;
+ 	margin-right:70px;
 	background-color: #07B0F2;
 	font-size: 15px;
 	font-weight: 400;
@@ -147,6 +146,8 @@ h2{
 	outline: none;
 	transition: all .3s;
 }
+
+
 
 #write:hover, #write:active, #write:focus {
 	background: #ff695f;
@@ -161,14 +162,24 @@ h2{
 }
 
 #searchmode {
-	width: 100px;
-	height: 30px;
+	outline: 0;
+	margin: 15px;
+	padding: 10px;
+	box-sizing: border-box;
+	font-size: 1rem;
+	line-height: 1.5;
+	color: #495057;
+	border: 1px solid rgba(0, 0, 0, 0.07);
+	border-bottom: 3px solid pink;
+	border-radius: .25rem;
+	background-color: rgba(255, 255, 255, 0.5);
+	transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 #searchmode:focus {
-	outline:1px solid #07B0F2;
-
+	border: 1px solid pink;
+	border-bottom: 3px solid pink;
 }
-
+/*
 #searchbtn {
 	background-color: #07B0F2;
 	color: #fff;
@@ -185,9 +196,66 @@ h2{
 	outline:1px solid #07B0F2;
 	
 }
+*/
+
+#searchbtn {
+	display: inline-block;
+	background: #ffffff;
+	font-size: 15px;
+	font-weight: 800;
+	color: #27CDF2;
+	text-transform: capitalize;
+	margin: 10px 0;
+	padding: 12px 25px;
+	border-radius: 23px;
+	letter-spacing: 0.25px;
+	border: 2px solid #27CDF2;
+	outline: none;
+	transition: all .3s;
+	padding: 12px 25px;
+	min-width: 120px;
+}
+
+#searchbtn:hover, #searchbtn:active, #searchbtn:focus {
+	background: #27CDF2;
+	color: #ffffff;
+}
+
+
+#searchvar{
+	outline: 0;
+	margin: 15px;
+	padding: 10px;
+	box-sizing: border-box;
+	font-size: 1rem;
+	line-height: 1.5;
+	color: #495057;
+	border: 1px solid rgba(0, 0, 0, 0.07);
+	border-bottom: 3px solid pink;
+	border-radius: .25rem;
+	background-color: rgba(255, 255, 255, 0.5);
+	transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+#searchvar:focus {
+	border: 1px solid pink;
+	border-bottom: 3px solid pink;
+}
+
+
+
+
 
 h1 {
 	color: white;
 	background-color: #07B0F2;
 	text-align: center;
+}
+
+#pager {
+	
+	margin-left: 40%;
+	margin-bottom: 20px;
+	
+	
 }

@@ -27,7 +27,9 @@
 			<h1>학부모 공간</h1>
 		</c:if>
 	</div>
+	<div>
 	<a id="write" href="BoardAddOrEdit.samb?boardid=${boardid}&mode=0">글쓰기</a>
+	</div>
 
 	<div class="table-wrapper">
 		<table class="fl-table">
@@ -73,7 +75,7 @@
 			<button id="searchbtn" type="submit">검색</button>
 		</form>
 		<c:set var="pager" value="${requestScope.pager.toString()}"></c:set>
-		<div><ul class="pagination">${pager}</ul></div>
+		<div id="pager"><ul class="pagination">${pager}</ul></div>
 		
 
 	</div>

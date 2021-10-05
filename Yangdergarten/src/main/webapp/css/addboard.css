@@ -11,7 +11,7 @@
 	
 }
 
-#title {
+#title,#change {
     font-size: 15px;
     font-weight: 400;
     color: black;
@@ -20,12 +20,94 @@
 	width: 100%; /*추가로 넣음*/
 	margin-bottom: 10px;
 	
+		display: inline-block;
+	background: #ffffff;
+	font-size: 15px;
+	font-weight: 800;
+	color: #27CDF2;
+	text-transform: capitalize;
+	margin: 10px 0;
+	padding: 12px 25px;
+	border-radius: 23px;
+	letter-spacing: 0.25px;
+	border: 2px solid #27CDF2;
+	outline: none;
+	transition: all .3s;
+	padding: 12px 25px;
+	min-width: 120px;
+	
 	
 }
 
+.divcontent {
+
+	  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#content {
+	    font-size: 15px;
+    font-weight: 400;
+    color: black;
+    letter-spacing: 0.25px;
+ 	width:1100px;
+	height : 100px;
+	margin-bottom: 10px;
+	
+		display: inline-block;
+	background: #ffffff;
+	font-size: 15px;
+	font-weight: 800;
+	color: #27CDF2;
+	text-transform: capitalize;
+	margin: 10px 0;
+	padding: 12px 25px;
+	border-radius: 23px;
+	letter-spacing: 0.25px;
+	border: 2px solid #27CDF2;
+	outline: none;
+	transition: all .3s;
+	padding: 12px 25px;
+	min-width: 120px;
+	
+
+}
+
+#retitle {
+		    font-size: 15px;
+    font-weight: 400;
+    color: black;
+    letter-spacing: 0.25px;
+ 	width:1100px;
+	height : 50px;
+	margin-bottom: 10px;
+	
+		display: inline-block;
+	background: #ffffff;
+	font-size: 15px;
+	font-weight: 800;
+	color: #27CDF2;
+	text-transform: capitalize;
+	margin: 10px 0;
+	padding: 12px 25px;
+	border-radius: 23px;
+	letter-spacing: 0.25px;
+	border: 2px solid #27CDF2;
+	outline: none;
+	transition: all .3s;
+	padding: 12px 25px;
+	min-width: 120px;
+	
+	
+}
 input::placeholder {
 	color: black;
 	
+}
+
+#chagne:focus {
+	border: 2px solid pink;
 }
 
 
@@ -86,11 +168,13 @@ input::placeholder {
 
 
 
-
 #big {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+
+
 
 

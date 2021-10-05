@@ -164,19 +164,20 @@ function saveContent() {
 		<c:set var="board" value="${requestScope.board}"></c:set>
 		<h1 id="writetitle">답글 쓰기</h1>
 
-		<div style="margin-left: 170px">
-			<p>내용</p>
-			<input type="text" name="content" value="${board.content}">
-		</div>
-
-		<div id="big">
+			<div class="divcontent">
+			<input type="text" id="content" name="content" value="${board.content}">
+			</div>
 
 
+
+
+
+	<div id="big">
 			<form name="form1" method="post"
 				action="BoardRewriteOk.samb?depth=${board.depth}&boardindex=${board.boardindex}&boardid=${board.boardId}&title=${board.title}&reference=${board.reference}">
 
 				<div>
-					<p>re:${board.title}</p>
+					<p id="retitle" >re:${board.title}</p>
 					<!-- 		file1 : <input type="file" name="filename1"><br>	   
 		file2 : <input type="file" name="filename2"><br> -->
 

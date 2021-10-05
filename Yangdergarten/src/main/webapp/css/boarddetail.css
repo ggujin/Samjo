@@ -39,6 +39,33 @@
 	margin-top: 2.5%;
 }
 
+.list button {
+	display: inline-block;
+	background: #ffffff;
+	font-size: 15px;
+	font-weight: 800;
+	color: #27CDF2;
+	text-transform: capitalize;
+	margin: 10px 0;
+	padding: 12px 25px;
+	border-radius: 23px;
+	letter-spacing: 0.25px;
+	border: 2px solid #27CDF2;
+	outline: none;
+	transition: all .3s;
+	padding: 12px 25px;
+	min-width: 120px;
+}
+
+.list button:hover, .list button:active, .list button:focus {
+	background: #27CDF2;
+	color: #ffffff;
+}
+
+.btnlist {
+	
+	margin-top: 4%;
+}
 
 /* new */
 hr {
@@ -48,20 +75,17 @@ hr {
 }
 
 h1 {
-	margin-left: 50px;
-	text-align: left;
-	color: black;
-}
-
-h4 {
 	margin-left: 60px;
 	text-align: left;
 	color: black;
 }
 
-h4 strong { /*For the bars | within the header and footer*/
+h4 {
+	margin-left: 70px;
 	color: black;
 }
+
+
 
 body {
 	
@@ -101,6 +125,8 @@ div.main-content {
 	width: 90%;
 	border: 1px solid #07B0F2;
 	margin-left: 5%;
+	margin-top: 5%;
+	margin-bottom: 2%;
 }
 
 .titleBox {
@@ -140,6 +166,7 @@ div.main-content {
 	list-style: none;
 	max-height: 200px;
 	overflow: auto;
+	margin: 10px;
 }
 
 .commentList li {
