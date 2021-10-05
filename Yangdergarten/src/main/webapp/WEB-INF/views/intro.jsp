@@ -9,31 +9,13 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
 
 		<link rel="stylesheet" href="css/intro.css">
+
 	     <jsp:include page="/WEB-INF/common/head.jsp"></jsp:include>
     <style>
     @import
 	url("https://fonts.googleapis.com/css?family=Jua&family=Nanum+Gothic:wght@400;700;800&family=Roboto:300,400,500,700,900")
 	;
-        #map {
-            margin: 1%;
-            width: 100%;
-            height: 500px;
-            align-self: center;
-        }
 
-        #maptittle {
-            width: 100%;
-            align-self: center;
-            margin: 10px;
-            border-bottom: 2px #1b0ce2a4 dashed;
-        }
-        
-        #mapintro {
-        	width: 300px;
-        	display: inline-block;
-			font-size: 1.0rem;
-        	margin : 25px 0 0 0;
-        }
     </style>
 </head>
 
@@ -103,6 +85,7 @@
             </script>
         
           </div>
+          
    
    
 
