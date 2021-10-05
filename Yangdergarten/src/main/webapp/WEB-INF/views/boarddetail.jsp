@@ -4,12 +4,76 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <jsp:include page="/WEB-INF/common/head.jsp"></jsp:include>
 <link rel="stylesheet" href="css/boarddetail.css">
 <!-- 아이콘 -->
 <script src="https://kit.fontawesome.com/c811b402f1.js"
 	crossorigin="anonymous"></script>
+	<script type="text/javascript">
+		//	<td id="deletebtn"><a href="ReplyDeleteOk.samb?boardindex=${board.boardindex}&no=${reply.no}">delete</a></td>
+
+
+		$(document).ready(function (){
+
+
+			$("#commentbtn").click(function (){
+				console.log('click1');
+				const params = {
+					content : $("#comment").val()
+				}
+
+				$.ajax(
+						{
+							type:"POST",
+							url:"ReplyOk.samb?boardindex=${board.boardindex}",
+							data:params,
+							success:function(res){
+								console.log('통신성공' + ${board.boardindex})
+								$('#myreplylist').load(location.href+' #myreplylist');
+								$("#comment").val("");
+							},
+							error : function (XMLHTttpRequest, textStatus, errorThrown){
+								console.log('통신실패');
+							}
+
+						});
+			});
+
+
+
+
+//	<td id="deletebtn"><a href="ReplyDeleteOk.samb?boardindex=${board.boardindex}&no=${reply.no}">delete</a></td>
+
+		})
+
+		function deleteRe(id){
+			console.log('lets delete');
+			console.log(id);
+			const params = {
+				boardindex : ${board.boardindex},
+				no : id
+			}
+
+			$.ajax({
+				type:"POST",
+				url:"ReplyDeleteOk.samb",
+				data:params,
+				success:function(res){
+					console.log('통신성공' + ${board.boardindex})
+					$('#myreplylist').load(location.href+' #myreplylist');
+
+				},
+				error : function (XMLHTttpRequest, textStatus, errorThrown){
+					console.log('통신실패');
+				}
+			})
+
+		}
+
+
+
+	</script>
 </head>
 
 <body>
@@ -100,7 +164,7 @@
 
 						<div class="commentText">
 
-
+							<div id="myreplylist">
 							<table class="fl-table">
 
 
@@ -111,13 +175,13 @@
 
 										<td class="date sub-text">${reply.createDate}</td>
 										<c:if test="${reply.author eq sessionScope.userId }">
-											<td><a
-												href="ReplyDeleteOk.samb?boardindex=${board.boardindex}&no=${reply.no}"><i
-													class="fas fa-trash-alt"></i></a></td>
+											<td id="${reply.no}" onClick="deleteRe(this.id)"><i
+													class="fas fa-trash-alt"></i></td>
 										</c:if>
 									</tr>
 								</c:forEach>
 							</table>
+							</div>
 
 						</div>
 					</li>
@@ -126,8 +190,7 @@
 
 
 
-				<form class="form-inline" role="form"
-					action="ReplyOk.samb?boardindex=${board.boardindex}" method="post">
+				<div class="form-inline">
 					<div class="form-group">
 						<input class="form-control" id="comment" type="text" name="content"
 							placeholder="Your comments" />
@@ -135,7 +198,7 @@
 					<div class="form-group">
 						<button id="commentbtn" type="submit">글쓰기</button>
 					</div>
-				</form>
+				</div>
 
 
 				<!-- 
