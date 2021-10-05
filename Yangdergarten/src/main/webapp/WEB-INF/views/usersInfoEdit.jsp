@@ -47,18 +47,17 @@
                 <td>회원 분류</td>
            </tr>
            <tr>
-            <td><select name="cnum" id="cnum"
-						class="form-control">
-							<option value="0">미등록</option>
-							<option value="1">학부모</option>
-							<option value="2">선생님</option>
-					</select></td>
+            <td><select name="cnum" id="cnum" class="form-control">
+					<option value="0" <c:if test="${user.cname eq '미등록'}">selected</c:if>>미등록</option>
+					<option value="1" <c:if test="${user.cname eq '학부모'}">selected</c:if>>학부모</option>
+					<option value="2" <c:if test="${user.cname eq '선생님'}">selected</c:if>>선생님</option>
+				</select></td>
             </tr>
             <tr>
                 <td>
                		<div class="btn_area">
 						<button type="submit" class="submit">수정</button>
-						<button type="reset" class="cancel">취소</button>
+						<button id="cancelBtn" type="button" class="cancel">취소</button>
 					</div>
 				
                 </td>
@@ -69,5 +68,9 @@
     </form>
     <%@ include file="/WEB-INF/common/footer.jsp"%>
 </body>
-
+<script>
+	$('#cancelBtn').click(function(){
+		location.href="showUsersList.samu";
+	});
+</script>
 </html>
