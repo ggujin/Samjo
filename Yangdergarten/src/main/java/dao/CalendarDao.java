@@ -19,7 +19,7 @@ public class CalendarDao {
 		List<Calendar> events = new ArrayList<Calendar>();
 
 		try {
-			conn = ConnectionHelper.getConnection("mysql");
+			conn = ConnectionHelper.getConnection("oracle");
 
 			String sql = "select ID, TITLE, STARTDATE, ENDDATE from CALENDAR";
 			pstmt = conn.prepareStatement(sql);
