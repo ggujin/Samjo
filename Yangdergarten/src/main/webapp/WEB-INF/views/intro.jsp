@@ -1,25 +1,39 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html>
 
 <head>
-    <jsp:include page="/WEB-INF/common/head.jsp"></jsp:include>
-    <link rel="stylesheet" href="css/jstyle.css">
+   <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
 
+		<link rel="stylesheet" href="css/intro.css">
+	     <jsp:include page="/WEB-INF/common/head.jsp"></jsp:include>
     <style>
+    @import
+	url("https://fonts.googleapis.com/css?family=Jua&family=Nanum+Gothic:wght@400;700;800&family=Roboto:300,400,500,700,900")
+	;
         #map {
             margin: 1%;
-            width: 90%;
+            width: 100%;
             height: 500px;
             align-self: center;
         }
 
         #maptittle {
-            width: 90%;
+            width: 100%;
             align-self: center;
             margin: 10px;
             border-bottom: 2px #1b0ce2a4 dashed;
+        }
+        
+        #mapintro {
+        	width: 300px;
+        	display: inline-block;
+			font-size: 1.0rem;
+        	
+        	
         }
     </style>
 </head>
@@ -32,23 +46,20 @@
 -->
 
 <body>
-    <div id="wrap">
-        <div id="nav">2</div>
-        <div id="header">1</div>
-
-        <div id="left">
-            <h2 style="padding: 10px 0 0 0;">유치원 소개</h2>
-            <ul id="leftList">
-                <li id="leftList_1"><a href="intro.html">원소개</a></li>
-                <li id="leftList_1"><a href="intro.html">원소개</a></li>
-                <li id="leftList_1"><a href="intro.html">원소개</a></li>
-                <li id="leftList_1"><a href="intro.html">원소개</a></li>
-            </ul>
-        </div>
-        <div id="contents">
-            <div id="maptittle">
-                <h2>오시는 길</h2>
-            </div>
+ <%@ include file="/WEB-INF/common/header.jsp"%>
+   <div class="container">
+		<div class="row">
+			<div class="heading-title text-center">
+				<h3 class="text-uppercase" style="font-family: 'Jua', sans-serif;">오시는 길</h3>
+				<br>
+				<div id ="mapintro">
+				 <img src="img/location.png" style="width:5%;"><a> 주소 : 서울 특별시 강남구 역삼동 819-3 </a>
+				 </div>
+				 <div id ="mapintro">
+				 <img src="img/train.png" style="width:5%;"><a> 지하철 : 강남역11번, 12번출구 도보 5분</a>
+				 </div>
+			</div>
+         </div>
             <div id="map"></div>
             <script type="text/javascript"
                 src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4845f5070e1c6602a8bc96a8d69e94d7"></script>
@@ -91,22 +102,14 @@
                     yAnchor: 0.1
                 });
             </script>
-        </div>
-    </div>
-    </div>
+        
+          </div>
+   
+   
 
 
 
-
+<%@ include file="/WEB-INF/common/footer.jsp"%>
 </body>
-
-
-
-
-<!-- Jquery needed -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="js/scripts.js"></script>
-
-<!-- Function used to shrink nav bar removing paddings and adding black background -->
-
+	 <jsp:include page="/WEB-INF/common/jscode.jsp"></jsp:include>
 </html>

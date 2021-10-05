@@ -35,16 +35,18 @@ public class ShowAddOrEditView implements Action {
         int userkind = (Integer)userkindobj;
         System.out.println("userkind : " + userkind);
 
-        if (userkind == 0) {
-
-            String msg="";
-            String url="";
-            msg = "로그인 후 이용해주세요";
-            url = "BoardList.samb?boardid=" + request.getParameter("boardid");
-            request.setAttribute("sam_msg", msg);
-            request.setAttribute("sam_url", url);
-            forward.setRedirect(false);
-            forward.setPath("/WEB-INF/views/redirect.jsp");
+        if (boardid.equals("3")&&userkind == 0) {
+        	
+        	 String msg="";
+             String url="";
+             msg = "정회원만 사용할 수 있는 기능입니다.";
+             url = "BoardList.samb?boardid=" + request.getParameter("boardid");
+             request.setAttribute("sam_msg", msg);
+             request.setAttribute("sam_url", url);
+             forward.setRedirect(false);
+             forward.setPath("/WEB-INF/views/redirect.jsp");
+        	
+      
 
         }else if(boardid.equals("0")&&userkind!=2) {
 
@@ -68,20 +70,22 @@ public class ShowAddOrEditView implements Action {
             forward.setRedirect(false);
             forward.setPath("/WEB-INF/views/redirect.jsp");
 
-        }else if (boardid.equals("3")&&userkind==0) {
-
+        }else if (userkind==0) {
+        	
+        	
             String msg="";
             String url="";
-            msg = "정회원만 사용할 수 있는 기능입니다.";
+            msg = "권한이 없습니다.";
             url = "BoardList.samb?boardid=" + request.getParameter("boardid");
             request.setAttribute("sam_msg", msg);
             request.setAttribute("sam_url", url);
             forward.setRedirect(false);
             forward.setPath("/WEB-INF/views/redirect.jsp");
             
+            
         }else {
 
-
+        		
 
 
 

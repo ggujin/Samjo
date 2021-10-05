@@ -37,7 +37,7 @@ public class FrontUserController extends HttpServlet {
 
             forward = new ActionForward();
             forward.setRedirect(false);
-            forward.setPath("/main.jsp");
+            forward.setPath("/WEB-INF/views/main.jsp");
 
             System.out.println("index.jsp로 이동");
 
@@ -64,7 +64,7 @@ public class FrontUserController extends HttpServlet {
         } else if (urlcommand.equals("/login.samu")) { // 로그인 Ok
             action = new Login(); //부모가 action애들 바꿔낄수 있따 Register->Login
             forward = action.execute(request, response);
-            ;/////******KEY POINT (현재 페이지가 가지고 있는 request 객체 주소 전달)
+            /////******KEY POINT (현재 페이지가 가지고 있는 request 객체 주소 전달)
 
         } else if (urlcommand.equals("/logout.samu")) { // 로그아웃 ok
             //UI+로직
@@ -112,7 +112,23 @@ public class FrontUserController extends HttpServlet {
             forward.setPath("/WEB-INF/views/adminPage.jsp");
 
             System.out.println("adminPage.jsp로 이동");
+        } else if (urlcommand.equals("/intro.samu")) { // 오시는 길 view
+        	
+        	forward = new ActionForward();
+        	forward.setRedirect(false);
+        	forward.setPath("/WEB-INF/views/intro.jsp");
+        	
+        	System.out.println("intro.jsp로 이동");
+
+        } else if (urlcommand.equals("/teachers.samu")) { // 교직원 소개 view
+        	
+        	forward = new ActionForward();
+        	forward.setRedirect(false);
+        	forward.setPath("/WEB-INF/views/teachers.jsp");
+        	
+        	System.out.println("teachers.jsp로 이동");
         }
+
 
 
 
