@@ -5,6 +5,8 @@
 	url("https://fonts.googleapis.com/css?family=Jua&family=Nanum+Gothic:wght@400;700;800&family=Roboto:300,400,500,700,900")
 	;
 
+@import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
+
 /* :: 2.0 Import All CSS Plugins */
 @import url(../css/bootstrap.min.css);
 
@@ -12,7 +14,13 @@
 
 @import url(../css/font-awesome.min.css);
 
+@import url(../css/loadMap.css);
+
 /* :: style.css */
+html {
+	position: relative;
+}
+
 body {
 	font-family: "Nanum Gothic", sans-serif;
 	font-size: 16px;
@@ -21,6 +29,7 @@ body {
 	background-position: center;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
+	min-height: 100%;
 }
 
 h1 {
@@ -67,6 +76,14 @@ ul li {
 img {
 	height: auto;
 	max-width: 100%;
+}
+
+.container {
+	min-height: 100%;
+}
+
+.calendar{
+	display:flex;
 }
 
 .bg-img {
@@ -289,6 +306,14 @@ keyframes lds-ellipsis1 { 0% {
 }
 
 100
+
+
+
+
+
+
+
+
 %
 {
 transform
@@ -296,10 +321,26 @@ transform
 
 
 
+
+
+
+
+
+
+
+
 :
 
 
+
+
+
+
  
+
+
+
+
 
 
 scale
@@ -307,9 +348,41 @@ scale
 
 
 
+
+
+
+
+
+
+
+
 (
+
+
+
+
+
+
+
+
 1
+
+
+
+
+
+
+
+
 )
+
+
+
+
+
+
+
+
 ;
 }
 }
@@ -319,6 +392,14 @@ keyframes lds-ellipsis3 { 0% {
 }
 
 100
+
+
+
+
+
+
+
+
 %
 {
 transform
@@ -326,10 +407,26 @@ transform
 
 
 
+
+
+
+
+
+
+
+
 :
 
 
+
+
+
+
  
+
+
+
+
 
 
 scale
@@ -337,9 +434,41 @@ scale
 
 
 
+
+
+
+
+
+
+
+
 (
+
+
+
+
+
+
+
+
 0
+
+
+
+
+
+
+
+
 )
+
+
+
+
+
+
+
+
 ;
 }
 }
@@ -349,6 +478,14 @@ keyframes lds-ellipsis2 { 0% {
 }
 
 100
+
+
+
+
+
+
+
+
 %
 {
 transform
@@ -356,10 +493,26 @@ transform
 
 
 
+
+
+
+
+
+
+
+
 :
 
 
+
+
+
+
  
+
+
+
+
 
 
 translate
@@ -367,12 +520,52 @@ translate
 
 
 
+
+
+
+
+
+
+
+
 (
+
+
+
+
+
+
+
+
 19
+
+
+
+
+
+
+
+
 px
 ,
 0
+
+
+
+
+
+
+
+
 )
+
+
+
+
+
+
+
+
 ;
 }
 }
@@ -774,7 +967,7 @@ px
 }
 
 .header-area .vizew-main-menu .classy-navbar {
-	padding: 0;
+	padding: 0 0 0 3rem;
 	height: 90px;
 }
 
@@ -798,6 +991,8 @@ px
 
 .header-area .vizew-main-menu .classy-navbar .nav-brand {
 	min-width: 150px;
+	max-width: 20rem;
+	margin: 0 0 1rem 0;
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -809,6 +1004,8 @@ px
 @media only screen and (max-width: 767px) {
 	.header-area .vizew-main-menu .classy-navbar .nav-brand {
 		min-width: 110px;
+		max-width: 200px;
+		margin: 0;
 	}
 }
 
@@ -2477,11 +2674,10 @@ px
 }
 
 .footer-area {
-	position: relative;
+	width: 100%;
 	z-index: 1;
 	background-color: #07B0F2;
 	padding-top: 30px;
-	bottom: 0;
 }
 
 .footer-area .footer-widget {

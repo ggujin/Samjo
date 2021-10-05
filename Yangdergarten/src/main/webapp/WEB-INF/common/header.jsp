@@ -57,7 +57,7 @@
 
 					<!-- Nav brand -->
 					<a href="GoToMain.samb?" class="nav-brand"><img
-						src=""
+						src="./img/logo.png"
 						alt=""></a>
 
 					<!-- Navbar Toggler -->

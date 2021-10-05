@@ -22,6 +22,10 @@ ul li {
 	list-style: none;
 }
 
+.classynav ul {
+	font-family: 'Jeju Gothic', sans-serif;
+}
+
 img {
 	height: auto;
 	max-width: 100%;
@@ -112,11 +116,7 @@ img {
 }
 
 .classy-navbar .nav-brand {
-	font-size: 26px;
-	font-weight: 500;
-	color: #565656;
 	display: inline-block;
-	margin-right: 30px;
 }
 
 .classy-navbar .nav-brand:focus, .classy-navbar .nav-brand:hover {

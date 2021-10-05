@@ -9,77 +9,86 @@
 <html>
 <head>
 <jsp:include page="/WEB-INF/common/head.jsp"></jsp:include>
-
 <link rel="stylesheet" href="css/boardmain.css">
+<link rel="stylesheet" href="css/list.css">
 
 </head>
 <body>
 	<%@ include file="/WEB-INF/common/header.jsp"%>
-	<div class="list">
+	<div class="contianer board_container">
+		<div class="list">
 
-		<c:if test="${boardid == '0'}">
-			<h1>공지사항</h1>
-		</c:if>
-		<c:if test="${boardid == '1'}">
-			<h1>우리반 소식</h1>
-		</c:if>
-		<c:if test="${boardid == '2'}">
-			<h1>학부모 공간</h1>
-		</c:if>
+			<c:if test="${boardid == '0'}">
+				<h1>공지사항</h1>
+			</c:if>
+			<c:if test="${boardid == '1'}">
+				<h1>우리반 소식</h1>
+			</c:if>
+			<c:if test="${boardid == '2'}">
+				<h1>학부모 공간</h1>
+			</c:if>
+		</div>
+		<div class="contents">
+			<div class="loadMap_area">
+				<%@ include file="/WEB-INF/common/loadMap_user.jsp"%>
+			</div>
+			<div class="contents_area">
+
+				<div class="btn_area">
+					<button id="write"
+						onClick="location.href='BoardAddOrEdit.samb?boardid=${boardid}&mode=0'">글쓰기</button>
+				</div>
+
+				<div class="table-wrapper">
+					<table class="fl-table">
+						<thead>
+							<tr>
+								<th>제목</th>
+								<th>글쓴이</th>
+								<th>날짜</th>
+							</tr>
+						</thead>
+						<tbody>
+
+							<c:forEach var="board" items="${boardlist}">
+								<tr>
+									<td>
+										<%--                        <a href="BoardContent.do?boardid=${boardid}&boardindex=${board.boardindex}&depth=${board.depth}&reference=${board.reference}">--%>
+										<a style="text-align: start;"
+										href="BoardContent.samb?boardindex=${board.boardindex}&boardid=${boardid}">
+											${board.title} </a>
+									</td>
+
+									<td>${board.author}</td>
+
+
+									<td>${board.updateDate}</td>
+
+								</tr>
+							</c:forEach>
+						</tbody>
+					</table>
+				</div>
+
+				<div class=contents_under">
+					<div class="sch_area">
+						<form action="SearchBoard.samb?boardid=${boardid}" method="post">
+							<select name="searchmode" id="searchmode">
+								<option value="0">이름</option>
+								<option value="1">제목</option>
+							</select> <input type="text" name="searchvar" id="searchvar" />
+							<button id="searchbtn" type="submit">검색</button>
+						</form>
+						<div id="pager">
+							<c:set var="pager" value="${requestScope.pager.toString()}"></c:set>
+							<ul class="pagination">${pager}</ul>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
 	</div>
-	<div>
-	<a id="write" href="BoardAddOrEdit.samb?boardid=${boardid}&mode=0">글쓰기</a>
-	</div>
-
-	<div class="table-wrapper">
-		<table class="fl-table">
-			<thead>
-				<tr>
-					<th>제목</th>
-					<th>글쓴이</th>
-					<th>날짜</th>
-				</tr>
-			</thead>
-			<tbody>
-
-				<c:forEach var="board" items="${boardlist}">
-					<tr>
-						<td>
-							<%--                        <a href="BoardContent.do?boardid=${boardid}&boardindex=${board.boardindex}&depth=${board.depth}&reference=${board.reference}">--%>
-							<a style="text-align: start;"
-							href="BoardContent.samb?boardindex=${board.boardindex}&boardid=${boardid}">
-								${board.title} </a>
-						</td>
-
-						<td>${board.author}</td>
-
-
-						<td>${board.updateDate}</td>
-
-					</tr>
-				</c:forEach>
-			</tbody>
-		</table>
-	</div>
-
-
-	<div class="search">
-		<form action="SearchBoard.samb?boardid=${boardid}" method="post">
-
-
-			<select name="searchmode" id="searchmode">
-				<option value="0">이름</option>
-				<option value="1">제목</option>
-			</select> 
-			<input type="text" name="searchvar" id="searchvar">
-			<button id="searchbtn" type="submit">검색</button>
-		</form>
-		<c:set var="pager" value="${requestScope.pager.toString()}"></c:set>
-		<div id="pager"><ul class="pagination">${pager}</ul></div>
-		
-
-	</div>
-
 	<%@ include file="/WEB-INF/common/footer.jsp"%>
 
 
