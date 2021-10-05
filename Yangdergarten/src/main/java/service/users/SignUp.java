@@ -34,7 +34,7 @@ public class SignUp implements Action {
     if(result > 0) {
 
       msg = "반갑습니다. "+ usersDto.getId() +" 님!";
-      url = "main.samu";
+      url = "GoToMain.samb";
     }else {
       msg = "회원가입이 정상적으로 진행되지 않았습니다.";
       url = "showSignUp.samu";
