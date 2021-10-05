@@ -32,8 +32,7 @@
         	width: 300px;
         	display: inline-block;
 			font-size: 1.0rem;
-        	
-        	
+        	margin : 25px 0 0 0;
         }
     </style>
 </head>
@@ -53,10 +52,10 @@
 				<h3 class="text-uppercase" style="font-family: 'Jua', sans-serif;">오시는 길</h3>
 				<br>
 				<div id ="mapintro">
-				 <img src="img/location.png" style="width:5%;"><a> 주소 : 서울 특별시 강남구 역삼동 819-3 </a>
+				 <img src="img/location.png" style="width:12%;"><a> 주소 : 서울 특별시 강남구 역삼동 819-3 </a>
 				 </div>
 				 <div id ="mapintro">
-				 <img src="img/train.png" style="width:5%;"><a> 지하철 : 강남역11번, 12번출구 도보 5분</a>
+				 <img src="img/train.png" style="width:12%;"><a> 지하철 : 강남역11번, 12번출구 도보 5분</a>
 				 </div>
 			</div>
          </div>

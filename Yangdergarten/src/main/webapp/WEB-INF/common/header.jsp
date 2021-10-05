@@ -79,9 +79,9 @@
 							<ul>
 								<li><a href="#">원 정보</a>
 									<ul class="dropdown">
-										<li><a href="#">유치원 소개</a></li>
-										<li><a href="#">오시는 길</a></li>
-										<li><a href="#">신청 방법</a></li>
+										<li><a href="teachers.samu">교직원 소개</a></li>
+										<li><a href="intro.samu">오시는 길</a></li>
+										
 									</ul></li>
 								<li><a href="BoardList.samb?boardid=0">공지사항</a> <!-- 관리자 ONLY -->
 									<ul class="dropdown">
