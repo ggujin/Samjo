@@ -8,6 +8,7 @@
 %>
 	<script>
 		alert('<%= msg %>');
+		<%-- swal("<%= msg %>","warning"); --%>
 	    location.href='<%=url%>';
 	</script>
 	

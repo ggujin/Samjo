@@ -6,73 +6,13 @@
 <head>
 
 <jsp:include page="/WEB-INF/common/head.jsp"></jsp:include>
-<c:set var="board" value="${requestScope.board}"></c:set>
+<jsp:include page="/WEB-INF/common/jscode.jsp"></jsp:include>
 <link rel="stylesheet" href="css/boarddetail.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-	<script type="text/javascript">
-//	<td id="deletebtn"><a href="ReplyDeleteOk.samb?boardindex=${board.boardindex}&no=${reply.no}">delete</a></td>
-
-
-		$(document).ready(function (){
-
-
-			$("#commentbtn").click(function (){
-				console.log('click1');
-				const params = {
-					content : $("#exampleFormControlTextarea2").val()
-				}
-
-				$.ajax(
-						{
-							type:"POST",
-							url:"ReplyOk.samb?boardindex=${board.boardindex}",
-							data:params,
-							success:function(res){
-								console.log('통신성공' + ${board.boardindex})
-								$('#myreplylist').load(location.href+' #myreplylist');
-
-							},
-							error : function (XMLHTttpRequest, textStatus, errorThrown){
-								console.log('통신실패');
-							}
-
-						});
-			});
-//	<td id="deletebtn"><a href="ReplyDeleteOk.samb?boardindex=${board.boardindex}&no=${reply.no}">delete</a></td>
-
-		})
-
-function deleteRe(id){
-	console.log('lets delete');
-	console.log(id);
-	const params = {
-		boardindex : ${board.boardindex},
-		no : id
-	}
-
-	$.ajax({
-		type:"POST",
-		url:"ReplyDeleteOk.samb",
-		data:params,
-		success:function(res){
-			console.log('통신성공' + ${board.boardindex})
-			$('#myreplylist').load(location.href+' #myreplylist');
-
-		},
-		error : function (XMLHTttpRequest, textStatus, errorThrown){
-			console.log('통신실패');
-		}
-	})
-
-}
-
-
-
-	</script>
 </head>
 
 <body>
 	<%@ include file="/WEB-INF/common/header.jsp"%>
+	<c:set var="board" value="${requestScope.board}"></c:set>
 
 
 	<div>
@@ -131,7 +71,6 @@ function deleteRe(id){
 		<i class="fa fa-comment fa"></i> 댓글
 	</div>
 
-	<div id="myreplylist">
 	<table class="fl-table">
 
 		<tr>
@@ -146,11 +85,11 @@ function deleteRe(id){
 				<td>${reply.author}</td>
 				<td>${reply.content}</td>
 				<td>${reply.createDate}</td>
-				<td id="${reply.no}" onClick="deleteRe(this.id)"><a>delete</a></td>
+				<td><a
+					href="ReplyDeleteOk.samb?boardindex=${board.boardindex}&no=${reply.no}">delete</a></td>
 			</tr>
 		</c:forEach>
 	</table>
-	</div>
 
 	<div class="card mb-2">
 		<div class="card-body">
@@ -158,10 +97,12 @@ function deleteRe(id){
 				<li class="list-group-item">
 
 
+					<form action="ReplyOk.samb?boardindex=${board.boardindex}"
+						method="post">
 						<textarea name="content" class="form-control"
 							id="exampleFormControlTextarea2" rows="2"></textarea>
-						<button type="button" class="btn btn-dark mt-3" id="commentbtn">댓글등록</button>
-
+						<button type="submit" class="btn btn-dark mt-3" id="commentbtn">댓글등록</button>
+					</form>
 
 				</li>
 			</ul>

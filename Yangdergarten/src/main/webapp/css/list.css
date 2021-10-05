@@ -1,11 +1,5 @@
 @charset "UTF-8";
 
-h1 {
-	font-family: "jua", sans-serif;
-	text-align: center;
-	color: pink;
-}
-
 .user_list h1{
 	margin-bottom:3rem;
 }
@@ -26,7 +20,8 @@ h1 {
 	flex-flow: column;
 }
 
-.list .user_list {
+.list .user_list,
+.list .sch_list {
 	max-width: 60%;
 	min-width: 40rem;
 	margin: auto;
@@ -36,6 +31,7 @@ h1 {
 
 .list table {
 	background-color: rgba(255, 255, 255, 0.3);
+	border-radius: 30px;
 	text-align: center;
 }
 

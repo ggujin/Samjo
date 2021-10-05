@@ -2,8 +2,12 @@ var calendar = null;
 let origianlEvents
 
 $(document).ready(function() {
+	
+	console.log('hi');
+	
 	$.ajax({
-		url: '/events',
+		url: "/events",
+		type: "GET",
 		contentType: 'application/json',
 		success: function(events) {
 			origianlEvents = events

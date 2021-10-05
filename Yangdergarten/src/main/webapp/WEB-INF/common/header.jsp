@@ -28,24 +28,7 @@
 				<div class="col-12 col-md-6">
 					<div
 						class="top-meta-data d-flex align-items-center justify-content-end">
-						<!-- Top Social Info -->
-						<!-- <div class="top-social-info">
-								<a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i
-									class="fa fa-twitter"></i></a> <a href="#"><i
-									class="fa fa-pinterest"></i></a> <a href="#"><i
-									class="fa fa-linkedin"></i></a> <a href="#"><i
-									class="fa fa-youtube-play"></i></a>
-							</div> -->
-						<!-- Top Search Area -->
-						<!-- <div class="top-search-area">
-								<form action="index.html" method="post">
-									<input type="search" name="top-search" id="topSearch"
-										placeholder="Search...">
-									<button type="submit" class="btn">
-										<i class="fa fa-search" aria-hidden="true"></i>
-									</button>
-								</form>
-							</div> -->
+			
 						<!-- Login -->
 						<c:if test="${empty userId}">
 							<a href="showLogin.samu" class="login-btn"><i
@@ -100,10 +83,10 @@
 										<li><a href="#">오시는 길</a></li>
 										<li><a href="#">신청 방법</a></li>
 									</ul></li>
-								<li><a href="#">공지사항</a> <!-- 관리자 ONLY -->
+								<li><a href="BoardList.samb?boardid=0">공지사항</a> <!-- 관리자 ONLY -->
 									<ul class="dropdown">
 										<li><a href="BoardList.samb?boardid=0">공지사항</a></li>
-										<li><a href="#">행사 안내</a></li>
+										<li><a href="calendar.jsp">행사 안내</a></li>
 										<li><a href="#">식단표</a></li>
 										<li><a href="#">행정 정보 공개</a></li>
 									</ul></li>
@@ -114,10 +97,9 @@
 								<c:if test="${userKind eq 2}">
 									<li><a href="adminPage.samu">관리자 페이지</a> <!-- 관리자 권한일때만 보임 -->
 										<ul class="dropdown">
-											<li><a href="showUsersList.samu">회원목록 조회</a></li>
-											<li><a href="StudentList.sams">원아목록 조회</a></li>
-											<li><a href="StudentAddPage.sams">원아 등록</a></li>
-											<li><a href="#">날씨 정보</a></li>
+											<li><a href="showUsersList.samu">회원목록</a></li>
+											<li><a href="StudentList.sams">원아목록</a></li>
+											<li><a href="GoWetherChart.samb">날씨 정보</a></li>
 										</ul></li>
 								</c:if>
 							</ul>
