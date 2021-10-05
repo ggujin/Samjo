@@ -9,6 +9,7 @@
 <html>
 <head>
 <jsp:include page="/WEB-INF/common/head.jsp"></jsp:include>
+
 <link rel="stylesheet" href="css/boardmain.css">
 
 </head>
@@ -67,11 +68,13 @@
 			<select name="searchmode" id="searchmode">
 				<option value="0">이름</option>
 				<option value="1">제목</option>
-			</select> <input type="text" name="searchvar">
+			</select> 
+			<input type="text" name="searchvar" id="searchvar">
 			<button id="searchbtn" type="submit">검색</button>
 		</form>
 		<c:set var="pager" value="${requestScope.pager.toString()}"></c:set>
-		<div>${pager}</div>
+		<div><ul class="pagination">${pager}</ul></div>
+		
 
 	</div>
 

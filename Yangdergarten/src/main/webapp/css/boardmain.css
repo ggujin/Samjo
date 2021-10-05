@@ -21,7 +21,9 @@ h2{
 }
 
 */
-
+.pagingbtn{
+	background-color: red;
+}
 /* Table Styles */
 .table-wrapper {
 	margin: 10px 70px 70px;
@@ -130,7 +132,9 @@ h2{
 }
 
 #write {
-	margin-left: 91.5%;
+  	float: right;
+  	margin-right:69px;
+  	margin-bottom:10px;
 	background-color: #07B0F2;
 	font-size: 15px;
 	font-weight: 400;
@@ -142,7 +146,6 @@ h2{
 	border: none;
 	outline: none;
 	transition: all .3s;
-	width: 15%; /*추가로 넣음*/
 }
 
 #write:hover, #write:active, #write:focus {
@@ -159,7 +162,11 @@ h2{
 
 #searchmode {
 	width: 100px;
-	height: 20.5px;
+	height: 30px;
+}
+#searchmode:focus {
+	outline:1px solid #07B0F2;
+
 }
 
 #searchbtn {
@@ -171,9 +178,16 @@ h2{
 	border: none;
 	outline: none;
 	transition: all .3s;
-	height: 20.5px;
+	height: 30px;
+}
+
+#searchvar:focus {
+	outline:1px solid #07B0F2;
+	
 }
 
 h1 {
-	color: black;
+	color: white;
+	background-color: #07B0F2;
+	text-align: center;
 }

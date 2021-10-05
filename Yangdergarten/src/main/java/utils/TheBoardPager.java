@@ -33,13 +33,17 @@ public class TheBoardPager {
         StringBuffer linkString = new StringBuffer();
 
         //1. 처음, 이전 항목 만들기
+        
+        //[<a href='%s&cp=1'>처음</a>]
+        //[<a href='%s&cp=%d'>이전</a>]
+        
         if (currentPage > 1) {
             linkString.append(
-                    String.format("[<a href='%s&cp=1'>처음</a>]",linkUrl));
+                    String.format("<li class=\"page-item\"><a href='%s&cp=1' class=\"page-link\">&laquo;</a><li>",linkUrl));
             linkString.append("&nbsp;");
             linkString.append("&nbsp;");
             linkString.append(String.format(
-                    "[<a href='%s&cp=%d'>이전</a>]", linkUrl, currentPage - 1));
+                    "<li class=\"page-item\"><a class=\"page-link\"  href='%s&cp=%d'> &laquo;</a><li>", linkUrl, currentPage - 1));
             linkString.append("&nbsp;");
         }
 
@@ -51,23 +55,25 @@ public class TheBoardPager {
             if (i > pageCount) break;
             linkString.append("&nbsp;");
             if(i == currentPage) {
-                linkString.append(String.format("[%d]", i));
+                linkString.append(String.format("<li class=\"page-item active\"><a class=\"page-link\">%d</a></li>", i));
             } else {
                 linkString.append(String.format(
-                        "<a href='%s&cp=%d'>%d</a>", linkUrl, i, i));
+                        "<li class=\"page-item\"><a class=\"page-link\" href='%s&cp=%d'>%d</a></li>", linkUrl, i, i));
             }
             linkString.append("&nbsp;");
         }
 
         //3. 다음, 마지막 항목 만들기
+        //<a href='%s&cp=%d'>다음</a>
+        //<a href='%s&cp=%d'>마지막</a>
         if (currentPage < pageCount) {
             linkString.append("&nbsp;");
             linkString.append(String.format(
-                    "[<a href='%s&cp=%d'>다음</a>]",linkUrl, currentPage + 1));
+                    "<li class=\"page-item\"><a href='%s&cp=%d' class=\"page-link\">&raquo;</a><li>",linkUrl, currentPage + 1));
             linkString.append("&nbsp;");
             linkString.append("&nbsp;");
             linkString.append(String.format(
-                    "[<a href='%s&cp=%d'>마지막</a>]", linkUrl, pageCount));
+            		"<li class=\"page-item\"><a href='%s&cp=%d' class=\"page-link\">&raquo;</a><li>", linkUrl, pageCount));
         }
 
         return linkString.toString();
