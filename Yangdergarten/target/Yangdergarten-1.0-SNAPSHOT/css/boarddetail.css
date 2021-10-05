@@ -1,134 +1,184 @@
-
-
-
-*{
-    box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-}
-body{
-    font-family: Helvetica;
-    -webkit-font-smoothing: antialiased;
-    background: white;
-}
-h2{
-    text-align: center;
-    font-size: 18px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: white;
-    padding: 30px 0;
+/* 진수 */
+.allbtn {
+	background-color: #07B0F2;
+	border-radius: 30px;
+	border: none;
+	outline: none;
+	font-size: 20px;
+	color: white;
+	float: right;
+	margin-bottom: 10px;
 }
 
-/* Table Styles */
-
-.table-wrapper{
-    margin: 10px 70px 70px;
-    box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
+#btn1 {
+	float: right;
+	margin-right: 7.5%;
+	margin-bottom: 10px;
 }
 
-.fl-table {
-    border-radius: 5px;
-    font-size: 12px;
-    font-weight: normal;
-    border: none;
-    border-collapse: collapse;
-    width: 100%;
-    max-width: 100%;
-    white-space: nowrap;
-    background-color: white;
+#commentbtn:hover, #commentbtn:active, #commentbtn:focus {
+	background: #ff695f;
 }
 
-.fl-table td, .fl-table th {
-    text-align: center;
-    padding: 8px;
-}
-
-.fl-table td {
-    border-right: 1px solid #f8f8f8;
-    font-size: 12px;
-}
-
-.fl-table thead th {
-    color: #ffffff;
-    background: #07B0F2;
+.allbtn:hover, .allbtn:active, .allbtn:focus {
+	background: #ff695f;
 }
 
 
-.fl-table thead th:nth-child(odd) {
-    color: #ffffff;
-    background: #324960;
+#commentbtn {
+	background-color: #07B0F2;
+	border-radius: 10px;
+	border: none;
+	outline: none;
+	font-size: 20px;
+	color: white;
+	margin-left: 20%;
 }
 
-.fl-table tr:nth-child(even) {
-    background: #F8F8F8;
+.top{
+	margin-top: 2.5%;
 }
 
-/* Responsive */
 
-@media (max-width: 767px) {
-    .fl-table {
-        display: block;
-        width: 100%;
-    }
-    .table-wrapper:before{
-        content: "Scroll horizontally >";
-        display: block;
-        text-align: right;
-        font-size: 11px;
-        color: white;
-        padding: 0 0 10px;
-    }
-    .fl-table thead, .fl-table tbody, .fl-table thead th {
-        display: block;
-    }
-    .fl-table thead th:last-child{
-        border-bottom: none;
-    }
-    .fl-table thead {
-        float: left;
-    }
-    .fl-table tbody {
-        width: auto;
-        position: relative;
-        overflow-x: auto;
-    }
-    .fl-table td, .fl-table th {
-        padding: 20px .625em .625em .625em;
-        height: 60px;
-        vertical-align: middle;
-        box-sizing: border-box;
-        overflow-x: hidden;
-        overflow-y: auto;
-        width: 120px;
-        font-size: 13px;
-        text-overflow: ellipsis;
-    }
-    .fl-table thead th {
-        text-align: left;
-        border-bottom: 1px solid #f7f7f9;
-    }
-    .fl-table tbody tr {
-        display: table-cell;
-    }
-    .fl-table tbody tr:nth-child(odd) {
-        background: none;
-    }
-    .fl-table tr:nth-child(even) {
-        background: transparent;
-    }
-    .fl-table tr td:nth-child(odd) {
-        background: #F8F8F8;
-        border-right: 1px solid #E6E4E4;
-    }
-    .fl-table tr td:nth-child(even) {
-        border-right: 1px solid #E6E4E4;
-    }
-    .fl-table tbody td {
-        display: block;
-        text-align: center;
-    }
+/* new */
+hr {
+	background-color: #07B0F2;
+	border: none;
+	height: 3px;
+}
+
+h1 {
+	margin-left: 50px;
+	text-align: left;
+	color: black;
+}
+
+h4 {
+	margin-left: 60px;
+	text-align: left;
+	color: black;
+}
+
+h4 strong { /*For the bars | within the header and footer*/
+	color: black;
+}
+
+body {
+	
+	background: white;
+}
+
+p {
+	line-height: 1.5;
+	font-size: 18px;
+	color: black;
+}
+
+div.container2 {
+	max-width: 85%;
+	border: 5px solid #07B0F2;
+	margin: 20px auto;
+	padding: 20px;
+}
+
+/*
+header{
+	padding: 15px;
+	color: #666566;
+}
+*/
+div.main-content {
+	color: white;
+	max-width: 90%;
+	margin: 0 auto;
+}
+
+/* 댓글 */
+@import
+	url(//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css);
+
+.detailBox {
+	width: 90%;
+	border: 1px solid #07B0F2;
+	margin-left: 5%;
+}
+
+.titleBox {
+	background-color: #fdfdfd;
+	padding: 10px;
+}
+
+.titleBox label {
+	color: #07B0F2;
+	margin: 0;
+	display: inline-block;
 }
 
 
 
+.commentBox .form-group:first-child, .actionBox .form-group:first-child
+	{
+	width: 80%;
+}
+
+.commentBox .form-group:nth-child(2), .actionBox .form-group:nth-child(2)
+	{
+	width: 18%;
+}
+
+.actionBox .form-group * {
+	width: 100%;
+	
+}
+
+.taskDescription {
+	margin-top: 10px 0;
+}
+
+.commentList {
+	padding: 0;
+	list-style: none;
+	max-height: 200px;
+	overflow: auto;
+}
+
+.commentList li {
+	margin: 0;
+	margin-top: 10px;
+}
+
+.commentList li>div {
+	display: table-cell;
+}
+
+.commenterImage {
+	width: 30px;
+	margin-right: 5px;
+	height: 100%;
+	float: left;
+}
+
+.commenterImage img {
+	width: 100%;
+	border-radius: 50%;
+}
+
+.commentText p {
+	margin: 0;
+}
+
+.sub-text {
+	color: #aaa;
+	font-family: verdana;
+	font-size: 11px;
+}
+
+.actionBox {
+	border-top: 1px dotted  #07B0F2;
+	padding: 10px;
+}
+
+#comment {
+	background-color: white;
+	border: 1px solid  #07B0F2;
+}

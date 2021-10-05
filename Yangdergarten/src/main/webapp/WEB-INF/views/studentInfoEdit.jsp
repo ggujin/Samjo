@@ -53,7 +53,7 @@
 					<div class="btn_area">
 							<!-- <button type="submit" class="submit">등록</button> -->
 							<button type="submit" class="submit">등록</button>
-							<button type="reset" class="cancel">취소</button>
+						<button id="cancelBtn" type="button" class="cancel">취소</button>
 						</div>
 				
 					</td>
@@ -65,4 +65,9 @@
 	<%@ include file="/WEB-INF/common/footer.jsp"%>
 </body>
 <jsp:include page="/WEB-INF/common/jscode.jsp"></jsp:include>
+<script>
+	$('#cancelBtn').click(function(){
+		location.href="StudentList.sams";
+	});
+</script>
 </html>

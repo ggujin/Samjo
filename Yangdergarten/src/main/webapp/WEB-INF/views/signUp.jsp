@@ -47,7 +47,6 @@
 	<%@ include file="/WEB-INF/common/footer.jsp"%>
 </body>
 <jsp:include page="/WEB-INF/common/jscode.jsp"></jsp:include>
-<script src="login.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js "></script>
-<script src="signUp.js"></script>
+<script src="../../js/signUp.js"></script>
 </html>

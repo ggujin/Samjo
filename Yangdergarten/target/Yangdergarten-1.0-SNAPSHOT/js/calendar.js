@@ -3,7 +3,8 @@ let origianlEvents
 
 $(document).ready(function() {
 	$.ajax({
-		url: '/events',
+		url: `${contextPath}/events`,
+		type: "GET",
 		contentType: 'application/json',
 		success: function(events) {
 			origianlEvents = events
@@ -64,6 +65,11 @@ function init(events) {
 
 	$('#deleteBtn').click(function () {
 		allDelete();
+	});
+	
+	$('#newEvent').keyup(function(){
+		let title = $('#newEvent').val();
+		$('#newEventDiv').text(title);
 	});
 }
 //1. 전체 이벤트 데이터를 추출		2. ajax로 서버에 전송하여 DB에 저장

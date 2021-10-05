@@ -57,7 +57,7 @@
 
 					<!-- Nav brand -->
 					<a href="GoToMain.samb?" class="nav-brand"><img
-						src="https://www.joeunsorikd.kg.kr:479/data/designImages/TITLE_LOGO_1583382672.jpg"
+						src=""
 						alt=""></a>
 
 					<!-- Navbar Toggler -->

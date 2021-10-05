@@ -10,12 +10,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
-<jsp:include page="/WEB-INF/common/head.jsp"></jsp:include>
-<link rel="stylesheet" href="css/list.css">
 </head>
 <body>
-	<div class="container sch_list">
-		<h1 class="noMargin">회원 검색 목록</h1>
+	<div class="sch_list noMargin">
+		<h1>회원 검색 목록</h1>
 
 		<div class="btn_area">
 			<button type="button" onclick="allListPage()" class="btn2">전체목록</button>

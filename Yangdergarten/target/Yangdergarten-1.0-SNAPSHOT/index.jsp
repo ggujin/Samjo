@@ -2,6 +2,6 @@
 
 
 <script>
-    location.href='/GoToMain.samb?';
+    location.href='GoToMain.samb?';
 </script>
 
