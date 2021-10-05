@@ -3,6 +3,7 @@ package dao;
 
 import dto.Board;
 import utils.ConnectionHelper;
+import utils.DateFormat;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -227,7 +228,7 @@ public class BoardDao {
     }
 
     public ArrayList<Board> getBoard(String boardid, int cpage, int pagesize) {
-
+        DateFormat dateFormat = new DateFormat();
         Connection conn = null;
         int resultrow = 0;
         PreparedStatement pstmt = null;
@@ -260,8 +261,8 @@ public class BoardDao {
                 board.setBoardindex(rs.getInt("boardindex"));
                 board.setBoardId(rs.getInt("boardid"));
                 board.setAuthor(rs.getString("author"));
-                board.setCreateDate(rs.getString("createdate"));
-                board.setUpdateDate(rs.getString("updatedate"));
+                board.setCreateDate(dateFormat.transform(rs.getDate("createdate")));
+                board.setUpdateDate(dateFormat.transform(rs.getDate("updatedate")));
                 board.setTitle(rs.getString("title"));
                 board.setContent(rs.getString("content"));
                 board.setReference(rs.getInt("reference"));
@@ -288,7 +289,7 @@ public class BoardDao {
     }
 
     public ArrayList<Board> getBoardByName(String boardid, int cpage, int pagesize, String seachvar) {
-
+        DateFormat dateFormat = new DateFormat();
         Connection conn = null;
         int resultrow = 0;
         PreparedStatement pstmt = null;
@@ -322,8 +323,8 @@ public class BoardDao {
                 board.setBoardindex(rs.getInt("boardindex"));
                 board.setBoardId(rs.getInt("boardid"));
                 board.setAuthor(rs.getString("author"));
-                board.setCreateDate(rs.getString("createdate"));
-                board.setUpdateDate(rs.getString("updatedate"));
+                board.setCreateDate(dateFormat.transform(rs.getDate("createdate")));
+                board.setUpdateDate(dateFormat.transform(rs.getDate("updatedate")));
                 board.setTitle(rs.getString("title"));
                 board.setContent(rs.getString("content"));
                 board.setReference(rs.getInt("reference"));
@@ -350,7 +351,7 @@ public class BoardDao {
     }
 
     public ArrayList<Board> getBoardByTitle(String boardid, int cpage, int pagesize, String seachvar) {
-
+        DateFormat dateFormat = new DateFormat();
         Connection conn = null;
         int resultrow = 0;
         PreparedStatement pstmt = null;
@@ -384,8 +385,8 @@ public class BoardDao {
                 board.setBoardindex(rs.getInt("boardindex"));
                 board.setBoardId(rs.getInt("boardid"));
                 board.setAuthor(rs.getString("author"));
-                board.setCreateDate(rs.getString("createdate"));
-                board.setUpdateDate(rs.getString("updatedate"));
+                board.setCreateDate(dateFormat.transform(rs.getDate("createdate")));
+                board.setUpdateDate(dateFormat.transform(rs.getDate("updatedate")));
                 board.setTitle(rs.getString("title"));
                 board.setContent(rs.getString("content"));
                 board.setReference(rs.getInt("reference"));
@@ -412,7 +413,7 @@ public class BoardDao {
     }
 
     public Board getBoardContent(String boardindex) {
-
+        DateFormat dateFormat = new DateFormat();
         Connection conn = null;
         PreparedStatement pstmt = null;
         Board board = new Board();
@@ -434,8 +435,8 @@ public class BoardDao {
                 board.setBoardindex(rs.getInt("boardindex"));
                 board.setBoardId(rs.getInt("boardid"));
                 board.setAuthor(rs.getString("author"));
-                board.setCreateDate(rs.getString("createdate"));
-                board.setUpdateDate(rs.getString("updatedate"));
+                board.setCreateDate(dateFormat.transform(rs.getDate("createdate")));
+                board.setUpdateDate(dateFormat.transform(rs.getDate("updatedate")));
                 board.setTitle(rs.getString("title"));
                 board.setContent(rs.getString("content"));
                 board.setReference(rs.getInt("reference"));

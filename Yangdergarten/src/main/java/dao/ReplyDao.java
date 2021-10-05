@@ -2,6 +2,7 @@ package dao;
 
 import dto.Reply;
 import utils.ConnectionHelper;
+import utils.DateFormat;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -49,6 +50,7 @@ public class ReplyDao {
     }
 
     public ArrayList<Reply> getReplies(String boardindex){
+        DateFormat dateFormat = new DateFormat();
         Connection conn = null;
         int resultrow = 0;
         PreparedStatement pstmt = null;
@@ -71,7 +73,7 @@ public class ReplyDao {
                 reply.setNo(rs.getInt("no"));
                 reply.setAuthor(rs.getString("author"));
                 reply.setContent(rs.getString("content"));
-                reply.setCreateDate(rs.getString("createdate"));
+                reply.setCreateDate(dateFormat.transform(rs.getDate("createdate")));
                 reply.setIndex(rs.getInt("boardindex"));
                 replyList.add(reply);
             }
