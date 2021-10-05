@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
@@ -25,32 +24,28 @@
 					<td>원아 번호</td>
 				</tr>
 				<tr>
-					<td><input type="text" name="studentNum" id="studentNum"
-						value="${st.studentNum}" readonly></td>
+					<td><input type="text" name="studentNum" id="studentNum" value="${st.studentNum}" readonly></td>
 				</tr>
 				<tr>
-					<td>원생 이름</td>
+					<td>원아 이름</td>
 				</tr>
 				<tr>
-					<td><input type="text" name="bName" id="bName"
-						value="${st.bName}"></td>
+					<td><input type="text" name="bName" id="bName" value="${st.bName}"></td>
 				</tr>
 				<tr>
 					<td>학부모 전화번호</td>
 				</tr>
 				<tr>
-					<td><input type="text" name="phone" id="phone"
-						value="${st.phone}"></td>
+					<td><input type="text" name="phone" id="phone" value="${st.phone}" readonly></td>
 				</tr>
 				<tr>
-					<td>원생 반</td>
+					<td>원아 반</td>
 				</tr>
 				<tr>
-					<td><select name="bClassNum" id="bClassNum"
-						class="form-control">
-							<option value="0">햇님반</option>
-							<option value="1">달님반</option>
-							<option value="2">별님반</option>
+					<td><select name="bClassNum" id="bClassNum" class="form-control">
+							<option value="0" <c:if test="${st.bClass eq '햇님반'}">selected</c:if>>햇님반</option>
+							<option value="1" <c:if test="${st.bClass eq '달님반'}">selected</c:if>>달님반</option>
+							<option value="2" <c:if test="${st.bClass eq '별님반'}">selected</c:if>>별님반</option>
 					</select></td>
 				</tr>
 				<tr>

@@ -52,7 +52,7 @@ public class CalendarDao {
 		try {
 			conn = ConnectionHelper.getConnection("oracle");
 //			오류나면 오라클이라서 그른거라.. 쿼리 다시 ㅠㅠ 해야행
-			String sql = "insert into CALENDAR(title,startdate,enddate) values(?,?,?)";
+			String sql = "insert into CALENDAR(id,title,startdate,enddate) values(1,?,?,?)";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, cal.getTitle());
 			pstmt.setString(2, cal.getStartDate());
