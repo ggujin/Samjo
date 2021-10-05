@@ -23,13 +23,19 @@ public class Login implements Action {
 
     String msg="";
     String url="";
-    if(usersDto.getPwd().equals(pwd)) {
+    
+    if(usersDto.getId() == null || usersDto.getPwd() == null) {
+    	msg = "아이디 또는 비밀번호를 확인해 주세요";
+        url = "showLogin.samu";
+    	
+    }else if(usersDto.getPwd().equals(pwd)) {
       session.setAttribute("login_out", "Logout");
       session.setAttribute("userKind", usersDto.getCnum());
       session.setAttribute("userId", usersDto.getId());
       msg = "Welcome!  " + usersDto.getId() + "  :)";
       url = "GoToMain.samb";
-    }else {
+      
+    }else { //우리가 모르는 예외상황을 대비한 else
       msg = "로그인 실패";
       url = "showLogin.samu";
     }
