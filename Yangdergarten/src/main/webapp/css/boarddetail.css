@@ -1,5 +1,7 @@
 /* 진수 */
-.allbtn {
+
+
+/* .allbtn {
 	background-color: #07B0F2;
 	border-radius: 30px;
 	border: none;
@@ -39,71 +41,107 @@
 	margin-top: 2.5%;
 }
 
-.list button {
-	display: inline-block;
-	background: #ffffff;
-	font-size: 15px;
-	font-weight: 800;
-	color: #27CDF2;
-	text-transform: capitalize;
-	margin: 10px 0;
-	padding: 12px 25px;
-	border-radius: 23px;
-	letter-spacing: 0.25px;
-	border: 2px solid #27CDF2;
-	outline: none;
-	transition: all .3s;
-	padding: 12px 25px;
-	min-width: 120px;
-}
-
-.list button:hover, .list button:active, .list button:focus {
-	background: #27CDF2;
-	color: #ffffff;
-}
 
 .btnlist {
-	
 	margin-top: 4%;
 }
+ */
+
+.contents .btn_area,
+.contents .sch_area {
+    display: flex;
+    margin: 3rem 0 0 5rem;
+    padding: 0 1rem;
+    width: 85%;
+    justify-content: space-between;
+    width: 85%;
+}
+
+.contents .sch_list .btn_area {
+    justify-content: space-between;
+}
+
+.contents button {
+    display: inline-block;
+    background: #ffffff;
+    font-size: 15px;
+    font-weight: 800;
+    color: #07B0F2;
+    text-transform: capitalize;
+    margin: 10px 0;
+    padding: 12px 25px;
+    border-radius: 23px;
+    letter-spacing: 0.25px;
+    border: 2px solid #07B0F2;
+    outline: none;
+    transition: all .3s;
+    padding: 12px 25px;
+    min-width: 120px;
+}
+
+.contents button:hover,
+.list button:active,
+.list button:focus {
+    background: #07B0F2;
+    color: #ffffff;
+}
+
+.contents .btn2 {
+    color: #ffffff;
+    border: 2px solid #07B0F2;
+    background: #07B0F2;
+}
+
+.contents .btn2:hover,
+.list .btn2:active,
+.list .btn2:focus {
+    color: pink;
+    border: 2px solid pink;
+    background: #ffffff;
+}
+
+.contents form {
+    display: flex;
+    flex-direction: column;
+}
+
 
 /* new */
+
 hr {
-	background-color: #07B0F2;
-	border: none;
-	height: 3px;
+    background-color: #07B0F2;
+    border: none;
+    height: 3px;
 }
 
 h1 {
-	margin-left: 60px;
-	text-align: left;
-	color: black;
+    margin: 1rem;
+    margin-left: 3rem;
+    text-align: left;
+    color: black;
 }
 
 h4 {
-	margin-left: 70px;
-	color: black;
-}
-
-
-
-body {
-	
-	background: white;
+    margin-left: 70px;
+    color: black;
 }
 
 p {
-	line-height: 1.5;
-	font-size: 18px;
-	color: black;
+    line-height: 1.5;
+    font-size: 18px;
+    color: black;
+    margin: 2rem auto 5rem auto;
 }
 
 div.container2 {
-	max-width: 85%;
-	border: 5px solid #07B0F2;
-	margin: 20px auto;
-	padding: 20px;
+    max-width: 85%;
+    border: 5px solid #07B0F2;
+    border-radius: 40px;
+    margin: 20px auto;
+    padding: 20px;
+    margin: 20px auto;
 }
+
 
 /*
 header{
@@ -111,101 +149,112 @@ header{
 	color: #666566;
 }
 */
+
 div.main-content {
-	color: white;
-	max-width: 90%;
-	margin: 0 auto;
+    color: white;
+    max-width: 90%;
+    margin: 0 auto;
 }
 
-/* 댓글 */
-@import
-	url(//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css);
 
+/* 댓글 */
+
+@import url(//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css);
 .detailBox {
-	width: 90%;
-	border: 1px solid #07B0F2;
-	margin-left: 5%;
-	margin-top: 5%;
-	margin-bottom: 2%;
+    width: 90%;
+    border: 1px solid #07B0F2;
+    margin-left: 5%;
+    margin-top: 5%;
+    margin-bottom: 2%;
 }
 
 .titleBox {
-	background-color: #fdfdfd;
-	padding: 10px;
+    background-color: #fdfdfd;
+    padding: 10px;
+    padding-left: 20px;
 }
 
 .titleBox label {
-	color: #07B0F2;
-	margin: 0;
-	display: inline-block;
+    color: #07B0F2;
+    margin: 0;
+    display: inline-block;
 }
 
-
-
-.commentBox .form-group:first-child, .actionBox .form-group:first-child
-	{
-	width: 80%;
+.commentBox .form-group:first-child,
+.actionBox .form-group:first-child {
+    width: 100%;
 }
 
-.commentBox .form-group:nth-child(2), .actionBox .form-group:nth-child(2)
-	{
-	width: 18%;
+.commentBox .form-group:nth-child(2),
+.actionBox .form-group:nth-child(2) {
+    width: 18%;
 }
 
 .actionBox .form-group * {
-	width: 100%;
-	
+    width: 100%;
 }
 
 .taskDescription {
-	margin-top: 10px 0;
+    margin-top: 10px 0;
 }
 
 .commentList {
-	padding: 0;
-	list-style: none;
-	max-height: 200px;
-	overflow: auto;
-	margin: 10px;
+    list-style: none;
+    /* max-height: 200px; */
+    overflow: inherit;
+    margin-top: -0.5rem;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
 }
 
 .commentList li {
-	margin: 0;
-	margin-top: 10px;
+    margin: 0;
+    margin-top: 10px;
 }
 
 .commentList li>div {
-	display: table-cell;
+    display: table-cell;
+    overflow: hidden;
 }
 
 .commenterImage {
-	width: 30px;
-	margin-right: 5px;
-	height: 100%;
-	float: left;
+    width: 30px;
+    margin-right: 5px;
+    height: 100%;
+    float: left;
 }
 
 .commenterImage img {
-	width: 100%;
-	border-radius: 50%;
+    width: 100%;
+    border-radius: 50%;
 }
 
 .commentText p {
-	margin: 0;
+    margin: 0;
+}
+
+.commentText .fl-table td {
+    margin-right: 1rem;
+    display: initial;
+}
+
+.commentText .fl-table tr:nth-child(odd) {
+    color: #07B0F2;
+    font-weight: bold;
 }
 
 .sub-text {
-	color: #aaa;
-	font-family: verdana;
-	font-size: 11px;
+    color: #aaa;
+    font-family: verdana;
+    font-size: 11px;
 }
 
 .actionBox {
-	border-top: 1px dotted  #07B0F2;
-	padding: 10px;
+    border-top: 1px dotted #07B0F2;
+    padding: 10px;
 }
 
 #comment {
-	background-color: white;
-	border: 1px solid  #07B0F2;
+    background-color: white;
+    border: 1px solid #07B0F2;
 }

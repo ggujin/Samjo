@@ -7,45 +7,50 @@
 
 <jsp:include page="/WEB-INF/common/head.jsp"></jsp:include>
 <link rel="stylesheet" href="css/boarddetail.css">
-<!-- 아이콘 -->
-<script src="https://kit.fontawesome.com/c811b402f1.js"
-	crossorigin="anonymous"></script>
+<link rel="stylesheet" href="css/list.css">
 </head>
 
 <body>
 	<%@ include file="/WEB-INF/common/header.jsp"%>
-	<c:set var="board" value="${requestScope.board}"></c:set>
+	<div class="contents">
 
-
-
-
-
-
-	<c:if test="${sessionScope.userId eq board.author}">
-		<div class="btnlist">
-
-			<button class="allbtn" id="btn1" type="button"
-				onclick="location.href='BoardAddOrEdit.samb?boardid=${board.boardId}&mode=1&boardindex=${board.boardindex}&title=${board.title}&content=${board.content}' ">
-				<i class="fas fa-edit">수정</i>
-			</button>
-			<button class="allbtn" id="btn2" type="button"
-				onclick="location.href='BoardDeleteOk.samb?boardid=${board.boardId}&boardindex=${board.boardindex}' ">
-				<i class="fas fa-trash-alt">삭제</i>
-			</button>
-
+		<div class="loadMap_area">
+			<%@ include file="/WEB-INF/common/loadMap_user.jsp"%>
 		</div>
-	</c:if>
-	<c:if test="${not empty sessionScope.userId}">
-		<button class="allbtn" id="btn3" type="button"
-			onclick="location.href='BoardAddOrEdit.samb?mode=2&boardid=${board.boardId}&boardindex=${board.boardindex}' ">
-			<i class="fas fa-reply">답글</i>
 
-		</button>
-	</c:if>
-	</div>
+		<div class="contents_area">
+			<div class="btn_area">
+				<div class="back">
+					<button type="button" class="btn2"
+						onclick="location.href='BoardList.samb?boardid=${board.boardId}' ">
+						목록</button>
+				</div>
+				<div class="board_detail_btn">
+					<c:set var="board" value="${requestScope.board}"></c:set>
+					<c:if test="${not empty sessionScope.userId}">
+						<button class="allbtn" id="btn3" type="button"
+							onclick="location.href='BoardAddOrEdit.samb?mode=2&boardid=${board.boardId}&boardindex=${board.boardindex}' ">
+							<i class="fas fa-reply">답글</i>
+						</button>
+					</c:if>
+					<c:if test="${sessionScope.userId eq board.author}">
 
 
-	<!--  오리지널
+						<button class="allbtn" id="btn1" type="button"
+							onclick="location.href='BoardAddOrEdit.samb?boardid=${board.boardId}&mode=1&boardindex=${board.boardindex}&title=${board.title}&content=${board.content}' ">
+							<i class="fas fa-edit">수정</i>
+						</button>
+						<button class="allbtn" id="btn2" type="button"
+							onclick="location.href='BoardDeleteOk.samb?boardid=${board.boardId}&boardindex=${board.boardindex}' ">
+							<i class="fas fa-trash-alt">삭제</i>
+						</button>
+					</c:if>
+				</div>
+			</div>
+
+
+
+			<!--  오리지널
     
         <a href="BoardAddOrEdit.samb?boardid=${board.boardId}&mode=1&boardindex=${board.boardindex}&title=${board.title}&content=${board.content}">수정</a>
     <a href="BoardDeleteOk.samb?boardid=${board.boardId}&boardindex=${board.boardindex}">삭제</a>
@@ -54,94 +59,85 @@
     
      -->
 
-	<!-- 
+			<!-- 
     <h1 id="author" style="color:black">${board.author}</h1>
     <h2 id="tilte" style="color:black">${board.title}</h2>
     <p id="content">${board.content}</p>
      -->
 
+			<div class="top">
+				<div class="container2">
+					<header>
+						<h1>
+							<em>${board.title}</em>
+						</h1>
+						<h4>
+							<strong>${board.author}</strong>
+						</h4>
+					</header>
+					<div class="main-content">
+						<hr>
+						<p>${board.content}</p>
+						<hr>
+					</div>
 
+					<!-- 댓글 -->
 
+					<div class="detailBox">
 
-	<div class="top">
-
-
-		<div class="container2">
-			<header>
-				<h1>
-					<em>${board.title}</em>
-				</h1>
-				<h4>
-					<strong>${board.author}</strong>
-				</h4>
-			</header>
-			<div class="main-content">
-				<hr>
-				<p>${board.content}</p>
-
-
-				<hr>
-			</div>
-
-
-
-
-			<!-- 댓글 -->
-
-			<div class="detailBox">
-
-				<div class="titleBox">
-					<label><i class="fas fa-comment"> 댓글 </i> </label>
-				</div>
-
-
-				<div class="actionBox">
-					<ul class="commentList">
-
-
-						<li>
-
-
-							<div class="commentText">
-
-
-								<table class="fl-table">
-
-
-									<c:forEach var="reply" items="${replylist}">
-										<tr>
-											<td>${reply.author}:</td>
-											<td>${reply.content}</td>
-
-											<td class="date sub-text">${reply.createDate}</td>
-											<c:if test="${reply.author eq sessionScope.userId }">
-												<td><a
-													href="ReplyDeleteOk.samb?boardindex=${board.boardindex}&no=${reply.no}"><i
-														class="fas fa-trash-alt"></i></a></td>
-											</c:if>
-										</tr>
-									</c:forEach>
-								</table>
-
-							</div>
-						</li>
-
-					</ul>
-
-
-					<form class="form-inline" role="form"
-						action="ReplyOk.samb?boardindex=${board.boardindex}" method="post">
-						<div class="form-group">
-							<input class="form-control" id="comment" type="text"
-								name="content" placeholder="Your comments" />
+						<div class="titleBox">
+							<label><i class="fas fa-comment"> 댓글 </i> </label>
 						</div>
-						<div class="form-group">
-							<button id="commentbtn" type="submit">글쓰기</button>
-						</div>
-					</form>
 
 
-					<!-- 
+						<div class="actionBox">
+							<ul class="commentList">
+
+
+								<li>
+
+
+									<div class="commentText">
+
+
+										<table class="fl-table">
+											<c:forEach var="reply" items="${replylist}">
+												<tr>
+													<td>${reply.author}</td>
+												</tr>
+												<tr>
+													<td>${reply.content}</td>
+
+													<td class="date sub-text">${reply.createDate}<c:if
+															test="${reply.author eq sessionScope.userId }">
+															<a
+																href="ReplyDeleteOk.samb?boardindex=${board.boardindex}&no=${reply.no}"><i
+																class="fas fa-trash-alt"></i></a></td>
+													</c:if>
+												</tr>
+											</c:forEach>
+										</table>
+
+									</div>
+								</li>
+
+							</ul>
+
+
+							<form class="form-inline" role="form"
+								action="ReplyOk.samb?boardindex=${board.boardindex}"
+								method="post">
+								<div class="form-group">
+									<input class="form-control" id="comment" type="text"
+										name="content" placeholder="Your comments" />
+								</div>
+								<div class="form-group">
+									<button id="commentbtn" type="submit">글쓰기</button>
+								</div>
+							</form>
+
+
+							<!-- 
 										<form action="ReplyOk.samb?boardindex=${board.boardindex}" method="post">
 						<textarea name="content" class="form-control" id="exampleFormControlTextarea2" rows="2"></textarea>
 						<button  class="btn btn-dark mt-3" >댓글등록</button>
@@ -150,23 +146,14 @@
 					 -->
 
 
-
-
-
-
-
+						</div>
+					</div>
 
 
 				</div>
 			</div>
 
-
-		</div>
-	</div>
-
-
-
-	<!-- 버릴거 
+			<!-- 버릴거 
 
 		<div class="card-header bg-light">
 			<i class="fa fa-comment fa"></i> 댓글
@@ -215,7 +202,7 @@
 
  -->
 
-	<!-- 오리지널	
+			<!-- 오리지널	
 
 <form action="ReplyOk.samb?boardindex=${board.boardindex}" method="post">
     <input type="text" name="author">
@@ -224,7 +211,8 @@
 </form>
 
  -->
-
+		</div>
+	</div>
 	<%@ include file="/WEB-INF/common/footer.jsp"%>
 </body>
 <jsp:include page="/WEB-INF/common/jscode.jsp"></jsp:include>

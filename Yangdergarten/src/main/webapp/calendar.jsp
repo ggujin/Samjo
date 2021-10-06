@@ -37,8 +37,7 @@
 <body>
 	<%@ include file="/WEB-INF/common/header.jsp"%>
 	<div class="container calendar">
-		<div id='external-events'
-			style="float: left; width: 15%; padding-left: 1rem; margin-right: 1.5rem; margin-top: 10rem">
+		<div id="external-events">
 			<input type="text" id="newEvent" placeholder="새로운 일정..." />
 
 			<p>
@@ -76,19 +75,21 @@
 			</p>
 		</div>
 
-
-		<div>
-			<h1>양선생 어린이집 일정</h1>
-			<div id="Btns" style="width: 40%; text-align: right">
-				<button id="deleteBtn">삭제</button>
-				<button id="saveBtn">전체저장</button>
+		<div class="user_visible">
+			<div>
+				<h1>양선생 어린이집 일정</h1>
+				
+			</div>
+			<div id='calendar-container'>
+				<div id="Btns" style="width: 40%; text-align: right">
+					<button id="deleteBtn">삭제</button>
+					<button id="saveBtn">전체저장</button>
+				</div>
+				<div id='calendar'></div>
 			</div>
 		</div>
-		<div id='calendar-container'>
-			<div id='calendar'></div>
-		</div>
 	</div>
-	</div>
+
 	<%@ include file="/WEB-INF/common/footer.jsp"%>
 
 

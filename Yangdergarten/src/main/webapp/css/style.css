@@ -84,6 +84,7 @@ img {
 
 .calendar{
 	display:flex;
+	flex-direction: column;
 }
 
 .bg-img {
