@@ -1,0 +1,83 @@
+@charset "UTF-8";
+.loadMap {
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+    max-width: 11rem;
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 0.5rem 2rem;
+    border-radius: 40px;
+    border: 3px dashed #07B0F2;
+}
+
+.loadMap h3 {
+    font-family: 'Jeju Gothic', sans-serif;
+    text-align: left;
+    color: #07B0F2;
+    line-height: 1.3;
+    font-size: 1rem;
+    margin: 0.3rem 0 0.1rem 0;
+}
+
+.loadMap h3 a {
+    color: #07B0F2 !important;
+}
+
+.loadMap_area {
+    position: fixed;
+    left: 8%;
+    margin: 2rem 0;
+}
+
+contents.loadMap_area {
+    position: fixed;
+    left: 3%;
+    margin: 2rem 0;
+    bottom: 35%;
+}
+
+.board_container {
+    height: 100%;
+    min-height: 30rem;
+    min-width: 700px;
+    margin: 5rem;
+}
+
+.board_container .list {
+    margin: 0 auto;
+    border: 5px dashed #07B0F2;
+    border-radius: 40px;
+    background-color: #27CDF2;
+}
+
+.board_container .contents {
+    display: inline-flex;
+    justify-content: space-around;
+    width: 100%;
+    min-width: 600px;
+}
+
+.board_container .contents_area {
+    width: 60%;
+    min-width: 500px;
+    margin: 0 0 0 100px;
+}
+
+.contents {
+    min-width: 1000px;
+    display: flex;
+    justify-content: center;
+}
+
+.contents .contents_area {
+    width: 85%;
+    margin: 0 0 5rem 5rem;
+}
+
+.contents .loadMap_area {
+    position: fixed;
+    left: 3%;
+    margin: 2rem 0;
+    bottom: 35%;
+}
+
